@@ -1,0 +1,18 @@
+# Use LF for source code on every operating system
+* text=auto eol=lf
+
+# Windows command scripts, if ever added
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.pdf binary
+*.zip binary

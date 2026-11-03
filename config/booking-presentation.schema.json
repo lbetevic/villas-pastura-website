@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://villas-pastura.local/schemas/booking-presentation.schema.json",
+  "title": "Villas Pastura booking presentation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "properties"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": 1 },
+    "properties": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["offers"],
+        "properties": {
+          "offers": {
+            "type": "object",
+            "additionalProperties": { "$ref": "#/$defs/offer" }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "labels": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["en", "de", "hr", "it"],
+      "properties": {
+        "en": { "type": "string", "minLength": 1 },
+        "de": { "type": "string", "minLength": 1 },
+        "hr": { "type": "string", "minLength": 1 },
+        "it": { "type": "string", "minLength": 1 }
+      }
+    },
+    "offer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["match", "labels"],
+      "properties": {
+        "match": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "specialOfferIds": { "type": "array", "items": { "type": "integer" }, "uniqueItems": true },
+            "ratePlanIds": { "type": "array", "items": { "type": "integer" }, "uniqueItems": true }
+          },
+          "anyOf": [
+            { "required": ["specialOfferIds"] },
+            { "required": ["ratePlanIds"] }
+          ]
+        },
+        "labels": { "$ref": "#/$defs/labels" },
+        "serviceOverrides": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["labels"],
+            "properties": { "labels": { "$ref": "#/$defs/labels" } }
+          }
+        },
+        "additionalPerks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "labels"],
+            "properties": {
+              "id": { "type": "string", "pattern": "^local:" },
+              "labels": { "$ref": "#/$defs/labels" }
+            }
+          }
+        },
+        "perkOrder": {
+          "type": "array",
+          "items": { "type": "string" },
+          "uniqueItems": true
+        }
+      }
+    }
+  }
+}

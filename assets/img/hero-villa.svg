@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-label="Abstract luxury villa with private pool">
+  <defs><linearGradient id="sky" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#cfe8ed"/><stop offset="1" stop-color="#f6f0e6"/></linearGradient><linearGradient id="sea" x1="0" x2="1"><stop stop-color="#2f8395"/><stop offset="1" stop-color="#123c55"/></linearGradient></defs>
+  <rect width="1600" height="1000" fill="url(#sky)"/><rect y="520" width="1600" height="480" fill="url(#sea)" opacity=".85"/>
+  <path d="M0 560 C250 480 360 620 580 540 C820 450 1030 610 1600 500 L1600 1000 L0 1000Z" fill="#0b2839" opacity=".22"/>
+  <rect x="210" y="405" width="850" height="300" rx="18" fill="#fffdf8"/><rect x="270" y="475" width="180" height="160" fill="#123c55" opacity=".85"/><rect x="505" y="475" width="180" height="160" fill="#123c55" opacity=".85"/><rect x="740" y="475" width="220" height="160" fill="#123c55" opacity=".85"/>
+  <path d="M170 405 L650 235 L1100 405Z" fill="#c8a45d"/><rect x="170" y="705" width="980" height="60" fill="#c8a45d"/>
+  <ellipse cx="1030" cy="810" rx="410" ry="95" fill="#84cdd4" opacity=".85"/><ellipse cx="1030" cy="810" rx="330" ry="64" fill="#2f8395" opacity=".9"/>
+  <circle cx="1260" cy="265" r="95" fill="#f1c76b" opacity=".8"/>
+</svg>

@@ -1,0 +1,23 @@
+{
+  "name": "villas-pastura-direct-booking",
+  "version": "1.22.0",
+  "private": true,
+  "type": "module",
+  "description": "Villas Pastura website with Nokumo pricing and Cloudflare booking-request checkout",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "npm run build && npm run db:local && wrangler dev",
+    "db:local": "wrangler d1 migrations apply DB --local",
+    "db:remote": "wrangler d1 migrations apply DB --remote",
+    "test": "node --test test/*.test.mjs",
+    "check": "npm run build && npm test && node scripts/validate.mjs",
+    "deploy": "npm run check && wrangler deploy"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.8",
+    "wrangler": "^4.118.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,619 @@
+<!doctype html>
+<!--
+  ============================================================================
+  V1.12 — UPUTE ZA RESPONSIVE FOTOGRAFIJE U GALERIJI
+  ============================================================================
+
+  VAŽNO: stranica NE čita automatski sve fotografije iz foldera.
+  Svaka scena definirana je u gallery-manifest.json, a Python skripta iz njega
+  automatski obnavlja statički HTML, prijevode i SEO strukturirane podatke.
+  Browser bira ručno pripremljeni 4:5 kadar na mobitelu, a 3:2 kadar na tabletu
+  i desktopu. Grid i lightbox koriste isti art-directed izbor; CSS ne određuje
+  crop finalne fotografije.
+
+  1) GDJE STAVITI FOTOGRAFIJE
+
+     Sve WebP datoteke stavljaju se u:
+
+       assets/img/gallery/
+
+  2) DVA RUČNO PRIPREMLJENA MASTER CROPA
+
+     Za svaku scenu pripremiti dva kadra:
+
+       PORTRAIT MASTER:   4:5, najmanje 1280 x 1600 px
+       LANDSCAPE MASTER:  3:2, najmanje 2400 x 1600 px (2500 x 1667 je valjan)
+
+     Cropove napraviti ručno. Mobile kadar ne mora biti geometrijska sredina
+     landscape kadra, ali mora prikazivati istu scenu bez pogrešnog dojma.
+
+  3) SEDAM WEBP DATOTEKA PO SCENI
+
+     Primjer za scenu "private pool sea view dusk":
+
+       villas-pastura-private-pool-sea-view-dusk-portrait-480x600.webp
+         480 x 600 px     mobile grid, 1x
+       villas-pastura-private-pool-sea-view-dusk-portrait-960x1200.webp
+         960 x 1200 px    mobile grid / lightbox, 2x
+       villas-pastura-private-pool-sea-view-dusk-portrait-1280x1600.webp
+         1280 x 1600 px   mobile lightbox, high density
+
+       villas-pastura-private-pool-sea-view-dusk-landscape-480x320.webp
+         480 x 320 px     manji tablet/desktop grid
+       villas-pastura-private-pool-sea-view-dusk-landscape-960x640.webp
+         960 x 640 px     standardni desktop grid
+       villas-pastura-private-pool-sea-view-dusk-landscape-1800x1200.webp
+         1800 x 1200 px   featured grid / standardni lightbox
+       villas-pastura-private-pool-sea-view-dusk-landscape-2400x1600.webp
+         2400 x 1600 px   veliki/retina desktop lightbox
+
+     Dio između "villas-pastura-" i "-portrait/-landscape" opisni je SEO slug.
+     Koristiti kratke engleske riječi, mala slova i crtice; filename mora točno
+     opisivati stvarni sadržaj fotografije.
+
+  4) ZAMJENA POSTOJEĆIH DEVELOPMENT PLACEHOLDERA
+
+     Najlakše je zamijeniti svih sedam datoteka jedne scene i zadržati postojeći
+     SEO slug. Ako finalna scena više ne odgovara slugu, preimenovati datoteke i
+     ažurirati sve reference u pripadajućem <figure> bloku te JSON-LD zapisu.
+
+     Kad se sadržaj fotografije promijeni, obavezno ažurirati i:
+
+       a) data-alt i img alt u pripadajućem <figure> bloku;
+       b) <figcaption> i caption prijevode u assets/js/gallery.js;
+       c) contentUrl i caption odgovarajućeg ImageObjecta u JSON-LD bloku.
+
+  5) DODAVANJE NOVE SCENE
+
+     a) Dodati portrait i landscape master s istim troznamenkastim source ID-em.
+     b) Dodati jedan zapis u gallery-manifest.json.
+     c) Upisati order, SEO slug, kategorije, layout i EN/DE/HR/IT captione.
+     d) Pokrenuti tools/build-gallery-images.bat.
+
+     Skripta provjerava par, radi svih sedam WebP datoteka i automatski ažurira
+     redoslijed grida, lightbox, prijevode i JSON-LD associatedMedia listu.
+
+  6) KATEGORIJE I POSEBNE VELIČINE KARTICA
+
+     data-category može sadržavati jednu ili više kategorija odvojene razmakom:
+       pool terrace exterior
+
+     gallery-item-featured daje veliku istaknutu karticu.
+     gallery-item-wide daje široku karticu.
+     Obična gallery-item klasa daje standardnu karticu.
+
+  7) EXPORT PREPORUKE
+
+     - WebP, sRGB, bez EXIF/GPS podataka.
+     - Sve portrait veličine moraju koristiti isti ručni 4:5 crop.
+     - Sve landscape veličine moraju koristiti isti ručni 3:2 crop.
+     - Quality 78-82 za grid, 82-86 za lightbox.
+     - Ne ugrađivati tekst ili logotipe u fotografiju.
+
+     Prva fotografija učitava se eager/high-priority; ostale su lazy. Velike
+     lightbox verzije učitavaju se tek nakon otvaranja, a susjedne naknadno kad
+     je browser idle.
+
+  8) AUTOMATSKA IZRADA SVIH DERIVATA
+
+     Ručno pripremljene master parove stavi u gallery-masters/ i imenuj:
+
+       gallery-masters/portrait/200_private-pool-sea-view-dusk.jpg
+       gallery-masters/landscape/200_private-pool-sea-view-dusk.jpg
+
+     Na Windowsu jednom pokreni tools/setup-image-tools.bat, a zatim za svaki
+     novi set pokreni tools/build-gallery-images.bat. Python skripta provjerava
+     mastere i radi resize/WebP konverziju; nikada ne radi kompozicijski crop
+     niti povećava sliku. Redoslijed se mijenja kroz order u manifestu.
+     Potpune upute nalaze se u gallery-masters/README.md.
+
+  Detaljnije upute nalaze se i u README.md.
+  ============================================================================
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#123c55" />
+  <meta name="description" content="Explore the private pool, sea-view terraces and contemporary interiors at Villas Pastura in Novalja on Pag Island." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <title>Villas Pastura Photo Gallery | Private Pool Villa in Novalja</title>
+  <link rel="icon" href="assets/icons/favicon.svg?v=1.16.2" type="image/svg+xml" />
+  <link rel="icon" href="favicon.ico?v=1.16.2" sizes="any" />
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png?v=1.16.2" />
+  <link rel="manifest" href="assets/icons/site.webmanifest?v=1.16.2" />
+  <link rel="preload" href="assets/css/styles.css?v=1.17.0" as="style" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=1.17.0" />
+  <link rel="stylesheet" href="assets/css/gallery.css?v=1.17.0" />
+  <link rel="stylesheet" href="assets/css/consent.css?v=1.16.2" />
+  <script defer src="assets/js/gallery.js?v=1.17.0"></script>
+  <script type="module" src="assets/js/privacy.js?v=1.16.2"></script>
+  <!-- GALLERY_SCHEMA_START -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageGallery",
+  "name": "Villas Pastura photo gallery",
+  "description": "Private pool villas, sea-view terraces and contemporary interiors in Novalja on Pag Island.",
+  "about": {
+    "@type": "VacationRental",
+    "name": "Private Pool Villas Pastura",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Novalja",
+      "addressRegion": "Pag Island",
+      "addressCountry": "HR"
+    },
+    "numberOfBedrooms": 4,
+    "occupancy": {
+      "@type": "QuantitativeValue",
+      "maxValue": 12
+    }
+  },
+  "associatedMedia": [
+    {
+      "@type": "ImageObject",
+      "contentUrl": "assets/img/gallery/villas-pastura-private-pool-villa-sunset-landscape-2400x1600.webp",
+      "caption": "Private pool and villa at sunset"
+    },
+    {
+      "@type": "ImageObject",
+      "contentUrl": "assets/img/gallery/villas-pastura-aerial-view-private-pool-villas-landscape-2400x1600.webp",
+      "caption": "Aerial view of Villas Pastura and the private pool"
+    },
+    {
+      "@type": "ImageObject",
+      "contentUrl": "assets/img/gallery/villas-pastura-pool-terrace-outdoor-lounge-evening-landscape-2400x1600.webp",
+      "caption": "Pool terrace and outdoor lounge after sunset"
+    },
+    {
+      "@type": "ImageObject",
+      "contentUrl": "assets/img/gallery/villas-pastura-poolside-wine-glasses-day-landscape-2400x1600.webp",
+      "caption": "Poolside view with a glass of wine"
+    },
+    {
+      "@type": "ImageObject",
+      "contentUrl": "assets/img/gallery/villas-pastura-sea-view-terrace-outdoor-dining-sunset-landscape-2400x1600.webp",
+      "caption": "Sea-view terrace set for outdoor dining at sunset"
+    },
+    {
+      "@type": "ImageObject",
+      "contentUrl": "assets/img/gallery/villas-pastura-outdoor-dining-private-pool-landscape-2400x1600.webp",
+      "caption": "Outdoor dining table beside the private pool"
+    },
+    {
+      "@type": "ImageObject",
+      "contentUrl": "assets/img/gallery/villas-pastura-open-plan-living-room-terrace-sea-view-landscape-2400x1600.webp",
+      "caption": "Open-plan living room with terrace and sea view"
+    },
+    {
+      "@type": "ImageObject",
+      "contentUrl": "assets/img/gallery/villas-pastura-sea-view-living-room-terrace-landscape-2400x1600.webp",
+      "caption": "Sea-view living room opening onto the terrace"
+    },
+    {
+      "@type": "ImageObject",
+      "contentUrl": "assets/img/gallery/villas-pastura-dining-area-contemporary-kitchen-landscape-2400x1600.webp",
+      "caption": "Dining area and contemporary kitchen"
+    },
+    {
+      "@type": "ImageObject",
+      "contentUrl": "assets/img/gallery/villas-pastura-bedroom-direct-sea-view-landscape-2400x1600.webp",
+      "caption": "Bedroom with direct sea view"
+    },
+    {
+      "@type": "ImageObject",
+      "contentUrl": "assets/img/gallery/villas-pastura-bedroom-sea-view-terrace-landscape-2400x1600.webp",
+      "caption": "Bright bedroom opening onto the sea-view terrace"
+    },
+    {
+      "@type": "ImageObject",
+      "contentUrl": "assets/img/gallery/villas-pastura-kitchen-island-sea-view-landscape-2400x1600.webp",
+      "caption": "Kitchen island with sea view"
+    },
+    {
+      "@type": "ImageObject",
+      "contentUrl": "assets/img/gallery/villas-pastura-fully-equipped-contemporary-kitchen-landscape-2400x1600.webp",
+      "caption": "Fully equipped contemporary kitchen"
+    },
+    {
+      "@type": "ImageObject",
+      "contentUrl": "assets/img/gallery/villas-pastura-modern-bathroom-walk-in-shower-landscape-2400x1600.webp",
+      "caption": "Modern bathroom with walk-in shower"
+    },
+    {
+      "@type": "ImageObject",
+      "contentUrl": "assets/img/gallery/villas-pastura-fresh-towels-guest-room-landscape-2400x1600.webp",
+      "caption": "Fresh towels prepared for guests"
+    },
+    {
+      "@type": "ImageObject",
+      "contentUrl": "assets/img/gallery/villas-pastura-bathroom-toiletries-guest-essentials-landscape-2400x1600.webp",
+      "caption": "Bathroom toiletries and guest essentials"
+    },
+    {
+      "@type": "ImageObject",
+      "contentUrl": "assets/img/gallery/villas-pastura-spices-cooking-essentials-landscape-2400x1600.webp",
+      "caption": "Spices and cooking essentials"
+    },
+    {
+      "@type": "ImageObject",
+      "contentUrl": "assets/img/gallery/villas-pastura-coffee-station-espresso-machine-landscape-2400x1600.webp",
+      "caption": "Coffee station with automatic espresso machine"
+    },
+    {
+      "@type": "ImageObject",
+      "contentUrl": "assets/img/gallery/villas-pastura-electric-vehicle-charging-landscape-2400x1600.webp",
+      "caption": "Electric vehicle charging at the villa"
+    },
+    {
+      "@type": "ImageObject",
+      "contentUrl": "assets/img/gallery/villas-pastura-private-parking-villa-landscape-2400x1600.webp",
+      "caption": "Private parking beside Villas Pastura"
+    }
+  ]
+}
+  </script>
+<!-- GALLERY_SCHEMA_END -->
+  <!-- GALLERY_DATA_START -->
+  <script type="application/json" id="gallery-image-data">{"images":[{"sourceId":"020","captions":{"en":"Private pool and villa at sunset","de":"Privater Pool und Villa bei Sonnenuntergang","hr":"Privatni bazen i vila pri zalasku sunca","it":"Piscina privata e villa al tramonto"}},{"sourceId":"010","captions":{"en":"Aerial view of Villas Pastura and the private pool","de":"Luftaufnahme der Villas Pastura mit privatem Pool","hr":"Pogled iz zraka na Villas Pastura i privatni bazen","it":"Vista aerea di Villas Pastura e della piscina privata"}},{"sourceId":"170","captions":{"en":"Pool terrace and outdoor lounge after sunset","de":"Poolterrasse und Outdoor-Lounge nach Sonnenuntergang","hr":"Terasa uz bazen i vanjski lounge nakon zalaska sunca","it":"Terrazza con piscina e lounge esterna dopo il tramonto"}},{"sourceId":"180","captions":{"en":"Poolside view with a glass of wine","de":"Poolblick mit einem Glas Wein","hr":"Pogled uz bazen s čašom vina","it":"Vista a bordo piscina con un bicchiere di vino"}},{"sourceId":"030","captions":{"en":"Sea-view terrace set for outdoor dining at sunset","de":"Meerblick-Terrasse für ein Abendessen bei Sonnenuntergang","hr":"Terasa s pogledom na more pripremljena za večeru pri zalasku","it":"Terrazza vista mare pronta per cenare al tramonto"}},{"sourceId":"190","captions":{"en":"Outdoor dining table beside the private pool","de":"Esstisch im Freien neben dem privaten Pool","hr":"Vanjski stol za blagovanje uz privatni bazen","it":"Tavolo da pranzo all'aperto accanto alla piscina privata"}},{"sourceId":"040","captions":{"en":"Open-plan living room with terrace and sea view","de":"Offener Wohnbereich mit Terrasse und Meerblick","hr":"Otvoreni dnevni boravak s terasom i pogledom na more","it":"Soggiorno open space con terrazza e vista mare"}},{"sourceId":"160","captions":{"en":"Sea-view living room opening onto the terrace","de":"Wohnzimmer mit Meerblick und Zugang zur Terrasse","hr":"Dnevni boravak s pogledom na more i izlazom na terasu","it":"Soggiorno vista mare con accesso alla terrazza"}},{"sourceId":"050","captions":{"en":"Dining area and contemporary kitchen","de":"Essbereich und moderne Küche","hr":"Blagovaonica i suvremena kuhinja","it":"Zona pranzo e cucina contemporanea"}},{"sourceId":"060","captions":{"en":"Bedroom with direct sea view","de":"Schlafzimmer mit direktem Meerblick","hr":"Spavaća soba s izravnim pogledom na more","it":"Camera da letto con vista diretta sul mare"}},{"sourceId":"070","captions":{"en":"Bright bedroom opening onto the sea-view terrace","de":"Helles Schlafzimmer mit Zugang zur Meerblick-Terrasse","hr":"Svijetla spavaća soba s izlazom na terasu i pogledom na more","it":"Camera luminosa con accesso alla terrazza vista mare"}},{"sourceId":"075","captions":{"en":"Kitchen island with sea view","de":"Kücheninsel mit Meerblick","hr":"Kuhinjski otok s pogledom na more","it":"Isola cucina con vista mare"}},{"sourceId":"080","captions":{"en":"Fully equipped contemporary kitchen","de":"Voll ausgestattete moderne Küche","hr":"Potpuno opremljena suvremena kuhinja","it":"Cucina contemporanea completamente attrezzata"}},{"sourceId":"090","captions":{"en":"Modern bathroom with walk-in shower","de":"Modernes Bad mit bodengleicher Dusche","hr":"Moderna kupaonica s walk-in tušem","it":"Bagno moderno con doccia walk-in"}},{"sourceId":"100","captions":{"en":"Fresh towels prepared for guests","de":"Frische Handtücher für die Gäste","hr":"Svježi ručnici pripremljeni za goste","it":"Asciugamani freschi preparati per gli ospiti"}},{"sourceId":"130","captions":{"en":"Bathroom toiletries and guest essentials","de":"Pflegeprodukte und Gästeausstattung im Bad","hr":"Kupaonska kozmetika i potrepštine za goste","it":"Prodotti da bagno e accessori per gli ospiti"}},{"sourceId":"135","captions":{"en":"Spices and cooking essentials","de":"Gewürze und Grundausstattung zum Kochen","hr":"Začini i osnovne potrepštine za kuhanje","it":"Spezie e prodotti essenziali per cucinare"}},{"sourceId":"150","captions":{"en":"Coffee station with automatic espresso machine","de":"Kaffeestation mit Kaffeevollautomat","hr":"Kutak za kavu s automatskim espresso aparatom","it":"Angolo caffè con macchina espresso automatica"}},{"sourceId":"120","captions":{"en":"Electric vehicle charging at the villa","de":"Lademöglichkeit für Elektrofahrzeuge an der Villa","hr":"Punjenje električnih vozila uz vilu","it":"Ricarica per veicoli elettrici presso la villa"}},{"sourceId":"110","captions":{"en":"Private parking beside Villas Pastura","de":"Privatparkplatz neben den Villas Pastura","hr":"Privatni parking uz Villas Pastura","it":"Parcheggio privato accanto a Villas Pastura"}}]}</script>
+<!-- GALLERY_DATA_END -->
+</head>
+<body class="gallery-page">
+  <a class="skip-link" href="#main">Skip to gallery</a>
+
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a class="brand" href="index.html#top" aria-label="Private Pool Villas Pastura home">
+        <span class="brand-text">
+          <strong>Private Pool Villas Pastura</strong>
+          <small>Novalja, Pag Island</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" data-menu-toggle>
+        <span class="sr-only">Open menu</span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation" data-nav>
+        <a href="index.html#villa" data-i18n="navVilla">The villa</a>
+        <a href="gallery.html" aria-current="page" data-i18n="navGallery">Gallery</a>
+        <a href="reviews.html" data-i18n="navReviews">Reviews</a>
+        <a href="index.html#location" data-i18n="navLocation">Location</a>
+      </nav>
+
+      <label class="language-picker">
+        <span class="sr-only">Choose language</span>
+        <select id="language-select" aria-label="Choose language">
+          <option value="en">EN</option>
+          <option value="de">DE</option>
+          <option value="hr">HR</option>
+          <option value="it">IT</option>
+        </select>
+      </label>
+    </div>
+  </header>
+
+  <main id="main">
+    <header class="gallery-intro">
+      <div class="container gallery-intro-inner">
+        <div>
+          <p class="section-kicker" data-i18n="galleryKicker">Villa gallery</p>
+          <h1 data-i18n="galleryHeading">See the spaces before you choose your dates.</h1>
+        </div>
+        <p data-i18n="galleryIntro">Explore the private pool, sea-view terraces and contemporary interiors designed for relaxed stays with family and friends.</p>
+      </div>
+    </header>
+
+    <section class="gallery-section" aria-labelledby="gallery-grid-title">
+      <div class="container">
+        <h2 class="sr-only" id="gallery-grid-title" data-i18n="galleryGridTitle">Villa photographs</h2>
+
+        <div class="gallery-filter" role="toolbar" aria-label="Filter gallery" data-gallery-filter>
+          <button type="button" class="filter-chip is-active" data-filter="all" aria-pressed="true" data-i18n="filterAll">All photos</button>
+          <button type="button" class="filter-chip" data-filter="pool" aria-pressed="false" data-i18n="filterPool">Pool</button>
+          <button type="button" class="filter-chip" data-filter="terrace" aria-pressed="false" data-i18n="filterTerrace">Terrace</button>
+          <button type="button" class="filter-chip" data-filter="exterior" aria-pressed="false" data-i18n="filterExterior">Exterior</button>
+          <button type="button" class="filter-chip" data-filter="interior" aria-pressed="false" data-i18n="filterInterior">Interior</button>
+          <button type="button" class="filter-chip" data-filter="bedrooms" aria-pressed="false" data-i18n="filterBedrooms">Bedrooms</button>
+          <button type="button" class="filter-chip" data-filter="details" aria-pressed="false" data-i18n="filterDetails">Details</button>
+        </div>
+
+        <div class="gallery-grid" data-gallery-grid>
+          <!-- GALLERY_ITEMS_START -->
+          <figure class="gallery-item gallery-item-featured" data-category="exterior pool">
+            <button class="gallery-open" type="button" data-gallery-index="0" data-image-id="020" data-full-src="assets/img/gallery/villas-pastura-private-pool-villa-sunset-landscape-1800x1200.webp" data-full-srcset="assets/img/gallery/villas-pastura-private-pool-villa-sunset-landscape-1800x1200.webp 1800w, assets/img/gallery/villas-pastura-private-pool-villa-sunset-landscape-2400x1600.webp 2400w" data-mobile-full-src="assets/img/gallery/villas-pastura-private-pool-villa-sunset-portrait-960x1200.webp" data-mobile-full-srcset="assets/img/gallery/villas-pastura-private-pool-villa-sunset-portrait-960x1200.webp 960w, assets/img/gallery/villas-pastura-private-pool-villa-sunset-portrait-1280x1600.webp 1280w" data-alt="Private pool and villa at sunset">
+              <picture>
+                <source media="(max-width: 699px)" srcset="assets/img/gallery/villas-pastura-private-pool-villa-sunset-portrait-480x600.webp 480w, assets/img/gallery/villas-pastura-private-pool-villa-sunset-portrait-960x1200.webp 960w, assets/img/gallery/villas-pastura-private-pool-villa-sunset-portrait-1280x1600.webp 1280w" sizes="calc(100vw - 32px)" type="image/webp" />
+                <source media="(min-width: 700px)" srcset="assets/img/gallery/villas-pastura-private-pool-villa-sunset-landscape-480x320.webp 480w, assets/img/gallery/villas-pastura-private-pool-villa-sunset-landscape-960x640.webp 960w, assets/img/gallery/villas-pastura-private-pool-villa-sunset-landscape-1800x1200.webp 1800w" sizes="(min-width: 1200px) 780px, (min-width: 980px) calc(66vw - 24px), calc(100vw - 32px)" type="image/webp" />
+                <img src="assets/img/gallery/villas-pastura-private-pool-villa-sunset-landscape-960x640.webp" width="960" height="640" alt="Private pool and villa at sunset" loading="eager" fetchpriority="high" decoding="async" />
+              </picture>
+              <span class="photo-expand" aria-hidden="true">↗</span>
+            </button>
+            <figcaption data-image-caption>Private pool and villa at sunset</figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="exterior pool">
+            <button class="gallery-open" type="button" data-gallery-index="1" data-image-id="010" data-full-src="assets/img/gallery/villas-pastura-aerial-view-private-pool-villas-landscape-1800x1200.webp" data-full-srcset="assets/img/gallery/villas-pastura-aerial-view-private-pool-villas-landscape-1800x1200.webp 1800w, assets/img/gallery/villas-pastura-aerial-view-private-pool-villas-landscape-2400x1600.webp 2400w" data-mobile-full-src="assets/img/gallery/villas-pastura-aerial-view-private-pool-villas-portrait-960x1200.webp" data-mobile-full-srcset="assets/img/gallery/villas-pastura-aerial-view-private-pool-villas-portrait-960x1200.webp 960w, assets/img/gallery/villas-pastura-aerial-view-private-pool-villas-portrait-1280x1600.webp 1280w" data-alt="Aerial view of Villas Pastura and the private pool">
+              <picture>
+                <source media="(max-width: 699px)" srcset="assets/img/gallery/villas-pastura-aerial-view-private-pool-villas-portrait-480x600.webp 480w, assets/img/gallery/villas-pastura-aerial-view-private-pool-villas-portrait-960x1200.webp 960w, assets/img/gallery/villas-pastura-aerial-view-private-pool-villas-portrait-1280x1600.webp 1280w" sizes="calc(100vw - 32px)" type="image/webp" />
+                <source media="(min-width: 700px)" srcset="assets/img/gallery/villas-pastura-aerial-view-private-pool-villas-landscape-480x320.webp 480w, assets/img/gallery/villas-pastura-aerial-view-private-pool-villas-landscape-960x640.webp 960w, assets/img/gallery/villas-pastura-aerial-view-private-pool-villas-landscape-1800x1200.webp 1800w" sizes="(min-width: 1200px) 380px, (min-width: 980px) calc(33vw - 24px), calc(50vw - 24px)" type="image/webp" />
+                <img src="assets/img/gallery/villas-pastura-aerial-view-private-pool-villas-landscape-960x640.webp" width="960" height="640" alt="Aerial view of Villas Pastura and the private pool" loading="lazy" decoding="async" />
+              </picture>
+              <span class="photo-expand" aria-hidden="true">↗</span>
+            </button>
+            <figcaption data-image-caption>Aerial view of Villas Pastura and the private pool</figcaption>
+          </figure>
+
+          <figure class="gallery-item gallery-item-wide" data-category="exterior pool terrace">
+            <button class="gallery-open" type="button" data-gallery-index="2" data-image-id="170" data-full-src="assets/img/gallery/villas-pastura-pool-terrace-outdoor-lounge-evening-landscape-1800x1200.webp" data-full-srcset="assets/img/gallery/villas-pastura-pool-terrace-outdoor-lounge-evening-landscape-1800x1200.webp 1800w, assets/img/gallery/villas-pastura-pool-terrace-outdoor-lounge-evening-landscape-2400x1600.webp 2400w" data-mobile-full-src="assets/img/gallery/villas-pastura-pool-terrace-outdoor-lounge-evening-portrait-960x1200.webp" data-mobile-full-srcset="assets/img/gallery/villas-pastura-pool-terrace-outdoor-lounge-evening-portrait-960x1200.webp 960w, assets/img/gallery/villas-pastura-pool-terrace-outdoor-lounge-evening-portrait-1280x1600.webp 1280w" data-alt="Pool terrace and outdoor lounge after sunset">
+              <picture>
+                <source media="(max-width: 699px)" srcset="assets/img/gallery/villas-pastura-pool-terrace-outdoor-lounge-evening-portrait-480x600.webp 480w, assets/img/gallery/villas-pastura-pool-terrace-outdoor-lounge-evening-portrait-960x1200.webp 960w, assets/img/gallery/villas-pastura-pool-terrace-outdoor-lounge-evening-portrait-1280x1600.webp 1280w" sizes="calc(100vw - 32px)" type="image/webp" />
+                <source media="(min-width: 700px)" srcset="assets/img/gallery/villas-pastura-pool-terrace-outdoor-lounge-evening-landscape-480x320.webp 480w, assets/img/gallery/villas-pastura-pool-terrace-outdoor-lounge-evening-landscape-960x640.webp 960w, assets/img/gallery/villas-pastura-pool-terrace-outdoor-lounge-evening-landscape-1800x1200.webp 1800w" sizes="(min-width: 1200px) 780px, (min-width: 980px) calc(66vw - 24px), calc(100vw - 32px)" type="image/webp" />
+                <img src="assets/img/gallery/villas-pastura-pool-terrace-outdoor-lounge-evening-landscape-960x640.webp" width="960" height="640" alt="Pool terrace and outdoor lounge after sunset" loading="lazy" decoding="async" />
+              </picture>
+              <span class="photo-expand" aria-hidden="true">↗</span>
+            </button>
+            <figcaption data-image-caption>Pool terrace and outdoor lounge after sunset</figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="exterior pool terrace details">
+            <button class="gallery-open" type="button" data-gallery-index="3" data-image-id="180" data-full-src="assets/img/gallery/villas-pastura-poolside-wine-glasses-day-landscape-1800x1200.webp" data-full-srcset="assets/img/gallery/villas-pastura-poolside-wine-glasses-day-landscape-1800x1200.webp 1800w, assets/img/gallery/villas-pastura-poolside-wine-glasses-day-landscape-2400x1600.webp 2400w" data-mobile-full-src="assets/img/gallery/villas-pastura-poolside-wine-glasses-day-portrait-960x1200.webp" data-mobile-full-srcset="assets/img/gallery/villas-pastura-poolside-wine-glasses-day-portrait-960x1200.webp 960w, assets/img/gallery/villas-pastura-poolside-wine-glasses-day-portrait-1280x1600.webp 1280w" data-alt="Poolside view with a glass of wine">
+              <picture>
+                <source media="(max-width: 699px)" srcset="assets/img/gallery/villas-pastura-poolside-wine-glasses-day-portrait-480x600.webp 480w, assets/img/gallery/villas-pastura-poolside-wine-glasses-day-portrait-960x1200.webp 960w, assets/img/gallery/villas-pastura-poolside-wine-glasses-day-portrait-1280x1600.webp 1280w" sizes="calc(100vw - 32px)" type="image/webp" />
+                <source media="(min-width: 700px)" srcset="assets/img/gallery/villas-pastura-poolside-wine-glasses-day-landscape-480x320.webp 480w, assets/img/gallery/villas-pastura-poolside-wine-glasses-day-landscape-960x640.webp 960w, assets/img/gallery/villas-pastura-poolside-wine-glasses-day-landscape-1800x1200.webp 1800w" sizes="(min-width: 1200px) 380px, (min-width: 980px) calc(33vw - 24px), calc(50vw - 24px)" type="image/webp" />
+                <img src="assets/img/gallery/villas-pastura-poolside-wine-glasses-day-landscape-960x640.webp" width="960" height="640" alt="Poolside view with a glass of wine" loading="lazy" decoding="async" />
+              </picture>
+              <span class="photo-expand" aria-hidden="true">↗</span>
+            </button>
+            <figcaption data-image-caption>Poolside view with a glass of wine</figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="exterior terrace">
+            <button class="gallery-open" type="button" data-gallery-index="4" data-image-id="030" data-full-src="assets/img/gallery/villas-pastura-sea-view-terrace-outdoor-dining-sunset-landscape-1800x1200.webp" data-full-srcset="assets/img/gallery/villas-pastura-sea-view-terrace-outdoor-dining-sunset-landscape-1800x1200.webp 1800w, assets/img/gallery/villas-pastura-sea-view-terrace-outdoor-dining-sunset-landscape-2400x1600.webp 2400w" data-mobile-full-src="assets/img/gallery/villas-pastura-sea-view-terrace-outdoor-dining-sunset-portrait-960x1200.webp" data-mobile-full-srcset="assets/img/gallery/villas-pastura-sea-view-terrace-outdoor-dining-sunset-portrait-960x1200.webp 960w, assets/img/gallery/villas-pastura-sea-view-terrace-outdoor-dining-sunset-portrait-1280x1600.webp 1280w" data-alt="Sea-view terrace set for outdoor dining at sunset">
+              <picture>
+                <source media="(max-width: 699px)" srcset="assets/img/gallery/villas-pastura-sea-view-terrace-outdoor-dining-sunset-portrait-480x600.webp 480w, assets/img/gallery/villas-pastura-sea-view-terrace-outdoor-dining-sunset-portrait-960x1200.webp 960w, assets/img/gallery/villas-pastura-sea-view-terrace-outdoor-dining-sunset-portrait-1280x1600.webp 1280w" sizes="calc(100vw - 32px)" type="image/webp" />
+                <source media="(min-width: 700px)" srcset="assets/img/gallery/villas-pastura-sea-view-terrace-outdoor-dining-sunset-landscape-480x320.webp 480w, assets/img/gallery/villas-pastura-sea-view-terrace-outdoor-dining-sunset-landscape-960x640.webp 960w, assets/img/gallery/villas-pastura-sea-view-terrace-outdoor-dining-sunset-landscape-1800x1200.webp 1800w" sizes="(min-width: 1200px) 380px, (min-width: 980px) calc(33vw - 24px), calc(50vw - 24px)" type="image/webp" />
+                <img src="assets/img/gallery/villas-pastura-sea-view-terrace-outdoor-dining-sunset-landscape-960x640.webp" width="960" height="640" alt="Sea-view terrace set for outdoor dining at sunset" loading="lazy" decoding="async" />
+              </picture>
+              <span class="photo-expand" aria-hidden="true">↗</span>
+            </button>
+            <figcaption data-image-caption>Sea-view terrace set for outdoor dining at sunset</figcaption>
+          </figure>
+
+          <figure class="gallery-item gallery-item-wide" data-category="exterior pool terrace">
+            <button class="gallery-open" type="button" data-gallery-index="5" data-image-id="190" data-full-src="assets/img/gallery/villas-pastura-outdoor-dining-private-pool-landscape-1800x1200.webp" data-full-srcset="assets/img/gallery/villas-pastura-outdoor-dining-private-pool-landscape-1800x1200.webp 1800w, assets/img/gallery/villas-pastura-outdoor-dining-private-pool-landscape-2400x1600.webp 2400w" data-mobile-full-src="assets/img/gallery/villas-pastura-outdoor-dining-private-pool-portrait-960x1200.webp" data-mobile-full-srcset="assets/img/gallery/villas-pastura-outdoor-dining-private-pool-portrait-960x1200.webp 960w, assets/img/gallery/villas-pastura-outdoor-dining-private-pool-portrait-1280x1600.webp 1280w" data-alt="Outdoor dining table beside the private pool">
+              <picture>
+                <source media="(max-width: 699px)" srcset="assets/img/gallery/villas-pastura-outdoor-dining-private-pool-portrait-480x600.webp 480w, assets/img/gallery/villas-pastura-outdoor-dining-private-pool-portrait-960x1200.webp 960w, assets/img/gallery/villas-pastura-outdoor-dining-private-pool-portrait-1280x1600.webp 1280w" sizes="calc(100vw - 32px)" type="image/webp" />
+                <source media="(min-width: 700px)" srcset="assets/img/gallery/villas-pastura-outdoor-dining-private-pool-landscape-480x320.webp 480w, assets/img/gallery/villas-pastura-outdoor-dining-private-pool-landscape-960x640.webp 960w, assets/img/gallery/villas-pastura-outdoor-dining-private-pool-landscape-1800x1200.webp 1800w" sizes="(min-width: 1200px) 780px, (min-width: 980px) calc(66vw - 24px), calc(100vw - 32px)" type="image/webp" />
+                <img src="assets/img/gallery/villas-pastura-outdoor-dining-private-pool-landscape-960x640.webp" width="960" height="640" alt="Outdoor dining table beside the private pool" loading="lazy" decoding="async" />
+              </picture>
+              <span class="photo-expand" aria-hidden="true">↗</span>
+            </button>
+            <figcaption data-image-caption>Outdoor dining table beside the private pool</figcaption>
+          </figure>
+
+          <figure class="gallery-item gallery-item-wide" data-category="interior">
+            <button class="gallery-open" type="button" data-gallery-index="6" data-image-id="040" data-full-src="assets/img/gallery/villas-pastura-open-plan-living-room-terrace-sea-view-landscape-1800x1200.webp" data-full-srcset="assets/img/gallery/villas-pastura-open-plan-living-room-terrace-sea-view-landscape-1800x1200.webp 1800w, assets/img/gallery/villas-pastura-open-plan-living-room-terrace-sea-view-landscape-2400x1600.webp 2400w" data-mobile-full-src="assets/img/gallery/villas-pastura-open-plan-living-room-terrace-sea-view-portrait-960x1200.webp" data-mobile-full-srcset="assets/img/gallery/villas-pastura-open-plan-living-room-terrace-sea-view-portrait-960x1200.webp 960w, assets/img/gallery/villas-pastura-open-plan-living-room-terrace-sea-view-portrait-1280x1600.webp 1280w" data-alt="Open-plan living room with terrace and sea view">
+              <picture>
+                <source media="(max-width: 699px)" srcset="assets/img/gallery/villas-pastura-open-plan-living-room-terrace-sea-view-portrait-480x600.webp 480w, assets/img/gallery/villas-pastura-open-plan-living-room-terrace-sea-view-portrait-960x1200.webp 960w, assets/img/gallery/villas-pastura-open-plan-living-room-terrace-sea-view-portrait-1280x1600.webp 1280w" sizes="calc(100vw - 32px)" type="image/webp" />
+                <source media="(min-width: 700px)" srcset="assets/img/gallery/villas-pastura-open-plan-living-room-terrace-sea-view-landscape-480x320.webp 480w, assets/img/gallery/villas-pastura-open-plan-living-room-terrace-sea-view-landscape-960x640.webp 960w, assets/img/gallery/villas-pastura-open-plan-living-room-terrace-sea-view-landscape-1800x1200.webp 1800w" sizes="(min-width: 1200px) 780px, (min-width: 980px) calc(66vw - 24px), calc(100vw - 32px)" type="image/webp" />
+                <img src="assets/img/gallery/villas-pastura-open-plan-living-room-terrace-sea-view-landscape-960x640.webp" width="960" height="640" alt="Open-plan living room with terrace and sea view" loading="lazy" decoding="async" />
+              </picture>
+              <span class="photo-expand" aria-hidden="true">↗</span>
+            </button>
+            <figcaption data-image-caption>Open-plan living room with terrace and sea view</figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="interior">
+            <button class="gallery-open" type="button" data-gallery-index="7" data-image-id="160" data-full-src="assets/img/gallery/villas-pastura-sea-view-living-room-terrace-landscape-1800x1200.webp" data-full-srcset="assets/img/gallery/villas-pastura-sea-view-living-room-terrace-landscape-1800x1200.webp 1800w, assets/img/gallery/villas-pastura-sea-view-living-room-terrace-landscape-2400x1600.webp 2400w" data-mobile-full-src="assets/img/gallery/villas-pastura-sea-view-living-room-terrace-portrait-960x1200.webp" data-mobile-full-srcset="assets/img/gallery/villas-pastura-sea-view-living-room-terrace-portrait-960x1200.webp 960w, assets/img/gallery/villas-pastura-sea-view-living-room-terrace-portrait-1280x1600.webp 1280w" data-alt="Sea-view living room opening onto the terrace">
+              <picture>
+                <source media="(max-width: 699px)" srcset="assets/img/gallery/villas-pastura-sea-view-living-room-terrace-portrait-480x600.webp 480w, assets/img/gallery/villas-pastura-sea-view-living-room-terrace-portrait-960x1200.webp 960w, assets/img/gallery/villas-pastura-sea-view-living-room-terrace-portrait-1280x1600.webp 1280w" sizes="calc(100vw - 32px)" type="image/webp" />
+                <source media="(min-width: 700px)" srcset="assets/img/gallery/villas-pastura-sea-view-living-room-terrace-landscape-480x320.webp 480w, assets/img/gallery/villas-pastura-sea-view-living-room-terrace-landscape-960x640.webp 960w, assets/img/gallery/villas-pastura-sea-view-living-room-terrace-landscape-1800x1200.webp 1800w" sizes="(min-width: 1200px) 380px, (min-width: 980px) calc(33vw - 24px), calc(50vw - 24px)" type="image/webp" />
+                <img src="assets/img/gallery/villas-pastura-sea-view-living-room-terrace-landscape-960x640.webp" width="960" height="640" alt="Sea-view living room opening onto the terrace" loading="lazy" decoding="async" />
+              </picture>
+              <span class="photo-expand" aria-hidden="true">↗</span>
+            </button>
+            <figcaption data-image-caption>Sea-view living room opening onto the terrace</figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="interior">
+            <button class="gallery-open" type="button" data-gallery-index="8" data-image-id="050" data-full-src="assets/img/gallery/villas-pastura-dining-area-contemporary-kitchen-landscape-1800x1200.webp" data-full-srcset="assets/img/gallery/villas-pastura-dining-area-contemporary-kitchen-landscape-1800x1200.webp 1800w, assets/img/gallery/villas-pastura-dining-area-contemporary-kitchen-landscape-2400x1600.webp 2400w" data-mobile-full-src="assets/img/gallery/villas-pastura-dining-area-contemporary-kitchen-portrait-960x1200.webp" data-mobile-full-srcset="assets/img/gallery/villas-pastura-dining-area-contemporary-kitchen-portrait-960x1200.webp 960w, assets/img/gallery/villas-pastura-dining-area-contemporary-kitchen-portrait-1280x1600.webp 1280w" data-alt="Dining area and contemporary kitchen">
+              <picture>
+                <source media="(max-width: 699px)" srcset="assets/img/gallery/villas-pastura-dining-area-contemporary-kitchen-portrait-480x600.webp 480w, assets/img/gallery/villas-pastura-dining-area-contemporary-kitchen-portrait-960x1200.webp 960w, assets/img/gallery/villas-pastura-dining-area-contemporary-kitchen-portrait-1280x1600.webp 1280w" sizes="calc(100vw - 32px)" type="image/webp" />
+                <source media="(min-width: 700px)" srcset="assets/img/gallery/villas-pastura-dining-area-contemporary-kitchen-landscape-480x320.webp 480w, assets/img/gallery/villas-pastura-dining-area-contemporary-kitchen-landscape-960x640.webp 960w, assets/img/gallery/villas-pastura-dining-area-contemporary-kitchen-landscape-1800x1200.webp 1800w" sizes="(min-width: 1200px) 380px, (min-width: 980px) calc(33vw - 24px), calc(50vw - 24px)" type="image/webp" />
+                <img src="assets/img/gallery/villas-pastura-dining-area-contemporary-kitchen-landscape-960x640.webp" width="960" height="640" alt="Dining area and contemporary kitchen" loading="lazy" decoding="async" />
+              </picture>
+              <span class="photo-expand" aria-hidden="true">↗</span>
+            </button>
+            <figcaption data-image-caption>Dining area and contemporary kitchen</figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="interior bedrooms">
+            <button class="gallery-open" type="button" data-gallery-index="9" data-image-id="060" data-full-src="assets/img/gallery/villas-pastura-bedroom-direct-sea-view-landscape-1800x1200.webp" data-full-srcset="assets/img/gallery/villas-pastura-bedroom-direct-sea-view-landscape-1800x1200.webp 1800w, assets/img/gallery/villas-pastura-bedroom-direct-sea-view-landscape-2400x1600.webp 2400w" data-mobile-full-src="assets/img/gallery/villas-pastura-bedroom-direct-sea-view-portrait-960x1200.webp" data-mobile-full-srcset="assets/img/gallery/villas-pastura-bedroom-direct-sea-view-portrait-960x1200.webp 960w, assets/img/gallery/villas-pastura-bedroom-direct-sea-view-portrait-1280x1600.webp 1280w" data-alt="Bedroom with direct sea view">
+              <picture>
+                <source media="(max-width: 699px)" srcset="assets/img/gallery/villas-pastura-bedroom-direct-sea-view-portrait-480x600.webp 480w, assets/img/gallery/villas-pastura-bedroom-direct-sea-view-portrait-960x1200.webp 960w, assets/img/gallery/villas-pastura-bedroom-direct-sea-view-portrait-1280x1600.webp 1280w" sizes="calc(100vw - 32px)" type="image/webp" />
+                <source media="(min-width: 700px)" srcset="assets/img/gallery/villas-pastura-bedroom-direct-sea-view-landscape-480x320.webp 480w, assets/img/gallery/villas-pastura-bedroom-direct-sea-view-landscape-960x640.webp 960w, assets/img/gallery/villas-pastura-bedroom-direct-sea-view-landscape-1800x1200.webp 1800w" sizes="(min-width: 1200px) 380px, (min-width: 980px) calc(33vw - 24px), calc(50vw - 24px)" type="image/webp" />
+                <img src="assets/img/gallery/villas-pastura-bedroom-direct-sea-view-landscape-960x640.webp" width="960" height="640" alt="Bedroom with direct sea view" loading="lazy" decoding="async" />
+              </picture>
+              <span class="photo-expand" aria-hidden="true">↗</span>
+            </button>
+            <figcaption data-image-caption>Bedroom with direct sea view</figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="interior bedrooms">
+            <button class="gallery-open" type="button" data-gallery-index="10" data-image-id="070" data-full-src="assets/img/gallery/villas-pastura-bedroom-sea-view-terrace-landscape-1800x1200.webp" data-full-srcset="assets/img/gallery/villas-pastura-bedroom-sea-view-terrace-landscape-1800x1200.webp 1800w, assets/img/gallery/villas-pastura-bedroom-sea-view-terrace-landscape-2400x1600.webp 2400w" data-mobile-full-src="assets/img/gallery/villas-pastura-bedroom-sea-view-terrace-portrait-960x1200.webp" data-mobile-full-srcset="assets/img/gallery/villas-pastura-bedroom-sea-view-terrace-portrait-960x1200.webp 960w, assets/img/gallery/villas-pastura-bedroom-sea-view-terrace-portrait-1280x1600.webp 1280w" data-alt="Bright bedroom opening onto the sea-view terrace">
+              <picture>
+                <source media="(max-width: 699px)" srcset="assets/img/gallery/villas-pastura-bedroom-sea-view-terrace-portrait-480x600.webp 480w, assets/img/gallery/villas-pastura-bedroom-sea-view-terrace-portrait-960x1200.webp 960w, assets/img/gallery/villas-pastura-bedroom-sea-view-terrace-portrait-1280x1600.webp 1280w" sizes="calc(100vw - 32px)" type="image/webp" />
+                <source media="(min-width: 700px)" srcset="assets/img/gallery/villas-pastura-bedroom-sea-view-terrace-landscape-480x320.webp 480w, assets/img/gallery/villas-pastura-bedroom-sea-view-terrace-landscape-960x640.webp 960w, assets/img/gallery/villas-pastura-bedroom-sea-view-terrace-landscape-1800x1200.webp 1800w" sizes="(min-width: 1200px) 380px, (min-width: 980px) calc(33vw - 24px), calc(50vw - 24px)" type="image/webp" />
+                <img src="assets/img/gallery/villas-pastura-bedroom-sea-view-terrace-landscape-960x640.webp" width="960" height="640" alt="Bright bedroom opening onto the sea-view terrace" loading="lazy" decoding="async" />
+              </picture>
+              <span class="photo-expand" aria-hidden="true">↗</span>
+            </button>
+            <figcaption data-image-caption>Bright bedroom opening onto the sea-view terrace</figcaption>
+          </figure>
+
+          <figure class="gallery-item gallery-item-wide" data-category="interior">
+            <button class="gallery-open" type="button" data-gallery-index="11" data-image-id="075" data-full-src="assets/img/gallery/villas-pastura-kitchen-island-sea-view-landscape-1800x1200.webp" data-full-srcset="assets/img/gallery/villas-pastura-kitchen-island-sea-view-landscape-1800x1200.webp 1800w, assets/img/gallery/villas-pastura-kitchen-island-sea-view-landscape-2400x1600.webp 2400w" data-mobile-full-src="assets/img/gallery/villas-pastura-kitchen-island-sea-view-portrait-960x1200.webp" data-mobile-full-srcset="assets/img/gallery/villas-pastura-kitchen-island-sea-view-portrait-960x1200.webp 960w, assets/img/gallery/villas-pastura-kitchen-island-sea-view-portrait-1280x1600.webp 1280w" data-alt="Kitchen island with sea view">
+              <picture>
+                <source media="(max-width: 699px)" srcset="assets/img/gallery/villas-pastura-kitchen-island-sea-view-portrait-480x600.webp 480w, assets/img/gallery/villas-pastura-kitchen-island-sea-view-portrait-960x1200.webp 960w, assets/img/gallery/villas-pastura-kitchen-island-sea-view-portrait-1280x1600.webp 1280w" sizes="calc(100vw - 32px)" type="image/webp" />
+                <source media="(min-width: 700px)" srcset="assets/img/gallery/villas-pastura-kitchen-island-sea-view-landscape-480x320.webp 480w, assets/img/gallery/villas-pastura-kitchen-island-sea-view-landscape-960x640.webp 960w, assets/img/gallery/villas-pastura-kitchen-island-sea-view-landscape-1800x1200.webp 1800w" sizes="(min-width: 1200px) 780px, (min-width: 980px) calc(66vw - 24px), calc(100vw - 32px)" type="image/webp" />
+                <img src="assets/img/gallery/villas-pastura-kitchen-island-sea-view-landscape-960x640.webp" width="960" height="640" alt="Kitchen island with sea view" loading="lazy" decoding="async" />
+              </picture>
+              <span class="photo-expand" aria-hidden="true">↗</span>
+            </button>
+            <figcaption data-image-caption>Kitchen island with sea view</figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="interior">
+            <button class="gallery-open" type="button" data-gallery-index="12" data-image-id="080" data-full-src="assets/img/gallery/villas-pastura-fully-equipped-contemporary-kitchen-landscape-1800x1200.webp" data-full-srcset="assets/img/gallery/villas-pastura-fully-equipped-contemporary-kitchen-landscape-1800x1200.webp 1800w, assets/img/gallery/villas-pastura-fully-equipped-contemporary-kitchen-landscape-2400x1600.webp 2400w" data-mobile-full-src="assets/img/gallery/villas-pastura-fully-equipped-contemporary-kitchen-portrait-960x1200.webp" data-mobile-full-srcset="assets/img/gallery/villas-pastura-fully-equipped-contemporary-kitchen-portrait-960x1200.webp 960w, assets/img/gallery/villas-pastura-fully-equipped-contemporary-kitchen-portrait-1280x1600.webp 1280w" data-alt="Fully equipped contemporary kitchen">
+              <picture>
+                <source media="(max-width: 699px)" srcset="assets/img/gallery/villas-pastura-fully-equipped-contemporary-kitchen-portrait-480x600.webp 480w, assets/img/gallery/villas-pastura-fully-equipped-contemporary-kitchen-portrait-960x1200.webp 960w, assets/img/gallery/villas-pastura-fully-equipped-contemporary-kitchen-portrait-1280x1600.webp 1280w" sizes="calc(100vw - 32px)" type="image/webp" />
+                <source media="(min-width: 700px)" srcset="assets/img/gallery/villas-pastura-fully-equipped-contemporary-kitchen-landscape-480x320.webp 480w, assets/img/gallery/villas-pastura-fully-equipped-contemporary-kitchen-landscape-960x640.webp 960w, assets/img/gallery/villas-pastura-fully-equipped-contemporary-kitchen-landscape-1800x1200.webp 1800w" sizes="(min-width: 1200px) 380px, (min-width: 980px) calc(33vw - 24px), calc(50vw - 24px)" type="image/webp" />
+                <img src="assets/img/gallery/villas-pastura-fully-equipped-contemporary-kitchen-landscape-960x640.webp" width="960" height="640" alt="Fully equipped contemporary kitchen" loading="lazy" decoding="async" />
+              </picture>
+              <span class="photo-expand" aria-hidden="true">↗</span>
+            </button>
+            <figcaption data-image-caption>Fully equipped contemporary kitchen</figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="interior">
+            <button class="gallery-open" type="button" data-gallery-index="13" data-image-id="090" data-full-src="assets/img/gallery/villas-pastura-modern-bathroom-walk-in-shower-landscape-1800x1200.webp" data-full-srcset="assets/img/gallery/villas-pastura-modern-bathroom-walk-in-shower-landscape-1800x1200.webp 1800w, assets/img/gallery/villas-pastura-modern-bathroom-walk-in-shower-landscape-2400x1600.webp 2400w" data-mobile-full-src="assets/img/gallery/villas-pastura-modern-bathroom-walk-in-shower-portrait-960x1200.webp" data-mobile-full-srcset="assets/img/gallery/villas-pastura-modern-bathroom-walk-in-shower-portrait-960x1200.webp 960w, assets/img/gallery/villas-pastura-modern-bathroom-walk-in-shower-portrait-1280x1600.webp 1280w" data-alt="Modern bathroom with walk-in shower">
+              <picture>
+                <source media="(max-width: 699px)" srcset="assets/img/gallery/villas-pastura-modern-bathroom-walk-in-shower-portrait-480x600.webp 480w, assets/img/gallery/villas-pastura-modern-bathroom-walk-in-shower-portrait-960x1200.webp 960w, assets/img/gallery/villas-pastura-modern-bathroom-walk-in-shower-portrait-1280x1600.webp 1280w" sizes="calc(100vw - 32px)" type="image/webp" />
+                <source media="(min-width: 700px)" srcset="assets/img/gallery/villas-pastura-modern-bathroom-walk-in-shower-landscape-480x320.webp 480w, assets/img/gallery/villas-pastura-modern-bathroom-walk-in-shower-landscape-960x640.webp 960w, assets/img/gallery/villas-pastura-modern-bathroom-walk-in-shower-landscape-1800x1200.webp 1800w" sizes="(min-width: 1200px) 380px, (min-width: 980px) calc(33vw - 24px), calc(50vw - 24px)" type="image/webp" />
+                <img src="assets/img/gallery/villas-pastura-modern-bathroom-walk-in-shower-landscape-960x640.webp" width="960" height="640" alt="Modern bathroom with walk-in shower" loading="lazy" decoding="async" />
+              </picture>
+              <span class="photo-expand" aria-hidden="true">↗</span>
+            </button>
+            <figcaption data-image-caption>Modern bathroom with walk-in shower</figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="details bedrooms">
+            <button class="gallery-open" type="button" data-gallery-index="14" data-image-id="100" data-full-src="assets/img/gallery/villas-pastura-fresh-towels-guest-room-landscape-1800x1200.webp" data-full-srcset="assets/img/gallery/villas-pastura-fresh-towels-guest-room-landscape-1800x1200.webp 1800w, assets/img/gallery/villas-pastura-fresh-towels-guest-room-landscape-2400x1600.webp 2400w" data-mobile-full-src="assets/img/gallery/villas-pastura-fresh-towels-guest-room-portrait-960x1200.webp" data-mobile-full-srcset="assets/img/gallery/villas-pastura-fresh-towels-guest-room-portrait-960x1200.webp 960w, assets/img/gallery/villas-pastura-fresh-towels-guest-room-portrait-1280x1600.webp 1280w" data-alt="Fresh towels prepared for guests">
+              <picture>
+                <source media="(max-width: 699px)" srcset="assets/img/gallery/villas-pastura-fresh-towels-guest-room-portrait-480x600.webp 480w, assets/img/gallery/villas-pastura-fresh-towels-guest-room-portrait-960x1200.webp 960w, assets/img/gallery/villas-pastura-fresh-towels-guest-room-portrait-1280x1600.webp 1280w" sizes="calc(100vw - 32px)" type="image/webp" />
+                <source media="(min-width: 700px)" srcset="assets/img/gallery/villas-pastura-fresh-towels-guest-room-landscape-480x320.webp 480w, assets/img/gallery/villas-pastura-fresh-towels-guest-room-landscape-960x640.webp 960w, assets/img/gallery/villas-pastura-fresh-towels-guest-room-landscape-1800x1200.webp 1800w" sizes="(min-width: 1200px) 380px, (min-width: 980px) calc(33vw - 24px), calc(50vw - 24px)" type="image/webp" />
+                <img src="assets/img/gallery/villas-pastura-fresh-towels-guest-room-landscape-960x640.webp" width="960" height="640" alt="Fresh towels prepared for guests" loading="lazy" decoding="async" />
+              </picture>
+              <span class="photo-expand" aria-hidden="true">↗</span>
+            </button>
+            <figcaption data-image-caption>Fresh towels prepared for guests</figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="details">
+            <button class="gallery-open" type="button" data-gallery-index="15" data-image-id="130" data-full-src="assets/img/gallery/villas-pastura-bathroom-toiletries-guest-essentials-landscape-1800x1200.webp" data-full-srcset="assets/img/gallery/villas-pastura-bathroom-toiletries-guest-essentials-landscape-1800x1200.webp 1800w, assets/img/gallery/villas-pastura-bathroom-toiletries-guest-essentials-landscape-2400x1600.webp 2400w" data-mobile-full-src="assets/img/gallery/villas-pastura-bathroom-toiletries-guest-essentials-portrait-960x1200.webp" data-mobile-full-srcset="assets/img/gallery/villas-pastura-bathroom-toiletries-guest-essentials-portrait-960x1200.webp 960w, assets/img/gallery/villas-pastura-bathroom-toiletries-guest-essentials-portrait-1280x1600.webp 1280w" data-alt="Bathroom toiletries and guest essentials">
+              <picture>
+                <source media="(max-width: 699px)" srcset="assets/img/gallery/villas-pastura-bathroom-toiletries-guest-essentials-portrait-480x600.webp 480w, assets/img/gallery/villas-pastura-bathroom-toiletries-guest-essentials-portrait-960x1200.webp 960w, assets/img/gallery/villas-pastura-bathroom-toiletries-guest-essentials-portrait-1280x1600.webp 1280w" sizes="calc(100vw - 32px)" type="image/webp" />
+                <source media="(min-width: 700px)" srcset="assets/img/gallery/villas-pastura-bathroom-toiletries-guest-essentials-landscape-480x320.webp 480w, assets/img/gallery/villas-pastura-bathroom-toiletries-guest-essentials-landscape-960x640.webp 960w, assets/img/gallery/villas-pastura-bathroom-toiletries-guest-essentials-landscape-1800x1200.webp 1800w" sizes="(min-width: 1200px) 380px, (min-width: 980px) calc(33vw - 24px), calc(50vw - 24px)" type="image/webp" />
+                <img src="assets/img/gallery/villas-pastura-bathroom-toiletries-guest-essentials-landscape-960x640.webp" width="960" height="640" alt="Bathroom toiletries and guest essentials" loading="lazy" decoding="async" />
+              </picture>
+              <span class="photo-expand" aria-hidden="true">↗</span>
+            </button>
+            <figcaption data-image-caption>Bathroom toiletries and guest essentials</figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="details">
+            <button class="gallery-open" type="button" data-gallery-index="16" data-image-id="135" data-full-src="assets/img/gallery/villas-pastura-spices-cooking-essentials-landscape-1800x1200.webp" data-full-srcset="assets/img/gallery/villas-pastura-spices-cooking-essentials-landscape-1800x1200.webp 1800w, assets/img/gallery/villas-pastura-spices-cooking-essentials-landscape-2400x1600.webp 2400w" data-mobile-full-src="assets/img/gallery/villas-pastura-spices-cooking-essentials-portrait-960x1200.webp" data-mobile-full-srcset="assets/img/gallery/villas-pastura-spices-cooking-essentials-portrait-960x1200.webp 960w, assets/img/gallery/villas-pastura-spices-cooking-essentials-portrait-1280x1600.webp 1280w" data-alt="Spices and cooking essentials">
+              <picture>
+                <source media="(max-width: 699px)" srcset="assets/img/gallery/villas-pastura-spices-cooking-essentials-portrait-480x600.webp 480w, assets/img/gallery/villas-pastura-spices-cooking-essentials-portrait-960x1200.webp 960w, assets/img/gallery/villas-pastura-spices-cooking-essentials-portrait-1280x1600.webp 1280w" sizes="calc(100vw - 32px)" type="image/webp" />
+                <source media="(min-width: 700px)" srcset="assets/img/gallery/villas-pastura-spices-cooking-essentials-landscape-480x320.webp 480w, assets/img/gallery/villas-pastura-spices-cooking-essentials-landscape-960x640.webp 960w, assets/img/gallery/villas-pastura-spices-cooking-essentials-landscape-1800x1200.webp 1800w" sizes="(min-width: 1200px) 380px, (min-width: 980px) calc(33vw - 24px), calc(50vw - 24px)" type="image/webp" />
+                <img src="assets/img/gallery/villas-pastura-spices-cooking-essentials-landscape-960x640.webp" width="960" height="640" alt="Spices and cooking essentials" loading="lazy" decoding="async" />
+              </picture>
+              <span class="photo-expand" aria-hidden="true">↗</span>
+            </button>
+            <figcaption data-image-caption>Spices and cooking essentials</figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="details">
+            <button class="gallery-open" type="button" data-gallery-index="17" data-image-id="150" data-full-src="assets/img/gallery/villas-pastura-coffee-station-espresso-machine-landscape-1800x1200.webp" data-full-srcset="assets/img/gallery/villas-pastura-coffee-station-espresso-machine-landscape-1800x1200.webp 1800w, assets/img/gallery/villas-pastura-coffee-station-espresso-machine-landscape-2400x1600.webp 2400w" data-mobile-full-src="assets/img/gallery/villas-pastura-coffee-station-espresso-machine-portrait-960x1200.webp" data-mobile-full-srcset="assets/img/gallery/villas-pastura-coffee-station-espresso-machine-portrait-960x1200.webp 960w, assets/img/gallery/villas-pastura-coffee-station-espresso-machine-portrait-1280x1600.webp 1280w" data-alt="Coffee station with automatic espresso machine">
+              <picture>
+                <source media="(max-width: 699px)" srcset="assets/img/gallery/villas-pastura-coffee-station-espresso-machine-portrait-480x600.webp 480w, assets/img/gallery/villas-pastura-coffee-station-espresso-machine-portrait-960x1200.webp 960w, assets/img/gallery/villas-pastura-coffee-station-espresso-machine-portrait-1280x1600.webp 1280w" sizes="calc(100vw - 32px)" type="image/webp" />
+                <source media="(min-width: 700px)" srcset="assets/img/gallery/villas-pastura-coffee-station-espresso-machine-landscape-480x320.webp 480w, assets/img/gallery/villas-pastura-coffee-station-espresso-machine-landscape-960x640.webp 960w, assets/img/gallery/villas-pastura-coffee-station-espresso-machine-landscape-1800x1200.webp 1800w" sizes="(min-width: 1200px) 380px, (min-width: 980px) calc(33vw - 24px), calc(50vw - 24px)" type="image/webp" />
+                <img src="assets/img/gallery/villas-pastura-coffee-station-espresso-machine-landscape-960x640.webp" width="960" height="640" alt="Coffee station with automatic espresso machine" loading="lazy" decoding="async" />
+              </picture>
+              <span class="photo-expand" aria-hidden="true">↗</span>
+            </button>
+            <figcaption data-image-caption>Coffee station with automatic espresso machine</figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="details exterior">
+            <button class="gallery-open" type="button" data-gallery-index="18" data-image-id="120" data-full-src="assets/img/gallery/villas-pastura-electric-vehicle-charging-landscape-1800x1200.webp" data-full-srcset="assets/img/gallery/villas-pastura-electric-vehicle-charging-landscape-1800x1200.webp 1800w, assets/img/gallery/villas-pastura-electric-vehicle-charging-landscape-2400x1600.webp 2400w" data-mobile-full-src="assets/img/gallery/villas-pastura-electric-vehicle-charging-portrait-960x1200.webp" data-mobile-full-srcset="assets/img/gallery/villas-pastura-electric-vehicle-charging-portrait-960x1200.webp 960w, assets/img/gallery/villas-pastura-electric-vehicle-charging-portrait-1280x1600.webp 1280w" data-alt="Electric vehicle charging at the villa">
+              <picture>
+                <source media="(max-width: 699px)" srcset="assets/img/gallery/villas-pastura-electric-vehicle-charging-portrait-480x600.webp 480w, assets/img/gallery/villas-pastura-electric-vehicle-charging-portrait-960x1200.webp 960w, assets/img/gallery/villas-pastura-electric-vehicle-charging-portrait-1280x1600.webp 1280w" sizes="calc(100vw - 32px)" type="image/webp" />
+                <source media="(min-width: 700px)" srcset="assets/img/gallery/villas-pastura-electric-vehicle-charging-landscape-480x320.webp 480w, assets/img/gallery/villas-pastura-electric-vehicle-charging-landscape-960x640.webp 960w, assets/img/gallery/villas-pastura-electric-vehicle-charging-landscape-1800x1200.webp 1800w" sizes="(min-width: 1200px) 380px, (min-width: 980px) calc(33vw - 24px), calc(50vw - 24px)" type="image/webp" />
+                <img src="assets/img/gallery/villas-pastura-electric-vehicle-charging-landscape-960x640.webp" width="960" height="640" alt="Electric vehicle charging at the villa" loading="lazy" decoding="async" />
+              </picture>
+              <span class="photo-expand" aria-hidden="true">↗</span>
+            </button>
+            <figcaption data-image-caption>Electric vehicle charging at the villa</figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="exterior">
+            <button class="gallery-open" type="button" data-gallery-index="19" data-image-id="110" data-full-src="assets/img/gallery/villas-pastura-private-parking-villa-landscape-1800x1200.webp" data-full-srcset="assets/img/gallery/villas-pastura-private-parking-villa-landscape-1800x1200.webp 1800w, assets/img/gallery/villas-pastura-private-parking-villa-landscape-2400x1600.webp 2400w" data-mobile-full-src="assets/img/gallery/villas-pastura-private-parking-villa-portrait-960x1200.webp" data-mobile-full-srcset="assets/img/gallery/villas-pastura-private-parking-villa-portrait-960x1200.webp 960w, assets/img/gallery/villas-pastura-private-parking-villa-portrait-1280x1600.webp 1280w" data-alt="Private parking beside Villas Pastura">
+              <picture>
+                <source media="(max-width: 699px)" srcset="assets/img/gallery/villas-pastura-private-parking-villa-portrait-480x600.webp 480w, assets/img/gallery/villas-pastura-private-parking-villa-portrait-960x1200.webp 960w, assets/img/gallery/villas-pastura-private-parking-villa-portrait-1280x1600.webp 1280w" sizes="calc(100vw - 32px)" type="image/webp" />
+                <source media="(min-width: 700px)" srcset="assets/img/gallery/villas-pastura-private-parking-villa-landscape-480x320.webp 480w, assets/img/gallery/villas-pastura-private-parking-villa-landscape-960x640.webp 960w, assets/img/gallery/villas-pastura-private-parking-villa-landscape-1800x1200.webp 1800w" sizes="(min-width: 1200px) 380px, (min-width: 980px) calc(33vw - 24px), calc(50vw - 24px)" type="image/webp" />
+                <img src="assets/img/gallery/villas-pastura-private-parking-villa-landscape-960x640.webp" width="960" height="640" alt="Private parking beside Villas Pastura" loading="lazy" decoding="async" />
+              </picture>
+              <span class="photo-expand" aria-hidden="true">↗</span>
+            </button>
+            <figcaption data-image-caption>Private parking beside Villas Pastura</figcaption>
+          </figure>
+<!-- GALLERY_ITEMS_END -->
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery-cta" aria-labelledby="gallery-cta-title">
+      <div class="container gallery-cta-inner">
+        <div>
+          <p class="section-kicker" data-i18n="ctaKicker">Your stay</p>
+          <h2 id="gallery-cta-title" data-i18n="ctaTitle">Like what you see?</h2>
+          <p data-i18n="ctaCopy">Choose your dates to see live availability, complete prices and booking conditions.</p>
+        </div>
+        <a class="button button-primary" href="index.html#booking" data-i18n="ctaButton">Check availability</a>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="gallery-lightbox" data-lightbox aria-labelledby="lightbox-caption">
+    <div class="lightbox-shell">
+      <header class="lightbox-toolbar">
+        <span class="lightbox-counter" data-lightbox-counter aria-live="polite"></span>
+        <button class="lightbox-close" type="button" data-lightbox-close aria-label="Close photo viewer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5 17.5 17.5M17.5 6.5 6.5 17.5" /></svg>
+        </button>
+      </header>
+      <div class="lightbox-stage" data-lightbox-stage>
+        <button class="lightbox-nav lightbox-prev" type="button" data-lightbox-prev aria-label="Previous photo">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14.5 6-6 6 6 6" /></svg>
+        </button>
+        <div class="lightbox-media" data-lightbox-media>
+          <span class="lightbox-loader" aria-hidden="true"></span>
+          <picture class="lightbox-picture">
+            <source media="(max-width: 699px)" type="image/webp" data-lightbox-mobile-source />
+            <img data-lightbox-image src="" alt="" decoding="async" />
+          </picture>
+        </div>
+        <button class="lightbox-nav lightbox-next" type="button" data-lightbox-next aria-label="Next photo">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9.5 6 6 6-6 6" /></svg>
+        </button>
+      </div>
+      <footer class="lightbox-footer">
+        <p id="lightbox-caption" data-lightbox-caption></p>
+      </footer>
+    </div>
+  </dialog>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Luxury Pool Villas Pastura, Novalja, Island Pag</p>
+      <p class="footer-privacy-links"><a href="faq.html">FAQ</a><a href="privacy.html" data-consent-footer="privacy">Privacy</a><a href="cookies.html" data-consent-footer="cookies">Cookies</a><button class="footer-link-button" type="button" data-consent-customize data-consent-footer="settings">Cookie settings</button><a href="mailto:info@ventustravel.eu">info@ventustravel.eu</a></p>
+    </div>
+  </footer>
+</body>
+</html>

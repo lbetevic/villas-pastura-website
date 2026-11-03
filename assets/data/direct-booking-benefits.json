@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "offerId": "pasturaDirect",
+  "offerLabels": {
+    "en": "Exclusive Direct Booking Offer",
+    "de": "Exklusives Direktbuchungsangebot",
+    "hr": "Ekskluzivna ponuda za izravne rezervacije",
+    "it": "Offerta esclusiva per prenotazioni dirette"
+  },
+  "items": [
+    {
+      "id": "4470",
+      "labels": {
+        "en": "Free early check-in",
+        "de": "Kostenloser früher Check-in",
+        "hr": "Besplatan raniji check-in",
+        "it": "Check-in anticipato gratuito"
+      }
+    },
+    {
+      "id": "4471",
+      "labels": {
+        "en": "Free late check-out (subject to availability)",
+        "de": "Kostenloser später Check-out (nach Verfügbarkeit)",
+        "hr": "Besplatan kasniji check-out (ovisno o raspoloživosti)",
+        "it": "Check-out posticipato gratuito (soggetto a disponibilità)"
+      }
+    },
+    {
+      "id": "4169",
+      "labels": {
+        "en": "Free parking",
+        "de": "Kostenloser Parkplatz",
+        "hr": "Besplatan parking",
+        "it": "Parcheggio gratuito"
+      }
+    },
+    {
+      "id": "4166",
+      "labels": {
+        "en": "Pets stay free",
+        "de": "Haustiere ohne Aufpreis",
+        "hr": "Boravak kućnih ljubimaca bez nadoplate",
+        "it": "Animali domestici senza supplemento"
+      }
+    },
+    {
+      "id": "local:free-ev-charging",
+      "labels": {
+        "en": "Free EV charging · 22 kW",
+        "de": "Kostenloses Laden für Elektrofahrzeuge · 22 kW",
+        "hr": "Besplatno punjenje električnih vozila · 22 kW",
+        "it": "Ricarica gratuita per veicoli elettrici · 22 kW"
+      }
+    }
+  ]
+}

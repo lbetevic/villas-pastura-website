@@ -1,0 +1,319 @@
+{
+  "status": "draft",
+  "lastModified": "2026-10-31",
+  "categories": [
+    {
+      "id": "booking",
+      "title": {
+        "en": "Booking & price",
+        "de": "Buchung & Preis",
+        "hr": "Rezervacija i cijena",
+        "it": "Prenotazione e prezzo"
+      },
+      "intro": {
+        "en": "Placeholder questions for booking terms, payments and transparent pricing.",
+        "de": "Platzhalterfragen zu Buchungsbedingungen, Zahlungen und transparenten Preisen.",
+        "hr": "Probna pitanja o uvjetima rezervacije, plaćanju i transparentnoj cijeni.",
+        "it": "Domande provvisorie su condizioni, pagamenti e prezzi trasparenti."
+      }
+    },
+    {
+      "id": "villa",
+      "title": {
+        "en": "The villa & pool",
+        "de": "Villa & Pool",
+        "hr": "Vila i bazen",
+        "it": "Villa e piscina"
+      },
+      "intro": {
+        "en": "Placeholder questions about privacy, comfort, the pool and house rules.",
+        "de": "Platzhalterfragen zu Privatsphäre, Komfort, Pool und Hausregeln.",
+        "hr": "Probna pitanja o privatnosti, komforu, bazenu i kućnim pravilima.",
+        "it": "Domande provvisorie su privacy, comfort, piscina e regole della casa."
+      }
+    },
+    {
+      "id": "arrival",
+      "title": {
+        "en": "Arrival & location",
+        "de": "Anreise & Lage",
+        "hr": "Dolazak i lokacija",
+        "it": "Arrivo e posizione"
+      },
+      "intro": {
+        "en": "Placeholder questions for transport, check-in, parking and nearby places.",
+        "de": "Platzhalterfragen zu Verkehr, Check-in, Parken und Zielen in der Nähe.",
+        "hr": "Probna pitanja o prijevozu, check-inu, parkingu i mjestima u blizini.",
+        "it": "Domande provvisorie su trasporti, check-in, parcheggio e luoghi vicini."
+      }
+    },
+    {
+      "id": "local",
+      "title": {
+        "en": "Local host advice",
+        "de": "Lokale Gastgeber-Tipps",
+        "hr": "Savjeti lokalnog host tima",
+        "it": "Consigli del team locale"
+      },
+      "intro": {
+        "en": "Placeholder questions reserved for first-hand recommendations from Novalja.",
+        "de": "Platzhalterfragen für persönliche Empfehlungen aus Novalja.",
+        "hr": "Probna pitanja rezervirana za iskustvene preporuke iz Novalje.",
+        "it": "Domande provvisorie per consigli diretti da Novalja."
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "direct-booking-price",
+      "category": "booking",
+      "homepage": true,
+      "variant": "medium",
+      "question": {
+        "en": "Placeholder: Is direct booking the best available price?",
+        "de": "Platzhalter: Ist die Direktbuchung der beste verfügbare Preis?",
+        "hr": "Placeholder: Je li direktna rezervacija najbolja dostupna cijena?",
+        "it": "Segnaposto: La prenotazione diretta offre il miglior prezzo disponibile?"
+      }
+    },
+    {
+      "id": "complete-price",
+      "category": "booking",
+      "homepage": true,
+      "variant": "long",
+      "question": {
+        "en": "Placeholder: What is included in the displayed price?",
+        "de": "Platzhalter: Was ist im angezeigten Preis enthalten?",
+        "hr": "Placeholder: Što je uključeno u prikazanu cijenu?",
+        "it": "Segnaposto: Cosa è incluso nel prezzo visualizzato?"
+      }
+    },
+    {
+      "id": "payment-confirmation",
+      "category": "booking",
+      "homepage": false,
+      "variant": "medium",
+      "question": {
+        "en": "Placeholder: How are payment and booking confirmation handled?",
+        "de": "Platzhalter: Wie funktionieren Zahlung und Buchungsbestätigung?",
+        "hr": "Placeholder: Kako funkcioniraju plaćanje i potvrda rezervacije?",
+        "it": "Segnaposto: Come funzionano pagamento e conferma?"
+      }
+    },
+    {
+      "id": "cancellation-terms",
+      "category": "booking",
+      "homepage": false,
+      "variant": "long",
+      "question": {
+        "en": "Placeholder: Which cancellation terms apply?",
+        "de": "Platzhalter: Welche Stornierungsbedingungen gelten?",
+        "hr": "Placeholder: Koji uvjeti otkazivanja vrijede?",
+        "it": "Segnaposto: Quali condizioni di cancellazione si applicano?"
+      }
+    },
+    {
+      "id": "tourist-tax",
+      "category": "booking",
+      "homepage": false,
+      "variant": "short",
+      "question": {
+        "en": "Placeholder: Is tourist tax included?",
+        "de": "Platzhalter: Ist die Kurtaxe enthalten?",
+        "hr": "Placeholder: Je li boravišna pristojba uključena?",
+        "it": "Segnaposto: La tassa di soggiorno è inclusa?"
+      }
+    },
+    {
+      "id": "private-villa-pool",
+      "category": "villa",
+      "homepage": true,
+      "variant": "medium",
+      "question": {
+        "en": "Are both villas and their pools completely private?",
+        "de": "Sind beide Villen und ihre Pools vollständig privat?",
+        "hr": "Jesu li obje vile i njihovi bazeni potpuno privatni?",
+        "it": "Entrambe le ville e le loro piscine sono completamente private?"
+      },
+      "answer": {
+        "en": "Each villa offers complete privacy, with its own entrance, fenced terrace and private pool. No outdoor facilities are shared.",
+        "de": "Jede Villa bietet vollständige Privatsphäre mit eigenem Eingang, umzäunter Terrasse und privatem Pool. Es werden keine Außenbereiche gemeinsam genutzt.",
+        "hr": "Svaka vila pruža potpunu privatnost te ima vlastiti ulaz, ograđenu terasu i privatni bazen. Nijedan vanjski sadržaj nije zajednički.",
+        "it": "Ogni villa offre completa privacy, con ingresso indipendente, terrazza recintata e piscina privata. Nessuno spazio esterno è condiviso."
+      }
+    },
+    {
+      "id": "comfortable-capacity",
+      "category": "villa",
+      "homepage": true,
+      "variant": "long",
+      "question": {
+        "en": "Placeholder: Is the villa genuinely comfortable at full capacity?",
+        "de": "Platzhalter: Ist die Villa auch bei voller Belegung komfortabel?",
+        "hr": "Placeholder: Je li vila zaista udobna pri punom kapacitetu?",
+        "it": "Segnaposto: La villa è davvero confortevole alla massima capacità?"
+      }
+    },
+    {
+      "id": "heated-pool",
+      "category": "villa",
+      "homepage": true,
+      "variant": "long",
+      "showTip": true,
+      "question": {
+        "en": "Placeholder: What does a heated pool mean in practice?",
+        "de": "Platzhalter: Was bedeutet ein beheizter Pool in der Praxis?",
+        "hr": "Placeholder: Što grijani bazen znači u praksi?",
+        "it": "Segnaposto: Cosa significa piscina riscaldata in pratica?"
+      }
+    },
+    {
+      "id": "children-suitability",
+      "category": "villa",
+      "homepage": false,
+      "variant": "medium",
+      "question": {
+        "en": "Placeholder: How suitable is the villa for small children?",
+        "de": "Platzhalter: Wie geeignet ist die Villa für kleine Kinder?",
+        "hr": "Placeholder: Koliko je vila prikladna za malu djecu?",
+        "it": "Segnaposto: Quanto è adatta la villa ai bambini piccoli?"
+      }
+    },
+    {
+      "id": "house-rules",
+      "category": "villa",
+      "homepage": false,
+      "variant": "medium",
+      "question": {
+        "en": "Placeholder: Which house rules should guests know before booking?",
+        "de": "Platzhalter: Welche Hausregeln sollten Gäste vor der Buchung kennen?",
+        "hr": "Placeholder: Koja kućna pravila treba znati prije rezervacije?",
+        "it": "Segnaposto: Quali regole vanno conosciute prima di prenotare?"
+      }
+    },
+    {
+      "id": "need-a-car",
+      "category": "arrival",
+      "homepage": true,
+      "variant": "long",
+      "showTip": true,
+      "question": {
+        "en": "Placeholder: Do we need a car when staying at Villas Pastura?",
+        "de": "Platzhalter: Brauchen wir während des Aufenthalts ein Auto?",
+        "hr": "Placeholder: Treba li nam automobil tijekom boravka?",
+        "it": "Segnaposto: Serve un'auto durante il soggiorno?"
+      }
+    },
+    {
+      "id": "check-in-arrival",
+      "category": "arrival",
+      "homepage": false,
+      "variant": "medium",
+      "question": {
+        "en": "Placeholder: How do arrival and check-in work?",
+        "de": "Platzhalter: Wie funktionieren Anreise und Check-in?",
+        "hr": "Placeholder: Kako funkcioniraju dolazak i check-in?",
+        "it": "Segnaposto: Come funzionano arrivo e check-in?"
+      }
+    },
+    {
+      "id": "parking-ev",
+      "category": "arrival",
+      "homepage": false,
+      "variant": "medium",
+      "question": {
+        "en": "Placeholder: Where do guests park and charge an electric car?",
+        "de": "Platzhalter: Wo können Gäste parken und ein Elektroauto laden?",
+        "hr": "Placeholder: Gdje gosti parkiraju i pune električni automobil?",
+        "it": "Segnaposto: Dove si parcheggia e si ricarica un'auto elettrica?"
+      }
+    },
+    {
+      "id": "nearest-beach",
+      "category": "arrival",
+      "homepage": false,
+      "variant": "long",
+      "showTip": true,
+      "question": {
+        "en": "Placeholder: Is the nearest beach practical for families?",
+        "de": "Platzhalter: Ist der nächste Strand für Familien praktisch?",
+        "hr": "Placeholder: Je li najbliža plaža praktična za obitelji?",
+        "it": "Segnaposto: La spiaggia più vicina è pratica per le famiglie?"
+      }
+    },
+    {
+      "id": "late-arrival",
+      "category": "arrival",
+      "homepage": false,
+      "variant": "short",
+      "question": {
+        "en": "Placeholder: What happens if we arrive late?",
+        "de": "Platzhalter: Was passiert bei einer späten Anreise?",
+        "hr": "Placeholder: Što ako stignemo kasno?",
+        "it": "Segnaposto: Cosa succede se arriviamo tardi?"
+      }
+    },
+    {
+      "id": "first-night-dinner",
+      "category": "local",
+      "homepage": false,
+      "variant": "long",
+      "showTip": true,
+      "question": {
+        "en": "Placeholder: Where would our hosts go for dinner on the first evening?",
+        "de": "Platzhalter: Wo würden unsere Gastgeber am ersten Abend essen gehen?",
+        "hr": "Placeholder: Gdje bi naš host tim večerao prve večeri?",
+        "it": "Segnaposto: Dove cenerebbe il nostro team la prima sera?"
+      }
+    },
+    {
+      "id": "best-beach-weather",
+      "category": "local",
+      "homepage": false,
+      "variant": "long",
+      "question": {
+        "en": "Placeholder: Which beach works best for different wind conditions?",
+        "de": "Platzhalter: Welcher Strand eignet sich bei unterschiedlichen Winden?",
+        "hr": "Placeholder: Koja je plaža najbolja pri različitim smjerovima vjetra?",
+        "it": "Segnaposto: Quale spiaggia scegliere con venti diversi?"
+      }
+    },
+    {
+      "id": "avoid-traffic",
+      "category": "local",
+      "homepage": false,
+      "variant": "medium",
+      "showTip": true,
+      "question": {
+        "en": "Placeholder: When should guests avoid the busiest arrival traffic?",
+        "de": "Platzhalter: Wann sollten Gäste den stärksten Anreiseverkehr meiden?",
+        "hr": "Placeholder: Kada treba izbjegavati najveću gužvu pri dolasku?",
+        "it": "Segnaposto: Quando conviene evitare il traffico più intenso?"
+      }
+    },
+    {
+      "id": "short-stay-itinerary",
+      "category": "local",
+      "homepage": false,
+      "variant": "long",
+      "question": {
+        "en": "Placeholder: What is worth doing during a short stay on Pag?",
+        "de": "Platzhalter: Was lohnt sich bei einem kurzen Aufenthalt auf Pag?",
+        "hr": "Placeholder: Što vrijedi napraviti tijekom kratkog boravka na Pagu?",
+        "it": "Segnaposto: Cosa vale la pena fare durante un breve soggiorno a Pag?"
+      }
+    },
+    {
+      "id": "local-support",
+      "category": "local",
+      "homepage": false,
+      "variant": "medium",
+      "question": {
+        "en": "Placeholder: Who helps us if we need something during the stay?",
+        "de": "Platzhalter: Wer hilft uns, wenn wir während des Aufenthalts etwas brauchen?",
+        "hr": "Placeholder: Tko nam pomaže ako nešto zatrebamo tijekom boravka?",
+        "it": "Segnaposto: Chi ci aiuta se serve qualcosa durante il soggiorno?"
+      }
+    }
+  ]
+}

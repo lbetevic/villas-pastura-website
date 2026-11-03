@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "gallery": {
+    "name": "Villas Pastura photo gallery",
+    "description": "Private pool villas, sea-view terraces and contemporary interiors in Novalja on Pag Island.",
+    "imagePrefix": "villas-pastura",
+    "outputDirectory": "assets/img/gallery",
+    "portraitWidths": [480, 960, 1280],
+    "landscapeWidths": [480, 960, 1800, 2400]
+  },
+  "images": [
+    {
+      "sourceId": "020",
+      "order": 10,
+      "slug": "private-pool-villa-sunset",
+      "categories": ["exterior", "pool"],
+      "layout": "featured",
+      "captions": {
+        "en": "Private pool and villa at sunset",
+        "de": "Privater Pool und Villa bei Sonnenuntergang",
+        "hr": "Privatni bazen i vila pri zalasku sunca",
+        "it": "Piscina privata e villa al tramonto"
+      }
+    },
+    {
+      "sourceId": "010",
+      "order": 20,
+      "slug": "aerial-view-private-pool-villas",
+      "categories": ["exterior", "pool"],
+      "layout": "standard",
+      "captions": {
+        "en": "Aerial view of Villas Pastura and the private pool",
+        "de": "Luftaufnahme der Villas Pastura mit privatem Pool",
+        "hr": "Pogled iz zraka na Villas Pastura i privatni bazen",
+        "it": "Vista aerea di Villas Pastura e della piscina privata"
+      }
+    },
+    {
+      "sourceId": "170",
+      "order": 30,
+      "slug": "pool-terrace-outdoor-lounge-evening",
+      "categories": ["exterior", "pool", "terrace"],
+      "layout": "wide",
+      "captions": {
+        "en": "Pool terrace and outdoor lounge after sunset",
+        "de": "Poolterrasse und Outdoor-Lounge nach Sonnenuntergang",
+        "hr": "Terasa uz bazen i vanjski lounge nakon zalaska sunca",
+        "it": "Terrazza con piscina e lounge esterna dopo il tramonto"
+      }
+    },
+    {
+      "sourceId": "180",
+      "order": 40,
+      "slug": "poolside-wine-glasses-day",
+      "categories": ["exterior", "pool", "terrace", "details"],
+      "layout": "standard",
+      "captions": {
+        "en": "Poolside view with a glass of wine",
+        "de": "Poolblick mit einem Glas Wein",
+        "hr": "Pogled uz bazen s čašom vina",
+        "it": "Vista a bordo piscina con un bicchiere di vino"
+      }
+    },
+    {
+      "sourceId": "030",
+      "order": 50,
+      "slug": "sea-view-terrace-outdoor-dining-sunset",
+      "categories": ["exterior", "terrace"],
+      "layout": "standard",
+      "captions": {
+        "en": "Sea-view terrace set for outdoor dining at sunset",
+        "de": "Meerblick-Terrasse für ein Abendessen bei Sonnenuntergang",
+        "hr": "Terasa s pogledom na more pripremljena za večeru pri zalasku",
+        "it": "Terrazza vista mare pronta per cenare al tramonto"
+      }
+    },
+    {
+      "sourceId": "190",
+      "order": 60,
+      "slug": "outdoor-dining-private-pool",
+      "categories": ["exterior", "pool", "terrace"],
+      "layout": "wide",
+      "captions": {
+        "en": "Outdoor dining table beside the private pool",
+        "de": "Esstisch im Freien neben dem privaten Pool",
+        "hr": "Vanjski stol za blagovanje uz privatni bazen",
+        "it": "Tavolo da pranzo all'aperto accanto alla piscina privata"
+      }
+    },
+    {
+      "sourceId": "040",
+      "order": 70,
+      "slug": "open-plan-living-room-terrace-sea-view",
+      "categories": ["interior"],
+      "layout": "wide",
+      "captions": {
+        "en": "Open-plan living room with terrace and sea view",
+        "de": "Offener Wohnbereich mit Terrasse und Meerblick",
+        "hr": "Otvoreni dnevni boravak s terasom i pogledom na more",
+        "it": "Soggiorno open space con terrazza e vista mare"
+      }
+    },
+    {
+      "sourceId": "160",
+      "order": 80,
+      "slug": "sea-view-living-room-terrace",
+      "categories": ["interior"],
+      "layout": "standard",
+      "captions": {
+        "en": "Sea-view living room opening onto the terrace",
+        "de": "Wohnzimmer mit Meerblick und Zugang zur Terrasse",
+        "hr": "Dnevni boravak s pogledom na more i izlazom na terasu",
+        "it": "Soggiorno vista mare con accesso alla terrazza"
+      }
+    },
+    {
+      "sourceId": "050",
+      "order": 90,
+      "slug": "dining-area-contemporary-kitchen",
+      "categories": ["interior"],
+      "layout": "standard",
+      "captions": {
+        "en": "Dining area and contemporary kitchen",
+        "de": "Essbereich und moderne Küche",
+        "hr": "Blagovaonica i suvremena kuhinja",
+        "it": "Zona pranzo e cucina contemporanea"
+      }
+    },
+    {
+      "sourceId": "060",
+      "order": 100,
+      "slug": "bedroom-direct-sea-view",
+      "categories": ["interior", "bedrooms"],
+      "layout": "standard",
+      "captions": {
+        "en": "Bedroom with direct sea view",
+        "de": "Schlafzimmer mit direktem Meerblick",
+        "hr": "Spavaća soba s izravnim pogledom na more",
+        "it": "Camera da letto con vista diretta sul mare"
+      }
+    },
+    {
+      "sourceId": "070",
+      "order": 110,
+      "slug": "bedroom-sea-view-terrace",
+      "categories": ["interior", "bedrooms"],
+      "layout": "standard",
+      "captions": {
+        "en": "Bright bedroom opening onto the sea-view terrace",
+        "de": "Helles Schlafzimmer mit Zugang zur Meerblick-Terrasse",
+        "hr": "Svijetla spavaća soba s izlazom na terasu i pogledom na more",
+        "it": "Camera luminosa con accesso alla terrazza vista mare"
+      }
+    },
+    {
+      "sourceId": "075",
+      "order": 120,
+      "slug": "kitchen-island-sea-view",
+      "categories": ["interior"],
+      "layout": "wide",
+      "captions": {
+        "en": "Kitchen island with sea view",
+        "de": "Kücheninsel mit Meerblick",
+        "hr": "Kuhinjski otok s pogledom na more",
+        "it": "Isola cucina con vista mare"
+      }
+    },
+    {
+      "sourceId": "080",
+      "order": 130,
+      "slug": "fully-equipped-contemporary-kitchen",
+      "categories": ["interior"],
+      "layout": "standard",
+      "captions": {
+        "en": "Fully equipped contemporary kitchen",
+        "de": "Voll ausgestattete moderne Küche",
+        "hr": "Potpuno opremljena suvremena kuhinja",
+        "it": "Cucina contemporanea completamente attrezzata"
+      }
+    },
+    {
+      "sourceId": "090",
+      "order": 140,
+      "slug": "modern-bathroom-walk-in-shower",
+      "categories": ["interior"],
+      "layout": "standard",
+      "captions": {
+        "en": "Modern bathroom with walk-in shower",
+        "de": "Modernes Bad mit bodengleicher Dusche",
+        "hr": "Moderna kupaonica s walk-in tušem",
+        "it": "Bagno moderno con doccia walk-in"
+      }
+    },
+    {
+      "sourceId": "100",
+      "order": 150,
+      "slug": "fresh-towels-guest-room",
+      "categories": ["details", "bedrooms"],
+      "layout": "standard",
+      "captions": {
+        "en": "Fresh towels prepared for guests",
+        "de": "Frische Handtücher für die Gäste",
+        "hr": "Svježi ručnici pripremljeni za goste",
+        "it": "Asciugamani freschi preparati per gli ospiti"
+      }
+    },
+    {
+      "sourceId": "130",
+      "order": 160,
+      "slug": "bathroom-toiletries-guest-essentials",
+      "categories": ["details"],
+      "layout": "standard",
+      "captions": {
+        "en": "Bathroom toiletries and guest essentials",
+        "de": "Pflegeprodukte und Gästeausstattung im Bad",
+        "hr": "Kupaonska kozmetika i potrepštine za goste",
+        "it": "Prodotti da bagno e accessori per gli ospiti"
+      }
+    },
+    {
+      "sourceId": "135",
+      "order": 170,
+      "slug": "spices-cooking-essentials",
+      "categories": ["details"],
+      "layout": "standard",
+      "captions": {
+        "en": "Spices and cooking essentials",
+        "de": "Gewürze und Grundausstattung zum Kochen",
+        "hr": "Začini i osnovne potrepštine za kuhanje",
+        "it": "Spezie e prodotti essenziali per cucinare"
+      }
+    },
+    {
+      "sourceId": "150",
+      "order": 180,
+      "slug": "coffee-station-espresso-machine",
+      "categories": ["details"],
+      "layout": "standard",
+      "captions": {
+        "en": "Coffee station with automatic espresso machine",
+        "de": "Kaffeestation mit Kaffeevollautomat",
+        "hr": "Kutak za kavu s automatskim espresso aparatom",
+        "it": "Angolo caffè con macchina espresso automatica"
+      }
+    },
+    {
+      "sourceId": "120",
+      "order": 190,
+      "slug": "electric-vehicle-charging",
+      "categories": ["details", "exterior"],
+      "layout": "standard",
+      "captions": {
+        "en": "Electric vehicle charging at the villa",
+        "de": "Lademöglichkeit für Elektrofahrzeuge an der Villa",
+        "hr": "Punjenje električnih vozila uz vilu",
+        "it": "Ricarica per veicoli elettrici presso la villa"
+      }
+    },
+    {
+      "sourceId": "110",
+      "order": 200,
+      "slug": "private-parking-villa",
+      "categories": ["exterior"],
+      "layout": "standard",
+      "captions": {
+        "en": "Private parking beside Villas Pastura",
+        "de": "Privatparkplatz neben den Villas Pastura",
+        "hr": "Privatni parking uz Villas Pastura",
+        "it": "Parcheggio privato accanto a Villas Pastura"
+      }
+    }
+  ]
+}

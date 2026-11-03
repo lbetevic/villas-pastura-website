@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#123c55" />
+  <meta name="robots" content="noindex,nofollow,noarchive" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <base href="/" />
+  <title>Guest details | Villas Pastura</title>
+  <link rel="icon" href="assets/icons/favicon.svg?v=1.16.2" type="image/svg+xml" />
+  <link rel="icon" href="favicon.ico?v=1.16.2" sizes="any" />
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png?v=1.16.2" />
+  <link rel="manifest" href="assets/icons/site.webmanifest?v=1.16.2" />
+  <link rel="stylesheet" href="assets/css/booking-flow.css?v=1.22.0" />
+  <link rel="stylesheet" href="assets/css/consent.css?v=1.16.2" />
+  <script type="module" src="assets/js/booking.js?v=1.22.0"></script>
+  <script type="module" src="assets/js/privacy.js?v=1.16.2"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="flow-header">
+    <div class="flow-container flow-header-inner">
+      <a class="flow-brand" href="index.html"><strong>Private Pool Villas Pastura</strong><small>Novalja, Pag Island</small></a>
+      <div class="flow-actions">
+        <button class="flow-back flow-back-button" id="back-to-rates" type="button" data-copy="back">Back to rates</button>
+        <label><span class="sr-only">Language</span><select class="flow-language" id="language-select"><option value="en">EN</option><option value="de">DE</option><option value="hr">HR</option><option value="it">IT</option></select></label>
+      </div>
+    </div>
+  </header>
+
+  <main class="flow-main" id="main">
+    <div class="flow-container">
+      <h1 class="flow-title flow-title-compact" data-copy="title">Complete your booking request</h1>
+
+      <div class="flow-status" id="quote-status" role="status"><div class="loading-line"></div><div class="loading-line"></div><p data-copy="loading">Refreshing your rate…</p></div>
+
+      <div class="booking-layout" id="booking-layout" hidden>
+        <section class="flow-card">
+          <form id="guest-form" novalidate hidden>
+            <h2 data-copy="guestHeading">Lead guest</h2>
+            <div class="field-grid">
+              <div class="form-field"><label for="first-name" data-copy="firstName">First name</label><input id="first-name" name="firstName" autocomplete="given-name" maxlength="80" required /></div>
+              <div class="form-field"><label for="last-name" data-copy="lastName">Last name</label><input id="last-name" name="lastName" autocomplete="family-name" maxlength="80" required /></div>
+              <div class="form-field"><label for="email" data-copy="email">Email</label><input id="email" name="email" type="email" autocomplete="email" maxlength="160" required /></div>
+              <div class="form-field is-wide"><label for="phone-number" data-copy="phone">Mobile phone</label><div class="phone-fields"><select id="phone-country-code" name="phoneCountryCode" autocomplete="tel-country-code" required><option value="+385">+385</option><option value="+43">+43</option><option value="+49">+49</option><option value="+39">+39</option><option value="+386">+386</option><option value="+41">+41</option><option value="+44">+44</option><option value="+1">+1</option></select><input id="phone-number" name="phoneNumber" type="tel" inputmode="tel" autocomplete="tel-national" maxlength="32" required /></div></div>
+              <div class="form-field is-wide"><label for="notes" data-copy="remarks">Notes or additional requests (optional)</label><textarea id="notes" name="notes" maxlength="1000"></textarea></div>
+            </div>
+
+            <fieldset class="payment-methods">
+              <legend data-copy="paymentHeading">Preferred payment method</legend>
+              <label class="payment-card"><input type="radio" name="paymentMethod" value="pay_by_link" required /><span><strong data-copy="payByLink">Pay by link (3-D Secure)</strong><small data-copy="payByLinkHelp">Ventus Travel will email the secure payment link after reviewing your request.</small></span></label>
+              <label class="payment-card"><input type="radio" name="paymentMethod" value="bank_transfer" required /><span><strong data-copy="bankTransfer">Bank transfer</strong><small data-copy="bankTransferHelp">Ventus Travel will email the bank details and payment reference.</small></span></label>
+            </fieldset>
+
+            <div class="checkbox-stack">
+              <label class="checkbox-field"><input type="checkbox" name="termsAccepted" required /><span data-copy-html="termsConsent">I have read and accept the <a href="booking-terms.html" target="_blank" rel="noopener">booking terms</a>, including the displayed cancellation and prepayment policy.</span></label>
+              <label class="checkbox-field"><input type="checkbox" name="privacyAccepted" required /><span data-copy-html="privacyConsent">I have read the <a href="privacy.html" target="_blank" rel="noopener">privacy policy</a> and agree that my data may be processed to manage this booking.</span></label>
+              <label class="checkbox-field"><input type="checkbox" name="marketingAccepted" /><span data-copy="marketingConsent">I would like to receive occasional offers (optional).</span></label>
+            </div>
+            <p class="review-notice" data-copy="requestNotice">This sends a booking request, not a confirmed reservation. Your dates are not held until Ventus Travel confirms them.</p>
+            <div id="turnstile-container"></div>
+            <p class="field-error" id="form-error" role="alert"></p>
+            <button class="button" type="submit" id="submit-request" data-copy="confirmButton">Send booking request</button>
+          </form>
+
+          <section id="confirmation-panel" hidden>
+            <h2 data-copy="confirmationHeading">Request received</h2>
+            <p data-copy="confirmationCopy">Your reservation is not yet confirmed or held. Ventus Travel will review the request and email payment instructions.</p>
+            <p class="review-notice" id="email-delivery-note" hidden data-copy="emailPending">Your request was saved, but the confirmation email is still pending delivery.</p>
+            <p class="request-reference"><span data-copy="reference">Reference</span><strong id="request-reference"></strong></p>
+            <a class="button button-secondary" href="index.html" data-copy="returnHome">Return to Villas Pastura</a>
+          </section>
+        </section>
+
+        <aside class="flow-card booking-summary" id="booking-summary"><h2 data-copy="summaryHeading">Your stay</h2></aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="flow-footer"><div class="flow-container flow-footer-inner"><span>© <span id="year"></span> Villas Pastura</span><nav><a href="privacy.html">Privacy</a><a href="cookies.html">Cookies</a><a href="booking-terms.html">Booking terms</a></nav></div></footer>
+</body>
+</html>

@@ -1,0 +1,7 @@
+# Copy this file to .dev.vars for local Worker development.
+# Never commit or place real values in a ZIP shared publicly.
+NOKUMO_API_KEY=client-id|api-key
+QUOTE_SIGNING_SECRET=replace-with-at-least-32-random-characters
+TURNSTILE_SECRET_KEY=
+TURNSTILE_SITE_KEY=
+BOOKING_EMAIL_FROM=

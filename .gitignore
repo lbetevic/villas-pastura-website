@@ -1,0 +1,32 @@
+# Dependencies and generated build
+node_modules/
+dist/
+
+# Local Cloudflare state and D1 database
+.wrangler/
+.wrangler-dry-run/
+.sites-runtime/
+
+# Secrets — never commit
+.dev.vars
+.dev.vars.*
+!.dev.vars.example
+
+.env
+.env.*
+!.env.example
+
+# Logs, test output and packaged releases
+*.log
+coverage/
+*.zip
+
+# Original high-resolution photos
+gallery-masters/
+assets/img/gallery/masters/
+assets/gallery/masters/
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/

@@ -1,0 +1,40 @@
+.reviews-page { background: var(--color-paper); }
+.reviews-page .site-header { color: var(--color-deep-2); background: rgb(255 253 248 / 94%); }
+.reviews-hero { padding: 72px 0 52px; }
+.reviews-hero-inner { display: grid; gap: 32px; align-items: end; }
+.reviews-hero h1 { max-width: 820px; color: var(--color-deep-2); font-size: clamp(2.5rem, 8vw, 5rem); text-shadow: none; }
+.reviews-hero p:not(.section-kicker) { max-width: 680px; margin: 24px 0 0; color: var(--color-muted); font-size: 1.1rem; }
+.aggregate-card { width: min(100%, 260px); display: grid; gap: 2px; padding: 28px; border-radius: var(--radius-lg); background: var(--color-deep-2); color: white; }
+.aggregate-card strong { font-size: clamp(3.4rem, 12vw, 5.4rem); line-height: .9; }
+.aggregate-card span { font-weight: 800; }
+.aggregate-card small { color: rgb(255 255 255 / 72%); }
+.reviews-list-section { padding: 28px 0 88px; }
+.reviews-grid { display: grid; gap: 20px; align-items: start; }
+.review-card { padding: 24px; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: white; box-shadow: 0 12px 40px rgb(18 60 85 / 8%); }
+.review-card header { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
+.review-card header > div { display: grid; gap: 2px; }
+.review-card header strong { color: var(--color-deep-2); font-size: 1.1rem; }
+.review-card time { color: var(--color-muted); font-size: .88rem; }
+.review-rating { flex: 0 0 auto; padding: 7px 10px; border-radius: 999px; background: var(--color-deep); color: white; font-weight: 900; }
+.review-rating span { margin-left: 2px; color: rgb(255 255 255 / 70%); font-size: .72rem; }
+.verified-label { margin: 18px 0 12px; color: var(--color-success); font-size: .76rem; font-weight: 850; letter-spacing: .06em; text-transform: uppercase; }
+.verified-label::before { content: "✓"; margin-right: 7px; }
+.review-card blockquote { margin: 0; }
+.review-card blockquote p { margin: 0 0 14px; color: var(--color-text); }
+.review-card blockquote p:last-child { margin-bottom: 0; }
+.reviews-cta { padding: 64px 0; background: var(--color-deep-2); color: white; }
+.reviews-cta h2 { color: white; }
+.reviews-cta p:not(.section-kicker) { margin: 0; color: rgb(255 255 255 / 76%); }
+.reviews-cta-inner { display: grid; gap: 24px; align-items: center; }
+.reviews-cta .button { width: 100%; }
+@media (min-width: 700px) {
+  .reviews-hero { padding: 96px 0 68px; }
+  .reviews-hero-inner { grid-template-columns: minmax(0, 1fr) 260px; }
+  .reviews-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+  .reviews-cta-inner { grid-template-columns: minmax(0, 1fr) auto; }
+  .reviews-cta .button { width: auto; min-width: 190px; }
+}
+@media (min-width: 980px) {
+  .reviews-page .primary-nav { position: static; display: flex; flex-direction: row; align-items: center; padding: 0; border: 0; background: transparent; box-shadow: none; }
+  .reviews-page .primary-nav a { padding: 10px 12px; }
+}
