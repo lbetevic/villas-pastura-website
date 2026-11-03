@@ -1,8 +1,31 @@
-# Villas Pastura direct-booking website — v1.22.0
+# Villas Pastura direct-booking website — v1.25.0
 
 A mobile-first, multilingual website plus a Cloudflare Worker that integrates
-server-to-server with Nokumo. Version 1.22.0 streamlines the booking-request
-flow, fixes browser-back recovery and strengthens the direct-booking case.
+server-to-server with Nokumo. Version 1.25.0 refines two targeted brand and
+contrast details without changing the established page layouts.
+
+## v1.25.0 targeted colour and contrast refinements
+
+- Primary gold buttons now use the brand's dark navy text instead of the previous near-black brown. The combination retains a WCAG contrast ratio of approximately 6.48:1.
+- The Reviews page header now uses a solid dark-navy background, giving the white villa name, location and desktop navigation a stable high-contrast surface.
+- Mobile navigation remains a white panel with dark links; the language control and menu button retain their existing high-contrast treatment.
+
+## v1.24.0 multilingual local guide
+
+- Thirteen curated POIs are organized into four guest-oriented groups: beaches, food and drink, everyday and arrival, and exploring Pag.
+- Names, short descriptions, approximate travel information and map actions are translated into EN, DE, HR and IT in `assets/data/poi-content.json`.
+- Every item opens a targeted Google Maps search in a new tab; approximate distances and travel times are explicitly labelled because traffic and seasonal routes can change.
+- Beach Terra, Babe, Planjka, Starac i More, Konoba Galia, Boškinac, the nearest supermarket, Novalja centre, Zadar Airport, Talijanova buža, the Olive Gardens of Lun, Cape Lun and the Life on Mars Trail are included.
+- The inherited 1 km distance for Konoba Galia is not reused because the restaurant's waterfront address is inconsistent with that figure; the guide uses a conservative approximate route from the villa.
+- Boškinac and Talijanova buža add one distinctive dining experience and one local cultural landmark without diluting the guide with a long generic attraction list.
+
+## v1.23.0 multilingual amenities catalogue
+
+- The complete amenity catalogue is deduplicated and organized into six guest-oriented groups: pool and outdoor living, space and comfort, kitchen and dining, entertainment and work, parking and guest services, and safety.
+- Amenity labels and group titles are translated into EN, DE, HR and IT in `assets/data/amenities-content.json`; the modal renders from that file and retains an English HTML fallback.
+- Pool descriptions now consistently state that the pools are heated. Brand names, headings, subheadings and authentic review quotations remain unchanged.
+- Low-value microitems such as toilet paper, trash cans, sofas and closets are intentionally not listed separately; closely related essentials are combined into concise entries.
+- The concrete safety features are shown, while “24-hour security” is omitted because it could incorrectly imply an on-site guard or reception.
 
 ## v1.22.0 streamlined checkout and direct-booking value
 

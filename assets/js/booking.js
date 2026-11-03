@@ -1,4 +1,4 @@
-import { apiRequest, currentLanguage, differenceInNights, formatDate, formatMoney, setLanguage } from './booking-api.js?v=1.22.0';
+import { apiRequest, currentLanguage, differenceInNights, formatDate, formatMoney, setLanguage } from './booking-api.js?v=1.25.0';
 
 const copy = {
   en: {

@@ -1,6 +1,6 @@
 {
   "name": "villas-pastura-direct-booking",
-  "version": "1.22.0",
+  "version": "1.25.0",
   "private": true,
   "type": "module",
   "description": "Villas Pastura website with Nokumo pricing and Cloudflare booking-request checkout",

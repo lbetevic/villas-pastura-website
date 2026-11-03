@@ -2,41 +2,41 @@ const galleryTranslations = {
   en: {
     navVilla: 'The villa', navGallery: 'Gallery', navReviews: 'Reviews', navLocation: 'Location',
     galleryKicker: 'Villa gallery', galleryHeading: 'See the spaces before you choose your dates.',
-    galleryIntro: 'Explore the private pool, sea-view terraces and contemporary interiors designed for relaxed stays with family and friends.',
+    galleryIntro: 'Explore the private heated pool, sea-view terraces and contemporary interiors designed for relaxed stays with family and friends.',
     galleryGridTitle: 'Villa photographs', filterAll: 'All photos', filterPool: 'Pool', filterTerrace: 'Terrace', filterExterior: 'Exterior', filterInterior: 'Interior', filterBedrooms: 'Bedrooms', filterDetails: 'Details',
     ctaKicker: 'Your stay', ctaTitle: 'Like what you see?', ctaCopy: 'Choose your dates to see live availability, complete prices and booking conditions.', ctaButton: 'Check availability',
     pageTitle: 'Villas Pastura Photo Gallery | Private Pool Villa in Novalja',
-    metaDescription: 'Explore the private pool, sea-view terraces and contemporary interiors at Villas Pastura in Novalja on Pag Island.',
+    metaDescription: 'Explore the private heated pool, sea-view terraces and contemporary interiors at Villas Pastura in Novalja on Pag Island.',
     photoCount: 'Photo {current} of {total}', filterLabel: 'Filter gallery', close: 'Close photo viewer', previous: 'Previous photo', next: 'Next photo'
   },
   de: {
     navVilla: 'Die Villa', navGallery: 'Galerie', navReviews: 'Bewertungen', navLocation: 'Lage',
     galleryKicker: 'Villa-Galerie', galleryHeading: 'Entdecken Sie die Räume, bevor Sie Ihre Reisedaten wählen.',
-    galleryIntro: 'Entdecken Sie den privaten Pool, die Meerblick-Terrassen und die modernen Innenräume für entspannte Aufenthalte mit Familie und Freunden.',
+    galleryIntro: 'Entdecken Sie den privaten beheizten Pool, die Meerblick-Terrassen und die modernen Innenräume für entspannte Aufenthalte mit Familie und Freunden.',
     galleryGridTitle: 'Fotos der Villa', filterAll: 'Alle Fotos', filterPool: 'Pool', filterTerrace: 'Terrasse', filterExterior: 'Außenbereich', filterInterior: 'Innenbereich', filterBedrooms: 'Schlafzimmer', filterDetails: 'Details',
     ctaKicker: 'Ihr Aufenthalt', ctaTitle: 'Gefällt Ihnen, was Sie sehen?', ctaCopy: 'Wählen Sie Daten für Live-Verfügbarkeit, Gesamtpreise und Bedingungen.', ctaButton: 'Verfügbarkeit prüfen',
     pageTitle: 'Villas Pastura Fotogalerie | Private Poolvilla in Novalja',
-    metaDescription: 'Entdecken Sie den privaten Pool, die Meerblick-Terrassen und die modernen Innenräume der Villas Pastura in Novalja auf Pag.',
+    metaDescription: 'Entdecken Sie den privaten beheizten Pool, die Meerblick-Terrassen und die modernen Innenräume der Villas Pastura in Novalja auf Pag.',
     photoCount: 'Foto {current} von {total}', filterLabel: 'Galerie filtern', close: 'Fotoansicht schließen', previous: 'Vorheriges Foto', next: 'Nächstes Foto'
   },
   hr: {
     navVilla: 'Vila', navGallery: 'Galerija', navReviews: 'Recenzije', navLocation: 'Lokacija',
     galleryKicker: 'Galerija vile', galleryHeading: 'Pogledajte prostor prije nego odaberete datume.',
-    galleryIntro: 'Istražite privatni bazen, terase s pogledom na more i suvremene interijere za opušten boravak s obitelji i prijateljima.',
+    galleryIntro: 'Istražite privatni grijani bazen, terase s pogledom na more i suvremene interijere za opušten boravak s obitelji i prijateljima.',
     galleryGridTitle: 'Fotografije vile', filterAll: 'Sve fotografije', filterPool: 'Bazen', filterTerrace: 'Terasa', filterExterior: 'Eksterijer', filterInterior: 'Interijer', filterBedrooms: 'Spavaće sobe', filterDetails: 'Detalji',
     ctaKicker: 'Vaš boravak', ctaTitle: 'Sviđa vam se što vidite?', ctaCopy: 'Odaberite datume za live raspoloživost, potpune cijene i uvjete.', ctaButton: 'Provjeri raspoloživost',
     pageTitle: 'Galerija Villas Pastura | Vila s privatnim bazenom u Novalji',
-    metaDescription: 'Pogledajte privatni bazen, terase s pogledom na more i suvremene interijere Villas Pastura u Novalji na otoku Pagu.',
+    metaDescription: 'Pogledajte privatni grijani bazen, terase s pogledom na more i suvremene interijere Villas Pastura u Novalji na otoku Pagu.',
     photoCount: 'Fotografija {current} od {total}', filterLabel: 'Filtriraj galeriju', close: 'Zatvori pregled fotografije', previous: 'Prethodna fotografija', next: 'Sljedeća fotografija'
   },
   it: {
     navVilla: 'La villa', navGallery: 'Galleria', navReviews: 'Recensioni', navLocation: 'Posizione',
     galleryKicker: 'Galleria della villa', galleryHeading: 'Scopri gli spazi prima di scegliere le date.',
-    galleryIntro: 'Esplora la piscina privata, le terrazze vista mare e gli interni contemporanei pensati per soggiorni rilassanti con famiglia e amici.',
+    galleryIntro: 'Esplora la piscina privata riscaldata, le terrazze vista mare e gli interni contemporanei pensati per soggiorni rilassanti con famiglia e amici.',
     galleryGridTitle: 'Fotografie della villa', filterAll: 'Tutte le foto', filterPool: 'Piscina', filterTerrace: 'Terrazza', filterExterior: 'Esterni', filterInterior: 'Interni', filterBedrooms: 'Camere da letto', filterDetails: 'Dettagli',
     ctaKicker: 'Il tuo soggiorno', ctaTitle: 'Ti piace quello che vedi?', ctaCopy: 'Scegli le date per disponibilità live, prezzi completi e condizioni.', ctaButton: 'Controlla disponibilità',
     pageTitle: 'Galleria Villas Pastura | Villa con piscina privata a Novalja',
-    metaDescription: 'Esplora la piscina privata, le terrazze vista mare e gli interni contemporanei di Villas Pastura a Novalja, sull’isola di Pag.',
+    metaDescription: 'Esplora la piscina privata riscaldata, le terrazze vista mare e gli interni contemporanei di Villas Pastura a Novalja, sull’isola di Pag.',
     photoCount: 'Foto {current} di {total}', filterLabel: 'Filtra la galleria', close: 'Chiudi visualizzatore', previous: 'Foto precedente', next: 'Foto successiva'
   }
 };

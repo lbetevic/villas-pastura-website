@@ -59,4 +59,4 @@ await build({
   minify: false,
 });
 
-console.log(`Built Villas Pastura v1.22.0 to ${dist}`);
+console.log(`Built Villas Pastura v1.25.0 to ${dist}`);

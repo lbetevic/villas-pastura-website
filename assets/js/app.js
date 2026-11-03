@@ -14,7 +14,7 @@ const translations = {
     feature1Title: 'Private heated pool', feature1Copy: 'Enjoy quiet mornings, sunset swims and full privacy without sharing facilities.', feature2Title: 'Outdoor kitchen', feature2Copy: 'A covered dining area with grill, fridge and lounge space for long summer evenings.', feature3Title: 'Local support', feature3Copy: 'Fast help before and during the stay, from arrival details to local recommendations.', feature4Title: 'Direct booking value', feature4Copy: 'Avoid unnecessary OTA fees and communicate directly with the local team.',
     availabilityKicker: 'Live direct booking', availabilityTitle: 'Real availability, complete prices and clear conditions.', availabilityCopy: 'Your dates are checked directly against the property management system. Every available rate keeps its own price, prepayment and cancellation conditions.',
     rateLow: 'Low season', rateMid: 'Mid season', rateHigh: 'High season', rateNote: 'Indicative nightly rates, excluding cleaning and tourist tax.',
-    locationKicker: 'Location', locationTitle: 'Pag Island: dramatic landscape, clear sea and easy access.', locationCopy: 'The villa is positioned for privacy while keeping beaches, Novalja restaurants and day trips within easy reach.', location1: '650 m to the nearest beach', location2: '8 min drive to Novalja centre', location3: 'Approx. 75 min from Zadar Airport',
+    locationKicker: 'Location', locationTitle: 'Pag Island: dramatic landscape, clear sea and easy access.', locationCopy: 'The villa is positioned for privacy while keeping beaches, Novalja restaurants and day trips within easy reach.', location1: '800 m to the nearest beach', location2: '8 min drive to Novalja centre', location3: 'Approx. 75 min from Zadar Airport',
     finalTitle: 'Ready to check your preferred dates?', finalCopy: 'See current availability, complete prices and the conditions of every available rate.', finalButton: 'Check availability',
     unavailable: 'Selected dates include unavailable nights.', invalidDates: 'Please choose a valid check-in and check-out date.', calendarLoading: 'Loading live availability…', calendarLive: 'Live availability loaded', calendarFallback: 'Live calendar is temporarily unavailable. You can still choose dates; the next step performs the authoritative check.', calendarAvailable: 'Available night', calendarUnavailable: 'Unavailable night', calendarCheckoutOnly: 'Available for check-out only'
   },
@@ -26,13 +26,13 @@ const translations = {
     villaKicker: 'Die Villa', villaTitle: 'Entspannt luxuriös, ohne Hotelkompromisse.', villaCopy: 'Villas Pastura verbindet privates Outdoor-Living, großzügige Schlafzimmer und einfache Direktbuchung. Ideal für Familien, Paare und kleine Premiumgruppen.', factBedrooms: 'Schlafzimmer', factGuests: 'Gäste', factPool: 'Pool', factBeach: 'Strand',
     highlightsKicker: 'Warum Gäste buchen', highlightsTitle: 'Alles Wichtige ist schnell erfassbar.', feature1Title: 'Privater beheizter Pool', feature1Copy: 'Ruhige Morgen, Sonnenuntergang am Pool und volle Privatsphäre.', feature2Title: 'Outdoor-Küche', feature2Copy: 'Überdachter Essbereich mit Grill, Kühlschrank und Lounge.', feature3Title: 'Lokale Betreuung', feature3Copy: 'Schnelle Hilfe vor und während des Aufenthalts.', feature4Title: 'Direktbuchungs-Vorteil', feature4Copy: 'Keine unnötigen OTA-Gebühren und direkter Kontakt zum lokalen Team.',
     availabilityKicker: 'Live-Direktbuchung', availabilityTitle: 'Echte Verfügbarkeit, Gesamtpreise und klare Bedingungen.', availabilityCopy: 'Ihre Daten werden direkt mit dem Verwaltungssystem geprüft. Jeder verfügbare Tarif behält Preis, Vorauszahlung und Stornobedingungen.', rateLow: 'Nebensaison', rateMid: 'Zwischensaison', rateHigh: 'Hochsaison', rateNote: 'Beispielpreise pro Nacht, exkl. Reinigung und Kurtaxe.',
-    locationKicker: 'Lage', locationTitle: 'Insel Pag: dramatische Landschaft, klares Meer und gute Erreichbarkeit.', locationCopy: 'Privat gelegen, aber nahe an Stränden, Restaurants in Novalja und Ausflügen.', location1: '650 m zum nächsten Strand', location2: '8 Min. Fahrt ins Zentrum von Novalja', location3: 'Ca. 75 Min. vom Flughafen Zadar', finalTitle: 'Bereit für Ihre Wunschdaten?', finalCopy: 'Aktuelle Verfügbarkeit, Gesamtpreise und Bedingungen jedes Tarifs ansehen.', finalButton: 'Verfügbarkeit prüfen', unavailable: 'Die gewählten Daten enthalten nicht verfügbare Nächte.', invalidDates: 'Bitte wählen Sie gültige An- und Abreisedaten.', calendarLoading: 'Live-Verfügbarkeit wird geladen…', calendarLive: 'Live-Verfügbarkeit geladen', calendarFallback: 'Der Live-Kalender ist vorübergehend nicht verfügbar. Sie können Daten wählen; im nächsten Schritt erfolgt die verbindliche Prüfung.', calendarAvailable: 'Verfügbare Nacht', calendarUnavailable: 'Nicht verfügbare Nacht', calendarCheckoutOnly: 'Nur als Abreisetag verfügbar'
+    locationKicker: 'Lage', locationTitle: 'Insel Pag: dramatische Landschaft, klares Meer und gute Erreichbarkeit.', locationCopy: 'Privat gelegen, aber nahe an Stränden, Restaurants in Novalja und Ausflügen.', location1: '800 m zum nächsten Strand', location2: '8 Min. Fahrt ins Zentrum von Novalja', location3: 'Ca. 75 Min. vom Flughafen Zadar', finalTitle: 'Bereit für Ihre Wunschdaten?', finalCopy: 'Aktuelle Verfügbarkeit, Gesamtpreise und Bedingungen jedes Tarifs ansehen.', finalButton: 'Verfügbarkeit prüfen', unavailable: 'Die gewählten Daten enthalten nicht verfügbare Nächte.', invalidDates: 'Bitte wählen Sie gültige An- und Abreisedaten.', calendarLoading: 'Live-Verfügbarkeit wird geladen…', calendarLive: 'Live-Verfügbarkeit geladen', calendarFallback: 'Der Live-Kalender ist vorübergehend nicht verfügbar. Sie können Daten wählen; im nächsten Schritt erfolgt die verbindliche Prüfung.', calendarAvailable: 'Verfügbare Nacht', calendarUnavailable: 'Nicht verfügbare Nacht', calendarCheckoutOnly: 'Nur als Abreisetag verfügbar'
   },
   hr: {
-    navVilla: 'Vila', navGallery: 'Galerija', navReviews: 'Recenzije', navLocation: 'Lokacija', heroEyebrow: 'Luksuzna vila s privatnim bazenom · Novalja, otok Pag', heroTitle: 'Privatna jadranska vila za obitelji i prijatelje koji žele prostor, komfor i lokalnu podršku.', heroCopy: 'Moderna vila s 4 spavaće sobe, grijanim bazenom, terasom s pogledom na more, ljetnom kuhinjom i direktnom podrškom lokalnog tima.', heroCta: 'Provjeri dostupnost', heroSecondary: 'Detalji vile', trustDirect: 'Najbolja direktna cijena', trustSupport: 'Lokalna podrška', trustSecure: 'Siguran tok upita', bookingTitle: 'Provjerite datume', bookingCopy: 'Odaberite datume i goste za live raspoloživost, potpunu cijenu i uvjete rezervacije.', labelStayDates: 'Datumi boravka', labelCheckin: 'Dolazak', labelCheckout: 'Odlazak', labelGuests: 'Gosti', decreaseGuests: 'Smanji broj gostiju', increaseGuests: 'Povećaj broj gostiju', bookingButton: 'Provjeri raspoloživost', chooseDate: 'Odaberi datum', selectDates: 'Odabir datuma', chooseStay: 'Odaberite boravak', selectArrival: 'Odaberite datum dolaska', selectDeparture: 'Sada odaberite datum odlaska', done: 'Gotovo', noDatesSelected: 'Datumi nisu odabrani', oneNight: '1 noćenje', nightCount: '{n} noćenja', villaKicker: 'Vila', villaTitle: 'Opušteni luksuz bez hotelskih kompromisa.', villaCopy: 'Villas Pastura spaja privatni vanjski prostor, prostrane sobe i jednostavnu direktnu rezervaciju. Idealna je za obitelji, parove i manje premium grupe.', factBedrooms: 'Sobe', factGuests: 'Gosti', factPool: 'Bazen', factBeach: 'Plaža', highlightsKicker: 'Zašto gosti biraju ovu vilu', highlightsTitle: 'Sve bitno je jasno i brzo čitljivo.', feature1Title: 'Privatni grijani bazen', feature1Copy: 'Mirna jutra, večernje kupanje i potpuna privatnost.', feature2Title: 'Ljetna kuhinja', feature2Copy: 'Natkriveni prostor za večeru s roštiljem, hladnjakom i lounge zonom.', feature3Title: 'Lokalna podrška', feature3Copy: 'Brza pomoć prije i tijekom boravka.', feature4Title: 'Prednost direktne rezervacije', feature4Copy: 'Bez nepotrebnih OTA troškova i uz direktnu komunikaciju.', availabilityKicker: 'Live direktna rezervacija', availabilityTitle: 'Stvarna raspoloživost, potpune cijene i jasni uvjeti.', availabilityCopy: 'Datume provjeravamo izravno u sustavu za upravljanje objektom. Svaka raspoloživa cijena zadržava svoje uvjete predujma i otkaza.', rateLow: 'Niska sezona', rateMid: 'Srednja sezona', rateHigh: 'Visoka sezona', rateNote: 'Okvirne cijene po noći, bez čišćenja i boravišne pristojbe.', locationKicker: 'Lokacija', locationTitle: 'Otok Pag: dramatičan krajolik, čisto more i jednostavan dolazak.', locationCopy: 'Vila je pozicionirana za privatnost, a plaže, restorani u Novalji i izleti su blizu.', location1: '650 m do najbliže plaže', location2: '8 min vožnje do centra Novalje', location3: 'Oko 75 min od Zračne luke Zadar', finalTitle: 'Spremni provjeriti željene datume?', finalCopy: 'Pogledajte trenutačnu raspoloživost, potpunu cijenu i uvjete svake cijene.', finalButton: 'Provjeri raspoloživost', unavailable: 'Odabrani datumi uključuju nedostupna noćenja.', invalidDates: 'Odaberite ispravan datum dolaska i odlaska.', calendarLoading: 'Učitavamo live raspoloživost…', calendarLive: 'Live raspoloživost učitana', calendarFallback: 'Live kalendar trenutačno nije dostupan. Svejedno možete odabrati datume; sljedeći korak radi mjerodavnu provjeru.', calendarAvailable: 'Raspoloživo noćenje', calendarUnavailable: 'Neraspoloživo noćenje', calendarCheckoutOnly: 'Raspoloživo samo kao datum odlaska'
+    navVilla: 'Vila', navGallery: 'Galerija', navReviews: 'Recenzije', navLocation: 'Lokacija', heroEyebrow: 'Luksuzna vila s privatnim bazenom · Novalja, otok Pag', heroTitle: 'Privatna jadranska vila za obitelji i prijatelje koji žele prostor, komfor i lokalnu podršku.', heroCopy: 'Moderna vila s 4 spavaće sobe, grijanim bazenom, terasom s pogledom na more, ljetnom kuhinjom i direktnom podrškom lokalnog tima.', heroCta: 'Provjeri dostupnost', heroSecondary: 'Detalji vile', trustDirect: 'Najbolja direktna cijena', trustSupport: 'Lokalna podrška', trustSecure: 'Siguran tok upita', bookingTitle: 'Provjerite datume', bookingCopy: 'Odaberite datume i goste za live raspoloživost, potpunu cijenu i uvjete rezervacije.', labelStayDates: 'Datumi boravka', labelCheckin: 'Dolazak', labelCheckout: 'Odlazak', labelGuests: 'Gosti', decreaseGuests: 'Smanji broj gostiju', increaseGuests: 'Povećaj broj gostiju', bookingButton: 'Provjeri raspoloživost', chooseDate: 'Odaberi datum', selectDates: 'Odabir datuma', chooseStay: 'Odaberite boravak', selectArrival: 'Odaberite datum dolaska', selectDeparture: 'Sada odaberite datum odlaska', done: 'Gotovo', noDatesSelected: 'Datumi nisu odabrani', oneNight: '1 noćenje', nightCount: '{n} noćenja', villaKicker: 'Vila', villaTitle: 'Opušteni luksuz bez hotelskih kompromisa.', villaCopy: 'Villas Pastura spaja privatni vanjski prostor, prostrane sobe i jednostavnu direktnu rezervaciju. Idealna je za obitelji, parove i manje premium grupe.', factBedrooms: 'Sobe', factGuests: 'Gosti', factPool: 'Bazen', factBeach: 'Plaža', highlightsKicker: 'Zašto gosti biraju ovu vilu', highlightsTitle: 'Sve bitno je jasno i brzo čitljivo.', feature1Title: 'Privatni grijani bazen', feature1Copy: 'Mirna jutra, večernje kupanje i potpuna privatnost.', feature2Title: 'Ljetna kuhinja', feature2Copy: 'Natkriveni prostor za večeru s roštiljem, hladnjakom i lounge zonom.', feature3Title: 'Lokalna podrška', feature3Copy: 'Brza pomoć prije i tijekom boravka.', feature4Title: 'Prednost direktne rezervacije', feature4Copy: 'Bez nepotrebnih OTA troškova i uz direktnu komunikaciju.', availabilityKicker: 'Live direktna rezervacija', availabilityTitle: 'Stvarna raspoloživost, potpune cijene i jasni uvjeti.', availabilityCopy: 'Datume provjeravamo izravno u sustavu za upravljanje objektom. Svaka raspoloživa cijena zadržava svoje uvjete predujma i otkaza.', rateLow: 'Niska sezona', rateMid: 'Srednja sezona', rateHigh: 'Visoka sezona', rateNote: 'Okvirne cijene po noći, bez čišćenja i boravišne pristojbe.', locationKicker: 'Lokacija', locationTitle: 'Otok Pag: dramatičan krajolik, čisto more i jednostavan dolazak.', locationCopy: 'Vila je pozicionirana za privatnost, a plaže, restorani u Novalji i izleti su blizu.', location1: '800 m do najbliže plaže', location2: '8 min vožnje do centra Novalje', location3: 'Oko 75 min od Zračne luke Zadar', finalTitle: 'Spremni provjeriti željene datume?', finalCopy: 'Pogledajte trenutačnu raspoloživost, potpunu cijenu i uvjete svake cijene.', finalButton: 'Provjeri raspoloživost', unavailable: 'Odabrani datumi uključuju nedostupna noćenja.', invalidDates: 'Odaberite ispravan datum dolaska i odlaska.', calendarLoading: 'Učitavamo live raspoloživost…', calendarLive: 'Live raspoloživost učitana', calendarFallback: 'Live kalendar trenutačno nije dostupan. Svejedno možete odabrati datume; sljedeći korak radi mjerodavnu provjeru.', calendarAvailable: 'Raspoloživo noćenje', calendarUnavailable: 'Neraspoloživo noćenje', calendarCheckoutOnly: 'Raspoloživo samo kao datum odlaska'
   },
   it: {
-    navVilla: 'La villa', navGallery: 'Galleria', navReviews: 'Recensioni', navLocation: 'Posizione', heroEyebrow: 'Villa di lusso con piscina privata · Novalja, isola di Pag', heroTitle: 'Una villa privata sull’Adriatico per famiglie e amici che cercano spazio, comfort e supporto locale.', heroCopy: 'Villa moderna con 4 camere, piscina riscaldata, terrazza vista mare, cucina estiva e supporto diretto da un team locale.', heroCta: 'Controlla disponibilità', heroSecondary: 'Dettagli villa', trustDirect: 'Miglior prezzo diretto', trustSupport: 'Supporto locale', trustSecure: 'Richiesta sicura', bookingTitle: 'Controlla le date', bookingCopy: 'Scegli date e ospiti per disponibilità live, prezzo completo e condizioni.', labelStayDates: 'Date del soggiorno', labelCheckin: 'Check-in', labelCheckout: 'Check-out', labelGuests: 'Ospiti', decreaseGuests: 'Riduci il numero di ospiti', increaseGuests: 'Aumenta il numero di ospiti', bookingButton: 'Controlla disponibilità', chooseDate: 'Scegli la data', selectDates: 'Seleziona le date', chooseStay: 'Scegli il soggiorno', selectArrival: 'Seleziona la data di arrivo', selectDeparture: 'Ora seleziona la partenza', done: 'Fatto', noDatesSelected: 'Nessuna data selezionata', oneNight: 'Soggiorno di 1 notte', nightCount: 'Soggiorno di {n} notti', villaKicker: 'La villa', villaTitle: 'Lusso rilassato, senza compromessi da hotel.', villaCopy: 'Villas Pastura combina vita all’aperto privata, camere spaziose e prenotazione diretta semplice. Ideale per famiglie, coppie e piccoli gruppi premium.', factBedrooms: 'Camere', factGuests: 'Ospiti', factPool: 'Piscina', factBeach: 'Spiaggia', highlightsKicker: 'Perché sceglierla', highlightsTitle: 'Tutto ciò che conta è facile da leggere.', feature1Title: 'Piscina privata riscaldata', feature1Copy: 'Mattine tranquille, tramonti in piscina e piena privacy.', feature2Title: 'Cucina esterna', feature2Copy: 'Zona pranzo coperta con grill, frigo e lounge.', feature3Title: 'Supporto locale', feature3Copy: 'Aiuto rapido prima e durante il soggiorno.', feature4Title: 'Valore diretto', feature4Copy: 'Evita commissioni OTA inutili e parla direttamente con il team locale.', availabilityKicker: 'Prenotazione diretta live', availabilityTitle: 'Disponibilità reale, prezzi completi e condizioni chiare.', availabilityCopy: 'Le date vengono verificate direttamente nel gestionale. Ogni tariffa mantiene prezzo, pagamento anticipato e condizioni di cancellazione.', rateLow: 'Bassa stagione', rateMid: 'Media stagione', rateHigh: 'Alta stagione', rateNote: 'Tariffe indicative per notte, pulizia e tassa turistica escluse.', locationKicker: 'Posizione', locationTitle: 'Isola di Pag: paesaggio unico, mare limpido e accesso semplice.', locationCopy: 'Privacy, spiagge, ristoranti di Novalja e gite giornaliere a portata di mano.', location1: '650 m dalla spiaggia più vicina', location2: '8 min in auto dal centro di Novalja', location3: 'Circa 75 min dall’aeroporto di Zara', finalTitle: 'Vuoi controllare le date preferite?', finalCopy: 'Vedi disponibilità attuale, prezzo completo e condizioni di ogni tariffa.', finalButton: 'Controlla disponibilità', unavailable: 'Le date selezionate includono notti non disponibili.', invalidDates: 'Scegli date valide di check-in e check-out.', calendarLoading: 'Caricamento disponibilità live…', calendarLive: 'Disponibilità live caricata', calendarFallback: 'Il calendario live non è momentaneamente disponibile. Puoi scegliere le date; il prossimo passo esegue il controllo definitivo.', calendarAvailable: 'Notte disponibile', calendarUnavailable: 'Notte non disponibile', calendarCheckoutOnly: 'Disponibile solo come data di partenza'
+    navVilla: 'La villa', navGallery: 'Galleria', navReviews: 'Recensioni', navLocation: 'Posizione', heroEyebrow: 'Villa di lusso con piscina privata · Novalja, isola di Pag', heroTitle: 'Una villa privata sull’Adriatico per famiglie e amici che cercano spazio, comfort e supporto locale.', heroCopy: 'Villa moderna con 4 camere, piscina riscaldata, terrazza vista mare, cucina estiva e supporto diretto da un team locale.', heroCta: 'Controlla disponibilità', heroSecondary: 'Dettagli villa', trustDirect: 'Miglior prezzo diretto', trustSupport: 'Supporto locale', trustSecure: 'Richiesta sicura', bookingTitle: 'Controlla le date', bookingCopy: 'Scegli date e ospiti per disponibilità live, prezzo completo e condizioni.', labelStayDates: 'Date del soggiorno', labelCheckin: 'Check-in', labelCheckout: 'Check-out', labelGuests: 'Ospiti', decreaseGuests: 'Riduci il numero di ospiti', increaseGuests: 'Aumenta il numero di ospiti', bookingButton: 'Controlla disponibilità', chooseDate: 'Scegli la data', selectDates: 'Seleziona le date', chooseStay: 'Scegli il soggiorno', selectArrival: 'Seleziona la data di arrivo', selectDeparture: 'Ora seleziona la partenza', done: 'Fatto', noDatesSelected: 'Nessuna data selezionata', oneNight: 'Soggiorno di 1 notte', nightCount: 'Soggiorno di {n} notti', villaKicker: 'La villa', villaTitle: 'Lusso rilassato, senza compromessi da hotel.', villaCopy: 'Villas Pastura combina vita all’aperto privata, camere spaziose e prenotazione diretta semplice. Ideale per famiglie, coppie e piccoli gruppi premium.', factBedrooms: 'Camere', factGuests: 'Ospiti', factPool: 'Piscina', factBeach: 'Spiaggia', highlightsKicker: 'Perché sceglierla', highlightsTitle: 'Tutto ciò che conta è facile da leggere.', feature1Title: 'Piscina privata riscaldata', feature1Copy: 'Mattine tranquille, tramonti in piscina e piena privacy.', feature2Title: 'Cucina esterna', feature2Copy: 'Zona pranzo coperta con grill, frigo e lounge.', feature3Title: 'Supporto locale', feature3Copy: 'Aiuto rapido prima e durante il soggiorno.', feature4Title: 'Valore diretto', feature4Copy: 'Evita commissioni OTA inutili e parla direttamente con il team locale.', availabilityKicker: 'Prenotazione diretta live', availabilityTitle: 'Disponibilità reale, prezzi completi e condizioni chiare.', availabilityCopy: 'Le date vengono verificate direttamente nel gestionale. Ogni tariffa mantiene prezzo, pagamento anticipato e condizioni di cancellazione.', rateLow: 'Bassa stagione', rateMid: 'Media stagione', rateHigh: 'Alta stagione', rateNote: 'Tariffe indicative per notte, pulizia e tassa turistica escluse.', locationKicker: 'Posizione', locationTitle: 'Isola di Pag: paesaggio unico, mare limpido e accesso semplice.', locationCopy: 'Privacy, spiagge, ristoranti di Novalja e gite giornaliere a portata di mano.', location1: '800 m dalla spiaggia più vicina', location2: '8 min in auto dal centro di Novalja', location3: 'Circa 75 min dall’aeroporto di Zara', finalTitle: 'Vuoi controllare le date preferite?', finalCopy: 'Vedi disponibilità attuale, prezzo completo e condizioni di ogni tariffa.', finalButton: 'Controlla disponibilità', unavailable: 'Le date selezionate includono notti non disponibili.', invalidDates: 'Scegli date valide di check-in e check-out.', calendarLoading: 'Caricamento disponibilità live…', calendarLive: 'Disponibilità live caricata', calendarFallback: 'Il calendario live non è momentaneamente disponibile. Puoi scegliere le date; il prossimo passo esegue il controllo definitivo.', calendarAvailable: 'Notte disponibile', calendarUnavailable: 'Notte non disponibile', calendarCheckoutOnly: 'Disponibile solo come data di partenza'
   }
 };
 
@@ -96,70 +96,70 @@ Object.assign(translations.en, {
   heroCopyMobile: '4 bedrooms · private pool · sea-view terrace · local support',
   heroCopy: 'Stay in a modern 4-bedroom villa with a private pool, sea-view terrace, summer kitchen and direct booking support from a local Pag team.',
   bookingTitleMobile: 'Check availability',
-  villaPrivacy: 'Each villa offers complete privacy, with its own entrance, fenced terrace and private pool. No outdoor facilities are shared.'
+  villaPrivacy: 'Each villa offers complete privacy, with its own entrance, fenced terrace and private heated pool. No outdoor facilities are shared.'
 });
 Object.assign(translations.de, {
   heroTitleMobile: 'Private Poolvillen in Novalja – geschaffen für gemeinsame Zeit.',
   heroCopyMobile: '4 Schlafzimmer · privater Pool · Meerblick-Terrasse · Betreuung vor Ort',
   heroCopy: 'Moderne Villa mit 4 Schlafzimmern, privatem Pool, Meerblick-Terrasse, Sommerküche und direkter Betreuung durch ein lokales Pag-Team.',
   bookingTitleMobile: 'Verfügbarkeit prüfen',
-  villaPrivacy: 'Jede Villa bietet vollständige Privatsphäre mit eigenem Eingang, umzäunter Terrasse und privatem Pool. Es werden keine Außenbereiche gemeinsam genutzt.'
+  villaPrivacy: 'Jede Villa bietet vollständige Privatsphäre mit eigenem Eingang, umzäunter Terrasse und privatem beheiztem Pool. Es werden keine Außenbereiche gemeinsam genutzt.'
 });
 Object.assign(translations.hr, {
   heroTitleMobile: 'Privatne vile s bazenom u Novalji, stvorene za zajedničke trenutke.',
   heroCopyMobile: '4 spavaće sobe · privatni bazen · terasa s pogledom na more · lokalna podrška',
   heroCopy: 'Moderna vila s 4 spavaće sobe, privatnim bazenom, terasom s pogledom na more, ljetnom kuhinjom i direktnom podrškom lokalnog tima.',
   bookingTitleMobile: 'Provjeri raspoloživost',
-  villaPrivacy: 'Svaka vila pruža potpunu privatnost te ima vlastiti ulaz, ograđenu terasu i privatni bazen. Nijedan vanjski sadržaj nije zajednički.'
+  villaPrivacy: 'Svaka vila pruža potpunu privatnost te ima vlastiti ulaz, ograđenu terasu i privatni grijani bazen. Nijedan vanjski sadržaj nije zajednički.'
 });
 Object.assign(translations.it, {
   heroTitleMobile: 'Ville con piscina privata a Novalja, pensate per stare insieme.',
   heroCopyMobile: '4 camere · piscina privata · terrazza vista mare · assistenza locale',
   heroCopy: 'Villa moderna con 4 camere, piscina privata, terrazza vista mare, cucina estiva e supporto diretto da un team locale.',
   bookingTitleMobile: 'Controlla disponibilità',
-  villaPrivacy: 'Ogni villa offre completa privacy, con ingresso indipendente, terrazza recintata e piscina privata. Nessuno spazio esterno è condiviso.'
+  villaPrivacy: 'Ogni villa offre completa privacy, con ingresso indipendente, terrazza recintata e piscina privata riscaldata. Nessuno spazio esterno è condiviso.'
 });
 
 Object.assign(translations.en, {
   villaCopy: 'Each villa has four ensuite bedrooms plus a guest WC, an open-plan living and dining area, and generous private outdoor space for up to 8 guests.',
-  factBathrooms: 'Ensuite bathrooms', factPoolValue: 'Private',
+  factBathrooms: 'Ensuite bathrooms', factPoolValue: 'Private & heated',
   highlightsKicker: 'Villa amenities', highlightsTitle: 'Made for private, easy-going time together.',
-  feature1Title: 'Private pool', feature1Copy: 'Each villa has its own pool and fenced terrace; no outdoor facilities are shared.',
+  feature1Title: 'Private pool', feature1Copy: 'Each villa has its own heated pool and fenced terrace; no outdoor facilities are shared.',
   feature2Title: 'Sea-view terrace', feature2Copy: 'A private outdoor setting for slow breakfasts and evenings together.',
   feature3Title: 'Outdoor kitchen & grill', feature3Copy: 'A covered dining area with grill, fridge and lounge space.',
   feature4Title: 'Private parking', feature4Copy: 'Convenient parking is available directly at the property.',
   feature5Title: 'EV charging', feature5Copy: 'Charge your electric vehicle at the villa.',
   feature6Title: 'Pet friendly', feature6Copy: 'Your four-legged family members are welcome.',
   amenitiesButton: 'View all amenities', amenitiesKicker: 'At a glance', amenitiesTitle: 'Villa amenities', amenitiesSpace: 'Space & comfort', amenitiesOutside: 'Private outdoor living', amenitiesPractical: 'Practical details',
-  amenityBedrooms: '4 bedrooms', amenityBathrooms: '4 ensuite bathrooms plus guest WC', amenityLiving: 'Open-plan living and dining area', amenityCapacity: 'Up to 8 guests', amenityPool: 'Private pool', amenityTerrace: 'Fenced sea-view terrace', amenityKitchen: 'Summer kitchen, grill and outdoor dining', amenityEntrance: 'Private entrance; no shared outdoor facilities', amenityParking: 'Private parking', amenityEv: 'EV charging', amenityPets: 'Pet friendly', amenitySupport: 'Direct support from the local team',
+  amenityBedrooms: '4 bedrooms', amenityBathrooms: '4 ensuite bathrooms plus guest WC', amenityLiving: 'Open-plan living and dining area', amenityCapacity: 'Up to 8 guests', amenityPool: 'Private heated pool', amenityTerrace: 'Fenced sea-view terrace', amenityKitchen: 'Summer kitchen, grill and outdoor dining', amenityEntrance: 'Private entrance; no shared outdoor facilities', amenityParking: 'Private parking', amenityEv: 'EV charging', amenityPets: 'Pet friendly', amenitySupport: 'Direct support from the local team',
   availabilityKicker: 'Why book direct', availabilityTitle: 'Our best direct-booking terms.', availabilityCopy: 'Priority support from a local hospitality team with more than 15 years of experience.',
   directPerksTitle: 'Included with our direct-booking offer', directPerk1: 'Free early check-in', directPerk2: 'Free late check-out (subject to availability)', directPerk3: 'Free parking', directPerk4: 'Pets stay free', directPerk5: 'Free EV charging · 22 kW',
   emailTeam: 'Email the local team', callTeam: 'Call the local team', sharePage: 'Share this villa', shareCopied: 'Link copied',
-  poiKicker: 'Plan your stay', poiTitle: 'Useful places and travel times', poiIntro: 'Final walking and driving times will be verified locally before publication.', poiBeaches: 'Beaches', poiNearestBeach: 'Nearest beach', poiBeachOptions: 'More nearby beaches', poiFood: 'Restaurants & cafés', poiNovaljaDining: 'Novalja dining', poiLocalPick: 'Local host recommendation', poiTravel: 'Getting here', poiNovaljaCentre: 'Novalja centre', poiZadarAirport: 'Zadar Airport', poiDistancePlaceholder: 'Walking time · Driving time', poiDrivingPlaceholder: 'Driving time', poiToBeAdded: 'To be added'
+  poiKicker: 'Plan your stay', poiTitle: 'Beaches, restaurants and island highlights', poiIntro: 'A concise local guide to useful places and experiences worth leaving the villa for.'
 });
 Object.assign(translations.de, {
   villaCopy: 'Jede Villa bietet vier Schlafzimmer mit eigenem Bad, ein Gäste-WC, einen offenen Wohn- und Essbereich sowie großzügigen privaten Außenraum für bis zu 8 Gäste.',
-  factBathrooms: 'Bäder en suite', factPoolValue: 'Privat', highlightsKicker: 'Ausstattung', highlightsTitle: 'Für private, unbeschwerte Zeit miteinander.',
-  feature1Title: 'Privater Pool', feature1Copy: 'Jede Villa hat einen eigenen Pool und eine umzäunte Terrasse; Außenbereiche werden nicht geteilt.', feature2Title: 'Terrasse mit Meerblick', feature2Copy: 'Privater Außenbereich für lange Frühstücke und gemeinsame Abende.', feature3Title: 'Sommerküche & Grill', feature3Copy: 'Überdachter Essbereich mit Grill, Kühlschrank und Lounge.', feature4Title: 'Privater Parkplatz', feature4Copy: 'Bequemes Parken direkt an der Unterkunft.', feature5Title: 'E-Ladestation', feature5Copy: 'Laden Sie Ihr Elektrofahrzeug an der Villa.', feature6Title: 'Haustierfreundlich', feature6Copy: 'Vierbeinige Familienmitglieder sind willkommen.',
-  amenitiesButton: 'Alle Ausstattungsmerkmale', amenitiesKicker: 'Auf einen Blick', amenitiesTitle: 'Ausstattung der Villa', amenitiesSpace: 'Raum & Komfort', amenitiesOutside: 'Privater Außenbereich', amenitiesPractical: 'Praktische Details', amenityBedrooms: '4 Schlafzimmer', amenityBathrooms: '4 Bäder en suite plus Gäste-WC', amenityLiving: 'Offener Wohn- und Essbereich', amenityCapacity: 'Bis zu 8 Gäste', amenityPool: 'Privater Pool', amenityTerrace: 'Umzäunte Terrasse mit Meerblick', amenityKitchen: 'Sommerküche, Grill und Essbereich', amenityEntrance: 'Eigener Eingang; keine geteilten Außenbereiche', amenityParking: 'Privater Parkplatz', amenityEv: 'E-Ladestation', amenityPets: 'Haustierfreundlich', amenitySupport: 'Direkter Kontakt zum lokalen Team',
+  factBathrooms: 'Bäder en suite', factPoolValue: 'Privat & beheizt', highlightsKicker: 'Ausstattung', highlightsTitle: 'Für private, unbeschwerte Zeit miteinander.',
+  feature1Title: 'Privater Pool', feature1Copy: 'Jede Villa hat einen eigenen beheizten Pool und eine umzäunte Terrasse; Außenbereiche werden nicht geteilt.', feature2Title: 'Terrasse mit Meerblick', feature2Copy: 'Privater Außenbereich für lange Frühstücke und gemeinsame Abende.', feature3Title: 'Sommerküche & Grill', feature3Copy: 'Überdachter Essbereich mit Grill, Kühlschrank und Lounge.', feature4Title: 'Privater Parkplatz', feature4Copy: 'Bequemes Parken direkt an der Unterkunft.', feature5Title: 'E-Ladestation', feature5Copy: 'Laden Sie Ihr Elektrofahrzeug an der Villa.', feature6Title: 'Haustierfreundlich', feature6Copy: 'Vierbeinige Familienmitglieder sind willkommen.',
+  amenitiesButton: 'Alle Ausstattungsmerkmale', amenitiesKicker: 'Auf einen Blick', amenitiesTitle: 'Ausstattung der Villa', amenitiesSpace: 'Raum & Komfort', amenitiesOutside: 'Privater Außenbereich', amenitiesPractical: 'Praktische Details', amenityBedrooms: '4 Schlafzimmer', amenityBathrooms: '4 Bäder en suite plus Gäste-WC', amenityLiving: 'Offener Wohn- und Essbereich', amenityCapacity: 'Bis zu 8 Gäste', amenityPool: 'Privater beheizter Pool', amenityTerrace: 'Umzäunte Terrasse mit Meerblick', amenityKitchen: 'Sommerküche, Grill und Essbereich', amenityEntrance: 'Eigener Eingang; keine geteilten Außenbereiche', amenityParking: 'Privater Parkplatz', amenityEv: 'E-Ladestation', amenityPets: 'Haustierfreundlich', amenitySupport: 'Direkter Kontakt zum lokalen Team',
   availabilityKicker: 'Warum direkt buchen', availabilityTitle: 'Unsere besten Konditionen für Direktbuchungen.', availabilityCopy: 'Bevorzugte Betreuung durch ein lokales Hospitality-Team mit mehr als 15 Jahren Erfahrung.', directPerksTitle: 'In unserem Direktbuchungsangebot enthalten', directPerk1: 'Kostenloser früher Check-in', directPerk2: 'Kostenloser später Check-out (nach Verfügbarkeit)', directPerk3: 'Kostenloser Parkplatz', directPerk4: 'Haustiere ohne Aufpreis', directPerk5: 'Kostenloses Laden für Elektrofahrzeuge · 22 kW', emailTeam: 'Lokales Team mailen', callTeam: 'Lokales Team anrufen', sharePage: 'Villa teilen', shareCopied: 'Link kopiert',
-  poiKicker: 'Aufenthalt planen', poiTitle: 'Nützliche Orte und Fahrzeiten', poiIntro: 'Geh- und Fahrzeiten werden vor Veröffentlichung vor Ort geprüft.', poiBeaches: 'Strände', poiNearestBeach: 'Nächster Strand', poiBeachOptions: 'Weitere Strände', poiFood: 'Restaurants & Cafés', poiNovaljaDining: 'Gastronomie in Novalja', poiLocalPick: 'Empfehlung des lokalen Teams', poiTravel: 'Anreise', poiNovaljaCentre: 'Zentrum von Novalja', poiZadarAirport: 'Flughafen Zadar', poiDistancePlaceholder: 'Gehzeit · Fahrzeit', poiDrivingPlaceholder: 'Fahrzeit', poiToBeAdded: 'Wird ergänzt'
+  poiKicker: 'Aufenthalt planen', poiTitle: 'Strände, Restaurants und Insel-Highlights', poiIntro: 'Ein kompakter lokaler Guide zu nützlichen Orten und Erlebnissen, für die sich ein Ausflug lohnt.'
 });
 Object.assign(translations.hr, {
   villaCopy: 'Svaka vila ima četiri spavaće sobe s vlastitom kupaonicom, dodatni WC, otvoreni dnevni i blagovaonski prostor te prostran privatni vanjski prostor za najviše 8 gostiju.',
-  factBathrooms: 'Ensuite kupaonice', factPoolValue: 'Privatni', highlightsKicker: 'Sadržaji vile', highlightsTitle: 'Za privatno i opušteno zajedničko vrijeme.',
-  feature1Title: 'Privatni bazen', feature1Copy: 'Svaka vila ima vlastiti bazen i ograđenu terasu; vanjski sadržaji nisu zajednički.', feature2Title: 'Terasa s pogledom na more', feature2Copy: 'Privatan vanjski prostor za duga jutra i zajedničke večeri.', feature3Title: 'Ljetna kuhinja i roštilj', feature3Copy: 'Natkrivena blagovaonica s roštiljem, hladnjakom i lounge prostorom.', feature4Title: 'Privatni parking', feature4Copy: 'Praktično parkiranje izravno uz objekt.', feature5Title: 'Punjenje električnih vozila', feature5Copy: 'Električno vozilo možete puniti kod vile.', feature6Title: 'Kućni ljubimci dobrodošli', feature6Copy: 'Dobrodošli su i četveronožni članovi obitelji.',
-  amenitiesButton: 'Pogledaj sve sadržaje', amenitiesKicker: 'Brzi pregled', amenitiesTitle: 'Sadržaji vile', amenitiesSpace: 'Prostor i udobnost', amenitiesOutside: 'Privatni vanjski prostor', amenitiesPractical: 'Praktični detalji', amenityBedrooms: '4 spavaće sobe', amenityBathrooms: '4 ensuite kupaonice i dodatni WC', amenityLiving: 'Otvoreni dnevni i blagovaonski prostor', amenityCapacity: 'Najviše 8 gostiju', amenityPool: 'Privatni bazen', amenityTerrace: 'Ograđena terasa s pogledom na more', amenityKitchen: 'Ljetna kuhinja, roštilj i vanjska blagovaonica', amenityEntrance: 'Vlastiti ulaz; bez zajedničkih vanjskih sadržaja', amenityParking: 'Privatni parking', amenityEv: 'Punjenje električnih vozila', amenityPets: 'Kućni ljubimci dobrodošli', amenitySupport: 'Direktna podrška lokalnog tima',
+  factBathrooms: 'Ensuite kupaonice', factPoolValue: 'Privatni i grijani', highlightsKicker: 'Sadržaji vile', highlightsTitle: 'Za privatno i opušteno zajedničko vrijeme.',
+  feature1Title: 'Privatni bazen', feature1Copy: 'Svaka vila ima vlastiti grijani bazen i ograđenu terasu; vanjski sadržaji nisu zajednički.', feature2Title: 'Terasa s pogledom na more', feature2Copy: 'Privatan vanjski prostor za duga jutra i zajedničke večeri.', feature3Title: 'Ljetna kuhinja i roštilj', feature3Copy: 'Natkrivena blagovaonica s roštiljem, hladnjakom i lounge prostorom.', feature4Title: 'Privatni parking', feature4Copy: 'Praktično parkiranje izravno uz objekt.', feature5Title: 'Punjenje električnih vozila', feature5Copy: 'Električno vozilo možete puniti kod vile.', feature6Title: 'Kućni ljubimci dobrodošli', feature6Copy: 'Dobrodošli su i četveronožni članovi obitelji.',
+  amenitiesButton: 'Pogledaj sve sadržaje', amenitiesKicker: 'Brzi pregled', amenitiesTitle: 'Sadržaji vile', amenitiesSpace: 'Prostor i udobnost', amenitiesOutside: 'Privatni vanjski prostor', amenitiesPractical: 'Praktični detalji', amenityBedrooms: '4 spavaće sobe', amenityBathrooms: '4 ensuite kupaonice i dodatni WC', amenityLiving: 'Otvoreni dnevni i blagovaonski prostor', amenityCapacity: 'Najviše 8 gostiju', amenityPool: 'Privatni grijani bazen', amenityTerrace: 'Ograđena terasa s pogledom na more', amenityKitchen: 'Ljetna kuhinja, roštilj i vanjska blagovaonica', amenityEntrance: 'Vlastiti ulaz; bez zajedničkih vanjskih sadržaja', amenityParking: 'Privatni parking', amenityEv: 'Punjenje električnih vozila', amenityPets: 'Kućni ljubimci dobrodošli', amenitySupport: 'Direktna podrška lokalnog tima',
   availabilityKicker: 'Zašto rezervirati direktno', availabilityTitle: 'Naši najbolji uvjeti za direktnu rezervaciju.', availabilityCopy: 'Prioritetna podrška lokalnog hospitality tima s više od 15 godina iskustva.', directPerksTitle: 'Uključeno u našu ponudu za direktnu rezervaciju', directPerk1: 'Besplatan raniji check-in', directPerk2: 'Besplatan kasniji check-out (ovisno o raspoloživosti)', directPerk3: 'Besplatan parking', directPerk4: 'Boravak kućnih ljubimaca bez nadoplate', directPerk5: 'Besplatno punjenje električnih vozila · 22 kW', emailTeam: 'Pošalji e-mail lokalnom timu', callTeam: 'Nazovi lokalni tim', sharePage: 'Podijeli vilu', shareCopied: 'Poveznica kopirana',
-  poiKicker: 'Isplanirajte boravak', poiTitle: 'Korisna mjesta i vremena putovanja', poiIntro: 'Točna vremena hodanja i vožnje lokalno ćemo provjeriti prije objave.', poiBeaches: 'Plaže', poiNearestBeach: 'Najbliža plaža', poiBeachOptions: 'Ostale obližnje plaže', poiFood: 'Restorani i kafići', poiNovaljaDining: 'Gastronomija u Novalji', poiLocalPick: 'Preporuka lokalnog host tima', poiTravel: 'Dolazak', poiNovaljaCentre: 'Centar Novalje', poiZadarAirport: 'Zračna luka Zadar', poiDistancePlaceholder: 'Pješice · Vožnja', poiDrivingPlaceholder: 'Vrijeme vožnje', poiToBeAdded: 'Bit će dodano'
+  poiKicker: 'Isplanirajte boravak', poiTitle: 'Plaže, restorani i posebna mjesta na otoku', poiIntro: 'Kratki lokalni vodič kroz korisna mjesta i doživljaje zbog kojih vrijedi izaći iz vile.'
 });
 Object.assign(translations.it, {
   villaCopy: 'Ogni villa dispone di quattro camere con bagno privato, un WC per gli ospiti, zona giorno e pranzo open space e ampi spazi esterni privati per un massimo di 8 ospiti.',
-  factBathrooms: 'Bagni en suite', factPoolValue: 'Privata', highlightsKicker: 'Servizi della villa', highlightsTitle: 'Pensata per stare insieme in completa privacy.',
-  feature1Title: 'Piscina privata', feature1Copy: 'Ogni villa ha piscina e terrazza recintata proprie; nessuno spazio esterno è condiviso.', feature2Title: 'Terrazza vista mare', feature2Copy: 'Uno spazio privato per colazioni lente e serate insieme.', feature3Title: 'Cucina estiva e grill', feature3Copy: 'Zona pranzo coperta con grill, frigorifero e lounge.', feature4Title: 'Parcheggio privato', feature4Copy: 'Comodo parcheggio direttamente presso la struttura.', feature5Title: 'Ricarica veicoli elettrici', feature5Copy: 'Ricarica l’auto elettrica presso la villa.', feature6Title: 'Animali ammessi', feature6Copy: 'Gli amici a quattro zampe sono i benvenuti.',
-  amenitiesButton: 'Vedi tutti i servizi', amenitiesKicker: 'In sintesi', amenitiesTitle: 'Servizi della villa', amenitiesSpace: 'Spazio e comfort', amenitiesOutside: 'Vita privata all’aperto', amenitiesPractical: 'Dettagli pratici', amenityBedrooms: '4 camere', amenityBathrooms: '4 bagni en suite più WC ospiti', amenityLiving: 'Zona giorno e pranzo open space', amenityCapacity: 'Fino a 8 ospiti', amenityPool: 'Piscina privata', amenityTerrace: 'Terrazza recintata vista mare', amenityKitchen: 'Cucina estiva, grill e zona pranzo', amenityEntrance: 'Ingresso indipendente; nessuno spazio esterno condiviso', amenityParking: 'Parcheggio privato', amenityEv: 'Ricarica veicoli elettrici', amenityPets: 'Animali ammessi', amenitySupport: 'Assistenza diretta del team locale',
+  factBathrooms: 'Bagni en suite', factPoolValue: 'Privata e riscaldata', highlightsKicker: 'Servizi della villa', highlightsTitle: 'Pensata per stare insieme in completa privacy.',
+  feature1Title: 'Piscina privata', feature1Copy: 'Ogni villa ha una piscina riscaldata e una terrazza recintata proprie; nessuno spazio esterno è condiviso.', feature2Title: 'Terrazza vista mare', feature2Copy: 'Uno spazio privato per colazioni lente e serate insieme.', feature3Title: 'Cucina estiva e grill', feature3Copy: 'Zona pranzo coperta con grill, frigorifero e lounge.', feature4Title: 'Parcheggio privato', feature4Copy: 'Comodo parcheggio direttamente presso la struttura.', feature5Title: 'Ricarica veicoli elettrici', feature5Copy: 'Ricarica l’auto elettrica presso la villa.', feature6Title: 'Animali ammessi', feature6Copy: 'Gli amici a quattro zampe sono i benvenuti.',
+  amenitiesButton: 'Vedi tutti i servizi', amenitiesKicker: 'In sintesi', amenitiesTitle: 'Servizi della villa', amenitiesSpace: 'Spazio e comfort', amenitiesOutside: 'Vita privata all’aperto', amenitiesPractical: 'Dettagli pratici', amenityBedrooms: '4 camere', amenityBathrooms: '4 bagni en suite più WC ospiti', amenityLiving: 'Zona giorno e pranzo open space', amenityCapacity: 'Fino a 8 ospiti', amenityPool: 'Piscina privata riscaldata', amenityTerrace: 'Terrazza recintata vista mare', amenityKitchen: 'Cucina estiva, grill e zona pranzo', amenityEntrance: 'Ingresso indipendente; nessuno spazio esterno condiviso', amenityParking: 'Parcheggio privato', amenityEv: 'Ricarica veicoli elettrici', amenityPets: 'Animali ammessi', amenitySupport: 'Assistenza diretta del team locale',
   availabilityKicker: 'Perché prenotare direttamente', availabilityTitle: 'Le nostre migliori condizioni per la prenotazione diretta.', availabilityCopy: 'Assistenza prioritaria da un team locale con oltre 15 anni di esperienza.', directPerksTitle: 'Incluso nella nostra offerta di prenotazione diretta', directPerk1: 'Check-in anticipato gratuito', directPerk2: 'Check-out posticipato gratuito (soggetto a disponibilità)', directPerk3: 'Parcheggio gratuito', directPerk4: 'Animali domestici senza supplemento', directPerk5: 'Ricarica gratuita per veicoli elettrici · 22 kW', emailTeam: 'Scrivi al team locale', callTeam: 'Chiama il team locale', sharePage: 'Condividi la villa', shareCopied: 'Link copiato',
-  poiKicker: 'Organizza il soggiorno', poiTitle: 'Luoghi utili e tempi di percorrenza', poiIntro: 'I tempi a piedi e in auto saranno verificati localmente prima della pubblicazione.', poiBeaches: 'Spiagge', poiNearestBeach: 'Spiaggia più vicina', poiBeachOptions: 'Altre spiagge vicine', poiFood: 'Ristoranti e caffè', poiNovaljaDining: 'Ristoranti di Novalja', poiLocalPick: 'Consiglio del team locale', poiTravel: 'Come arrivare', poiNovaljaCentre: 'Centro di Novalja', poiZadarAirport: 'Aeroporto di Zara', poiDistancePlaceholder: 'A piedi · In auto', poiDrivingPlaceholder: 'Tempo in auto', poiToBeAdded: 'Da aggiungere'
+  poiKicker: 'Organizza il soggiorno', poiTitle: 'Spiagge, ristoranti e luoghi speciali dell’isola', poiIntro: 'Una guida locale essenziale ai luoghi utili e alle esperienze per cui vale la pena uscire dalla villa.'
 });
 
 let currentLang = localStorage.getItem('villa-lang') || 'en';
@@ -175,11 +175,16 @@ const menuToggle = document.querySelector('[data-menu-toggle]');
 const nav = document.querySelector('[data-nav]');
 const languageSelect = document.querySelector('#language-select');
 const amenitiesDialog = document.querySelector('#amenities-dialog');
+const amenitiesGroups = document.querySelector('.amenities-groups');
 const amenitiesOpenButton = document.querySelector('[data-amenities-open]');
 const amenitiesCloseButton = document.querySelector('[data-amenities-close]');
 const shareButton = document.querySelector('[data-share-page]');
 const directPerksList = document.querySelector('#direct-perks-list');
+const poiGrid = document.querySelector('#poi-grid');
+const poiNotice = document.querySelector('#poi-notice');
 let directBookingBenefits = null;
+let amenitiesContent = null;
+let poiContent = null;
 const faqPreviewDataElement = document.querySelector('#faq-preview-data');
 let faqPreviewData = { items: [] };
 try {
@@ -240,10 +245,100 @@ document.documentElement.classList.add('booking-progressive-ready');
 updateBookingProgressiveState();
 window.addEventListener('load', () => window.setTimeout(loadCalendarAvailability, 1000), { once: true });
 loadDirectBookingBenefits();
+loadAmenitiesContent();
+loadPoiContent();
+
+async function loadPoiContent() {
+  try {
+    const response = await fetch('assets/data/poi-content.json?v=1.25.0', { headers: { Accept: 'application/json' } });
+    if (!response.ok) throw new Error(`POI request failed with ${response.status}`);
+    const payload = await response.json();
+    if (payload.schemaVersion !== 1 || !Array.isArray(payload.groups)) throw new Error('Unsupported POI data.');
+    poiContent = payload;
+    renderPoiContent();
+  } catch (error) {
+    console.error('POI content could not be loaded; using the HTML fallback.', error);
+  }
+}
+
+function renderPoiContent() {
+  if (!poiGrid || !poiContent?.groups?.length) return;
+  const mapLabel = poiContent.mapLabels?.[currentLang] || poiContent.mapLabels?.en || 'Open in Google Maps';
+  const sections = poiContent.groups.map((group) => {
+    const section = document.createElement('section');
+    section.className = 'poi-card';
+    const heading = document.createElement('h3');
+    heading.textContent = group.title?.[currentLang] || group.title?.en || '';
+    const list = document.createElement('ul');
+    list.className = 'poi-list';
+    (group.items || []).forEach((item) => {
+      const listItem = document.createElement('li');
+      const link = document.createElement('a');
+      link.className = 'poi-link';
+      link.href = item.mapUrl;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      const nameRow = document.createElement('span');
+      nameRow.className = 'poi-name-row';
+      const name = document.createElement('strong');
+      name.textContent = item.name?.[currentLang] || item.name?.en || '';
+      const mapIcon = document.createElement('span');
+      mapIcon.className = 'poi-map-icon';
+      mapIcon.setAttribute('aria-hidden', 'true');
+      mapIcon.textContent = '↗';
+      nameRow.append(name, mapIcon);
+      const description = document.createElement('span');
+      description.className = 'poi-description';
+      description.textContent = item.description?.[currentLang] || item.description?.en || '';
+      const travel = document.createElement('span');
+      travel.className = 'poi-travel';
+      travel.textContent = item.travel?.[currentLang] || item.travel?.en || '';
+      link.setAttribute('aria-label', `${name.textContent} · ${mapLabel}`);
+      link.append(nameRow, description, travel);
+      listItem.append(link);
+      list.append(listItem);
+    });
+    section.append(heading, list);
+    return section;
+  });
+  poiGrid.replaceChildren(...sections);
+  if (poiNotice) poiNotice.textContent = poiContent.notice?.[currentLang] || poiContent.notice?.en || '';
+}
+
+async function loadAmenitiesContent() {
+  try {
+    const response = await fetch('assets/data/amenities-content.json?v=1.25.0', { headers: { Accept: 'application/json' } });
+    if (!response.ok) throw new Error(`Amenities request failed with ${response.status}`);
+    const payload = await response.json();
+    if (payload.schemaVersion !== 1 || !Array.isArray(payload.groups)) throw new Error('Unsupported amenities data.');
+    amenitiesContent = payload;
+    renderAmenities();
+  } catch (error) {
+    console.error('Amenities content could not be loaded.', error);
+  }
+}
+
+function renderAmenities() {
+  if (!amenitiesGroups || !amenitiesContent?.groups?.length) return;
+  const sections = amenitiesContent.groups.map((group) => {
+    const section = document.createElement('section');
+    const heading = document.createElement('h3');
+    const list = document.createElement('ul');
+    heading.textContent = group.title?.[currentLang] || group.title?.en || '';
+    (group.items || []).forEach((item) => {
+      const listItem = document.createElement('li');
+      listItem.textContent = item.labels?.[currentLang] || item.labels?.en || '';
+      list.append(listItem);
+    });
+    section.append(heading, list);
+    return section;
+  });
+  amenitiesGroups.replaceChildren(...sections);
+}
 
 async function loadDirectBookingBenefits() {
   try {
-    const response = await fetch('assets/data/direct-booking-benefits.json?v=1.22.0', { headers: { Accept: 'application/json' } });
+    const response = await fetch('assets/data/direct-booking-benefits.json?v=1.25.0', { headers: { Accept: 'application/json' } });
     if (!response.ok) throw new Error(`Benefits request failed with ${response.status}`);
     directBookingBenefits = await response.json();
     renderDirectBookingBenefits();
@@ -429,6 +524,8 @@ function applyLanguage(lang) {
     details.querySelector('[data-faq-answer]').textContent = item.answer?.[lang] || item.answer?.en || '';
   });
   renderDirectBookingBenefits();
+  renderAmenities();
+  renderPoiContent();
   closeCalendarButton.setAttribute('aria-label', dict.closeCalendar);
   amenitiesCloseButton?.setAttribute('aria-label', dict.closeCalendar);
   previousMonthButton.setAttribute('aria-label', dict.previousMonth);

@@ -9,6 +9,7 @@ const required = [
   'config/booking-presentation.json', 'config/booking-presentation.schema.json',
   'migrations/0001_booking_checkout.sql',
   'assets/js/app.js', 'assets/js/availability.js', 'assets/js/booking.js',
+  'assets/data/amenities-content.json', 'assets/data/poi-content.json',
 ];
 for (const file of required) await access(join(root, file));
 
@@ -39,7 +40,7 @@ for (const file of await walk(root)) {
 }
 
 const worker = await readFile(join(root, 'worker/index.js'), 'utf8');
-if (/CreateReservation/i.test(worker)) throw new Error('CreateReservation must remain absent from v1.22.0.');
+if (/CreateReservation/i.test(worker)) throw new Error('CreateReservation must remain absent from v1.25.0.');
 if (!worker.includes('NOKUMO_API_KEY') || !worker.includes('QUOTE_SIGNING_SECRET')) throw new Error('Worker secret bindings are missing.');
 if (!worker.includes('/booking-requests') || !worker.includes('/checkout-sessions')) throw new Error('Booking-request endpoints are missing.');
 
@@ -52,7 +53,64 @@ if (!homepage.includes('hero-title-mobile') || !homepage.includes('booking-progr
 if (!homepage.includes('children0To11') || !homepage.includes('children12To17')) throw new Error('Guest age-band controls are missing.');
 if (!homepage.includes('Each villa offers complete privacy')) throw new Error('Approved villa privacy statement is missing.');
 if (!homepage.includes('<dd>8</dd>') || !homepage.includes('factBathrooms')) throw new Error('Correct capacity or ensuite-bathroom fact is missing.');
-if (!homepage.includes('amenities-dialog') || !homepage.includes('poiDistancePlaceholder')) throw new Error('Amenities modal or POI placeholders are missing.');
+if (!homepage.includes('amenities-dialog') || !homepage.includes('id="poi-grid"') || !homepage.includes('id="poi-notice"')) throw new Error('Amenities modal or POI guide markup is missing.');
+if (!homepage.includes('Private heated pool') || !app.includes('renderAmenities')) throw new Error('Heated-pool amenity fallback or data-driven amenity renderer is missing.');
+const sharedStyles = await readFile(join(root, 'assets/css/styles.css'), 'utf8');
+const reviewStyles = await readFile(join(root, 'assets/css/reviews.css'), 'utf8');
+if (!sharedStyles.includes('.button-primary { background: var(--color-gold); color: var(--color-deep-2); }')) throw new Error('Primary button brand-colour contrast refinement is missing.');
+if (!reviewStyles.includes('background: var(--color-deep-2)') || !reviewStyles.includes('.reviews-page .brand-text small { color: white;') || !reviewStyles.includes('.reviews-page .primary-nav a { padding: 10px 12px; color: white;')) {
+  throw new Error('Reviews-page header contrast refinements are missing.');
+}
+
+const amenities = JSON.parse(await readFile(join(root, 'assets/data/amenities-content.json'), 'utf8'));
+const expectedAmenityGroups = ['pool-outdoor', 'space-comfort', 'kitchen-dining', 'entertainment-work', 'parking-services', 'safety'];
+if (amenities.schemaVersion !== 1 || amenities.groups?.map((group) => group.id).join(',') !== expectedAmenityGroups.join(',')) {
+  throw new Error('Amenity groups are missing or out of order.');
+}
+const amenityItemIds = new Set();
+for (const group of amenities.groups) {
+  if (!['en', 'de', 'hr', 'it'].every((language) => group.title?.[language])) throw new Error(`Amenity group ${group.id} is missing a translation.`);
+  for (const item of group.items || []) {
+    if (amenityItemIds.has(item.id)) throw new Error(`Duplicate amenity item ID: ${item.id}`);
+    amenityItemIds.add(item.id);
+    if (!['en', 'de', 'hr', 'it'].every((language) => item.labels?.[language])) throw new Error(`Amenity ${item.id} is missing a translation.`);
+  }
+}
+const amenityById = new Map(amenities.groups.flatMap((group) => group.items).map((item) => [item.id, item]));
+if (!/heated/i.test(amenityById.get('heated-pool')?.labels?.en || '') || !/22 kW/.test(amenityById.get('ev-charging')?.labels?.en || '')) {
+  throw new Error('Heated-pool or 22 kW EV amenity details are missing.');
+}
+
+const poi = JSON.parse(await readFile(join(root, 'assets/data/poi-content.json'), 'utf8'));
+const expectedPoiGroups = ['beaches', 'food', 'essentials', 'explore'];
+if (poi.schemaVersion !== 1 || poi.groups?.map((group) => group.id).join(',') !== expectedPoiGroups.join(',')) {
+  throw new Error('POI groups are missing or out of order.');
+}
+if (!['en', 'de', 'hr', 'it'].every((language) => poi.notice?.[language] && poi.mapLabels?.[language])) {
+  throw new Error('POI map labels or distance notice translations are incomplete.');
+}
+const poiItemIds = new Set();
+const poiById = new Map();
+for (const group of poi.groups) {
+  if (!['en', 'de', 'hr', 'it'].every((language) => group.title?.[language])) throw new Error(`POI group ${group.id} is missing a translation.`);
+  for (const item of group.items || []) {
+    if (poiItemIds.has(item.id)) throw new Error(`Duplicate POI item ID: ${item.id}`);
+    poiItemIds.add(item.id);
+    poiById.set(item.id, item);
+    if (!['en', 'de', 'hr', 'it'].every((language) => item.name?.[language] && item.description?.[language] && item.travel?.[language])) {
+      throw new Error(`POI ${item.id} is missing a translation.`);
+    }
+    if (!item.mapUrl?.startsWith('https://www.google.com/maps/')) throw new Error(`POI ${item.id} has an invalid map URL.`);
+  }
+}
+if (poiItemIds.size !== 13) throw new Error('The POI guide must contain the 13 approved places.');
+for (const id of ['beach-terra', 'babe-beach', 'planjka-beach', 'starac-i-more', 'konoba-galia', 'boskinac', 'supermarket', 'novalja-centre', 'zadar-airport', 'roman-aqueduct', 'olive-gardens', 'cape-lun', 'life-on-mars']) {
+  if (!poiById.has(id)) throw new Error(`Approved POI ${id} is missing.`);
+}
+if (!poiById.get('konoba-galia')?.travel?.en?.includes('≈ 5 km') || /1\.0 km/.test(poiById.get('konoba-galia')?.travel?.en || '')) {
+  throw new Error('Konoba Galia still uses the inherited incorrect distance.');
+}
+if (!app.includes('renderPoiContent')) throw new Error('The data-driven POI renderer is missing.');
 
 const availabilityPage = await readFile(join(root, 'availability.html'), 'utf8');
 const availabilityClient = await readFile(join(root, 'assets/js/availability.js'), 'utf8');
@@ -113,4 +171,4 @@ for (const file of (await walk(root)).filter((path) => path.endsWith('.html'))) 
   }
 }
 
-console.log('Validated v1.22.0 files, offer presentation, child age bands, Nokumo policy dates, D1 checkout routing, booking request, versioned assets, local links and credential hygiene.');
+console.log('Validated v1.25.0 files, multilingual amenities and POI guide, heated-pool wording, offer presentation, child age bands, Nokumo policy dates, D1 checkout routing, booking request, versioned assets, local links and credential hygiene.');

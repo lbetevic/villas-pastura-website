@@ -91,7 +91,7 @@ h3 { margin: 0 0 8px; font-size: 1.12rem; color: var(--color-deep-2); }
 }
 .form-grid { display: grid; gap: 12px; }
 .button { min-height: 50px; display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; padding: 12px 20px; text-decoration: none; font-weight: 800; border: 0; cursor: pointer; }
-.button-primary { background: var(--color-gold); color: #241c0d; }
+.button-primary { background: var(--color-gold); color: var(--color-deep-2); }
 .button-primary:hover { filter: brightness(.96); }
 .button-secondary { border: 1px solid var(--color-deep); background: white; color: var(--color-deep); }
 .button-secondary:hover { background: rgb(18 60 85 / 6%); }
@@ -256,7 +256,7 @@ h3 { margin: 0 0 8px; font-size: 1.12rem; color: var(--color-deep-2); }
 .feature-card h3 { margin-top: 0; }
 .feature-card p { margin: 0; color: var(--color-muted); }
 .amenities-button { margin-top: 22px; }
-.amenities-dialog { width: min(820px, calc(100% - 32px)); max-height: min(760px, calc(100dvh - 32px)); padding: 0; border: 0; border-radius: 22px; box-shadow: var(--shadow); }
+.amenities-dialog { width: min(980px, calc(100% - 32px)); max-height: min(760px, calc(100dvh - 32px)); padding: 0; border: 0; border-radius: 22px; box-shadow: var(--shadow); }
 .amenities-dialog::backdrop { background: rgb(7 23 32 / 66%); backdrop-filter: blur(3px); }
 .amenities-dialog-panel { padding: 24px; }
 .amenities-dialog header { display: flex; align-items: start; justify-content: space-between; gap: 20px; padding-bottom: 18px; border-bottom: 1px solid var(--color-border); }
@@ -287,10 +287,20 @@ h3 { margin: 0 0 8px; font-size: 1.12rem; color: var(--color-deep-2); }
 .poi-grid { display: grid; gap: 14px; margin-top: 24px; }
 .poi-card { padding: 20px; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: white; }
 .poi-card h3 { margin: 0 0 14px; color: var(--color-deep-2); }
-.poi-card dl { display: grid; gap: 14px; margin: 0; }
-.poi-card dl div { padding-top: 12px; border-top: 1px solid var(--color-border); }
-.poi-card dt { font-weight: 800; color: var(--color-deep); }
-.poi-card dd { margin: 3px 0 0; color: var(--color-muted); font-size: .9rem; }
+.poi-list { display: grid; list-style: none; margin: 0; padding: 0; }
+.poi-list li + li { border-top: 1px solid var(--color-border); }
+.poi-link { display: grid; gap: 5px; padding: 14px 0; color: inherit; text-decoration: none; }
+.poi-list li:first-child .poi-link { padding-top: 0; }
+.poi-list li:last-child .poi-link { padding-bottom: 0; }
+.poi-name-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+.poi-name-row strong { color: var(--color-deep); }
+.poi-map-icon { display: inline-grid; flex: 0 0 auto; width: 28px; height: 28px; place-items: center; border: 1px solid var(--color-border); border-radius: 50%; color: var(--color-sea); line-height: 1; transition: border-color .2s ease, background .2s ease, color .2s ease; }
+.poi-description { color: var(--color-muted); font-size: .9rem; line-height: 1.45; }
+.poi-travel { color: var(--color-sea); font-size: .84rem; font-weight: 800; line-height: 1.35; }
+.poi-link:hover .poi-name-row strong, .poi-link:focus-visible .poi-name-row strong { color: var(--color-sea); }
+.poi-link:hover .poi-map-icon, .poi-link:focus-visible .poi-map-icon { border-color: var(--color-sea); background: var(--color-sea); color: white; }
+.poi-link:focus-visible { border-radius: 8px; outline: 3px solid color-mix(in srgb, var(--color-sea) 28%, transparent); outline-offset: 4px; }
+.poi-notice { max-width: 760px; margin: 16px 0 0; color: var(--color-muted); font-size: .82rem; line-height: 1.5; }
 .final-cta { background: var(--color-deep-2); color: white; }
 .final-cta h2 { color: white; }
 .final-cta p { color: rgb(255 255 255 / 78%); }
@@ -316,7 +326,8 @@ h3 { margin: 0 0 8px; font-size: 1.12rem; color: var(--color-deep-2); }
   .form-grid .field select, .form-grid .guest-stepper, .form-grid .guest-summary-trigger, .form-grid .form-submit, .form-grid .date-range-trigger { min-height: 64px; height: 64px; }
   .booking-card { padding: 28px; }
   .cards-grid { grid-template-columns: repeat(2, 1fr); }
-  .amenities-groups, .poi-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .amenities-groups { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .poi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .footer-inner { display: flex; justify-content: space-between; align-items: center; }
 }
 

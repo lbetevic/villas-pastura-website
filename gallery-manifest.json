@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "gallery": {
     "name": "Villas Pastura photo gallery",
-    "description": "Private pool villas, sea-view terraces and contemporary interiors in Novalja on Pag Island.",
+    "description": "Private heated pool villas, sea-view terraces and contemporary interiors in Novalja on Pag Island.",
     "imagePrefix": "villas-pastura",
     "outputDirectory": "assets/img/gallery",
     "portraitWidths": [480, 960, 1280],
@@ -16,10 +16,10 @@
       "categories": ["exterior", "pool"],
       "layout": "featured",
       "captions": {
-        "en": "Private pool and villa at sunset",
-        "de": "Privater Pool und Villa bei Sonnenuntergang",
-        "hr": "Privatni bazen i vila pri zalasku sunca",
-        "it": "Piscina privata e villa al tramonto"
+        "en": "Private heated pool and villa at sunset",
+        "de": "Privater beheizter Pool und Villa bei Sonnenuntergang",
+        "hr": "Privatni grijani bazen i vila pri zalasku sunca",
+        "it": "Piscina privata riscaldata e villa al tramonto"
       }
     },
     {
@@ -29,10 +29,10 @@
       "categories": ["exterior", "pool"],
       "layout": "standard",
       "captions": {
-        "en": "Aerial view of Villas Pastura and the private pool",
-        "de": "Luftaufnahme der Villas Pastura mit privatem Pool",
-        "hr": "Pogled iz zraka na Villas Pastura i privatni bazen",
-        "it": "Vista aerea di Villas Pastura e della piscina privata"
+        "en": "Aerial view of Villas Pastura and the private heated pool",
+        "de": "Luftaufnahme der Villas Pastura mit privatem beheiztem Pool",
+        "hr": "Pogled iz zraka na Villas Pastura i privatni grijani bazen",
+        "it": "Vista aerea di Villas Pastura e della piscina privata riscaldata"
       }
     },
     {
@@ -81,10 +81,10 @@
       "categories": ["exterior", "pool", "terrace"],
       "layout": "wide",
       "captions": {
-        "en": "Outdoor dining table beside the private pool",
-        "de": "Esstisch im Freien neben dem privaten Pool",
-        "hr": "Vanjski stol za blagovanje uz privatni bazen",
-        "it": "Tavolo da pranzo all'aperto accanto alla piscina privata"
+        "en": "Outdoor dining table beside the private heated pool",
+        "de": "Esstisch im Freien neben dem privaten beheizten Pool",
+        "hr": "Vanjski stol za blagovanje uz privatni grijani bazen",
+        "it": "Tavolo da pranzo all'aperto accanto alla piscina privata riscaldata"
       }
     },
     {
