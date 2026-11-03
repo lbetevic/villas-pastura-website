@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "origin": {
+    "name": "Pool Villas Pastura",
+    "address": "Škuncini stani - samorašnji 20, 53291 Novalja, Croatia"
+  },
+  "notice": {
+    "en": "Approximate distances and travel times from Villas Pastura. Traffic and seasonal conditions may affect the route.",
+    "de": "Ungefähre Entfernungen und Fahrzeiten ab Villas Pastura. Verkehr und saisonale Bedingungen können die Route beeinflussen.",
+    "hr": "Približne udaljenosti i vremena putovanja od Villas Pastura. Promet i sezonski uvjeti mogu utjecati na rutu.",
+    "it": "Distanze e tempi di percorrenza approssimativi da Villas Pastura. Il traffico e le condizioni stagionali possono influire sul percorso."
+  },
+  "mapLabels": {
+    "en": "Open in Google Maps",
+    "de": "In Google Maps öffnen",
+    "hr": "Otvori u Google Maps",
+    "it": "Apri in Google Maps"
+  },
+  "groups": [
+    {
+      "id": "beaches",
+      "title": { "en": "Beaches", "de": "Strände", "hr": "Plaže", "it": "Spiagge" },
+      "items": [
+        {
+          "id": "beach-terra",
+          "name": { "en": "Beach Terra", "de": "Beach Terra", "hr": "Plaža Terra", "it": "Beach Terra" },
+          "description": { "en": "Nearest beach", "de": "Nächstgelegener Strand", "hr": "Najbliža plaža", "it": "Spiaggia più vicina" },
+          "travel": { "en": "≈ 800 m · 3 min drive · 12 min walk", "de": "≈ 800 m · 3 Min. Fahrt · 12 Min. zu Fuß", "hr": "≈ 800 m · 3 min vožnje · 12 min pješice", "it": "≈ 800 m · 3 min in auto · 12 min a piedi" },
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Beach+Terra+Novalja"
+        },
+        {
+          "id": "babe-beach",
+          "name": { "en": "Babe Beach", "de": "Strand Babe", "hr": "Plaža Babe", "it": "Spiaggia Babe" },
+          "description": { "en": "Shallow, warm water · pet-friendly section", "de": "Flaches, warmes Wasser · hundefreundlicher Abschnitt", "hr": "Plitko i toplo more · dio plaže prima kućne ljubimce", "it": "Acqua bassa e calda · tratto pet-friendly" },
+          "travel": { "en": "≈ 3.5 km · 6 min drive", "de": "≈ 3,5 km · 6 Min. Fahrt", "hr": "≈ 3,5 km · 6 min vožnje", "it": "≈ 3,5 km · 6 min in auto" },
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Babe+Beach+Novalja"
+        },
+        {
+          "id": "planjka-beach",
+          "name": { "en": "Planjka Beach (Trinćel)", "de": "Strand Planjka (Trinćel)", "hr": "Plaža Planjka (Trinćel)", "it": "Spiaggia Planjka (Trinćel)" },
+          "description": { "en": "Blue Flag beach · especially suitable for families", "de": "Strand mit Blauer Flagge · besonders familienfreundlich", "hr": "Plaža s Plavom zastavom · posebno pogodna za obitelji", "it": "Spiaggia Bandiera Blu · particolarmente adatta alle famiglie" },
+          "travel": { "en": "≈ 6 km · 10 min drive", "de": "≈ 6 km · 10 Min. Fahrt", "hr": "≈ 6 km · 10 min vožnje", "it": "≈ 6 km · 10 min in auto" },
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Planjka+Beach+Trincel"
+        }
+      ]
+    },
+    {
+      "id": "food",
+      "title": { "en": "Eat & drink", "de": "Essen & Trinken", "hr": "Hrana i piće", "it": "Mangiare e bere" },
+      "items": [
+        {
+          "id": "starac-i-more",
+          "name": { "en": "Starac i More", "de": "Starac i More", "hr": "Starac i More", "it": "Starac i More" },
+          "description": { "en": "Seafood and Mediterranean cuisine in Novalja", "de": "Fisch und mediterrane Küche in Novalja", "hr": "Riba i mediteranska kuhinja u Novalji", "it": "Pesce e cucina mediterranea a Novalja" },
+          "travel": { "en": "≈ 5 km · 8–10 min drive", "de": "≈ 5 km · 8–10 Min. Fahrt", "hr": "≈ 5 km · 8–10 min vožnje", "it": "≈ 5 km · 8–10 min in auto" },
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Starac+i+More+Novalja"
+        },
+        {
+          "id": "konoba-galia",
+          "name": { "en": "Konoba Galia", "de": "Konoba Galia", "hr": "Konoba Galia", "it": "Konoba Galia" },
+          "description": { "en": "Traditional charcoal-grill restaurant by the Novalja waterfront", "de": "Traditionelles Holzkohlegrill-Restaurant an der Promenade von Novalja", "hr": "Tradicionalna konoba s roštiljem na ugljen uz novaljsku rivu", "it": "Ristorante tradizionale con griglia a carbone sul lungomare di Novalja" },
+          "travel": { "en": "≈ 5 km · 8–10 min drive", "de": "≈ 5 km · 8–10 Min. Fahrt", "hr": "≈ 5 km · 8–10 min vožnje", "it": "≈ 5 km · 8–10 min in auto" },
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Konoba+Galia+Novalja"
+        },
+        {
+          "id": "boskinac",
+          "name": { "en": "Boškinac", "de": "Boškinac", "hr": "Boškinac", "it": "Boškinac" },
+          "description": { "en": "MICHELIN-starred island cuisine · reservation recommended", "de": "MICHELIN-Stern und kreative Inselküche · Reservierung empfohlen", "hr": "MICHELIN zvjezdica i kreativna otočna kuhinja · preporučena rezervacija", "it": "Cucina isolana con stella MICHELIN · prenotazione consigliata" },
+          "travel": { "en": "≈ 7 km · 12 min drive", "de": "≈ 7 km · 12 Min. Fahrt", "hr": "≈ 7 km · 12 min vožnje", "it": "≈ 7 km · 12 min in auto" },
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Boskinac+Restaurant+Novalja"
+        }
+      ]
+    },
+    {
+      "id": "essentials",
+      "title": { "en": "Everyday & arrival", "de": "Alltag & Anreise", "hr": "Svakodnevno i dolazak", "it": "Servizi e arrivo" },
+      "items": [
+        {
+          "id": "supermarket",
+          "name": { "en": "Nearest supermarket", "de": "Nächster Supermarkt", "hr": "Najbliži supermarket", "it": "Supermercato più vicino" },
+          "description": { "en": "Everyday groceries and supplies", "de": "Lebensmittel und Dinge des täglichen Bedarfs", "hr": "Namirnice i svakodnevne potrepštine", "it": "Alimentari e prodotti di uso quotidiano" },
+          "travel": { "en": "≈ 3 km · 5 min drive", "de": "≈ 3 km · 5 Min. Fahrt", "hr": "≈ 3 km · 5 min vožnje", "it": "≈ 3 km · 5 min in auto" },
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=supermarket+near+Pool+Villas+Pastura+Novalja"
+        },
+        {
+          "id": "novalja-centre",
+          "name": { "en": "Novalja centre", "de": "Zentrum von Novalja", "hr": "Centar Novalje", "it": "Centro di Novalja" },
+          "description": { "en": "Waterfront, shops, cafés and restaurants", "de": "Promenade, Geschäfte, Cafés und Restaurants", "hr": "Riva, trgovine, kafići i restorani", "it": "Lungomare, negozi, bar e ristoranti" },
+          "travel": { "en": "≈ 5 km · 8 min drive", "de": "≈ 5 km · 8 Min. Fahrt", "hr": "≈ 5 km · 8 min vožnje", "it": "≈ 5 km · 8 min in auto" },
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Novalja+centre"
+        },
+        {
+          "id": "zadar-airport",
+          "name": { "en": "Zadar Airport", "de": "Flughafen Zadar", "hr": "Zračna luka Zadar", "it": "Aeroporto di Zara" },
+          "description": { "en": "Main airport for arrival by air", "de": "Wichtigster Flughafen für die Anreise", "hr": "Glavna zračna luka za dolazak", "it": "Aeroporto principale per l'arrivo" },
+          "travel": { "en": "≈ 82 km · 75–90 min drive", "de": "≈ 82 km · 75–90 Min. Fahrt", "hr": "≈ 82 km · 75–90 min vožnje", "it": "≈ 82 km · 75–90 min in auto" },
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Zadar+Airport"
+        }
+      ]
+    },
+    {
+      "id": "explore",
+      "title": { "en": "Explore Pag", "de": "Pag entdecken", "hr": "Istražite Pag", "it": "Esplora Pag" },
+      "items": [
+        {
+          "id": "roman-aqueduct",
+          "name": { "en": "Roman Aqueduct · Talijanova buža", "de": "Römisches Aquädukt · Talijanova buža", "hr": "Rimski vodovod · Talijanova buža", "it": "Acquedotto romano · Talijanova buža" },
+          "description": { "en": "1st-century rock-cut aqueduct inside Novalja City Museum", "de": "In den Fels gehauenes Aquädukt aus dem 1. Jh. im Stadtmuseum Novalja", "hr": "U stijeni isklesan vodovod iz 1. stoljeća u Gradskom muzeju Novalja", "it": "Acquedotto del I secolo scavato nella roccia nel Museo civico di Novalja" },
+          "travel": { "en": "≈ 5 km · 8 min drive", "de": "≈ 5 km · 8 Min. Fahrt", "hr": "≈ 5 km · 8 min vožnje", "it": "≈ 5 km · 8 min in auto" },
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=City+Museum+Novalja+Talijanova+buza"
+        },
+        {
+          "id": "olive-gardens",
+          "name": { "en": "Olive Gardens of Lun", "de": "Olivenhaine von Lun", "hr": "Vrtovi lunjskih maslina", "it": "Uliveti di Lun" },
+          "description": { "en": "Protected landscape of ancient wild olive trees", "de": "Geschützte Landschaft mit jahrtausendealten wilden Olivenbäumen", "hr": "Zaštićeni krajolik drevnih samoniklih maslina", "it": "Paesaggio protetto di antichi olivi selvatici" },
+          "travel": { "en": "≈ 17 km · 25 min drive", "de": "≈ 17 km · 25 Min. Fahrt", "hr": "≈ 17 km · 25 min vožnje", "it": "≈ 17 km · 25 min in auto" },
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Olive+Gardens+of+Lun"
+        },
+        {
+          "id": "cape-lun",
+          "name": { "en": "Cape Lun · Punta Luna", "de": "Kap Lun · Punta Luna", "hr": "Rt Lun · Punta Luna", "it": "Capo Lun · Punta Luna" },
+          "description": { "en": "The northern tip of Pag · best around sunset", "de": "Die Nordspitze von Pag · besonders schön bei Sonnenuntergang", "hr": "Najsjevernija točka Paga · najljepša oko zalaska sunca", "it": "L'estremità settentrionale di Pag · ideale al tramonto" },
+          "travel": { "en": "≈ 21 km · 30 min drive", "de": "≈ 21 km · 30 Min. Fahrt", "hr": "≈ 21 km · 30 min vožnje", "it": "≈ 21 km · 30 min in auto" },
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Cape+Lun+Punta+Luna"
+        },
+        {
+          "id": "life-on-mars",
+          "name": { "en": "Life on Mars Trail · Metajna", "de": "Life on Mars Trail · Metajna", "hr": "Life on Mars Trail · Metajna", "it": "Life on Mars Trail · Metajna" },
+          "description": { "en": "Marked karst hiking trail · no natural shade or water", "de": "Markierter Karstwanderweg · kein natürlicher Schatten oder Wasser", "hr": "Označena krška pješačka staza · bez prirodnog hlada i vode", "it": "Sentiero carsico segnalato · senza ombra naturale né acqua" },
+          "travel": { "en": "≈ 34 km · 40–45 min drive", "de": "≈ 34 km · 40–45 Min. Fahrt", "hr": "≈ 34 km · 40–45 min vožnje", "it": "≈ 34 km · 40–45 min in auto" },
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Life+on+Mars+Trail+Metajna"
+        }
+      ]
+    }
+  ]
+}

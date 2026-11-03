@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "groups": [
+    {
+      "id": "pool-outdoor",
+      "title": {
+        "en": "Pool & outdoor living",
+        "de": "Pool & Außenbereich",
+        "hr": "Bazen i vanjski prostor",
+        "it": "Piscina e spazi esterni"
+      },
+      "items": [
+        { "id": "heated-pool", "labels": { "en": "Private heated pool", "de": "Privater beheizter Pool", "hr": "Privatni grijani bazen", "it": "Piscina privata riscaldata" } },
+        { "id": "pool-towels", "labels": { "en": "Pool towels", "de": "Poolhandtücher", "hr": "Ručnici za bazen", "it": "Teli piscina" } },
+        { "id": "sun-loungers", "labels": { "en": "Sun loungers and parasols", "de": "Sonnenliegen und Sonnenschirme", "hr": "Ležaljke i suncobrani", "it": "Lettini prendisole e ombrelloni" } },
+        { "id": "outdoor-shower", "labels": { "en": "Outdoor shower", "de": "Außendusche", "hr": "Vanjski tuš", "it": "Doccia esterna" } },
+        { "id": "sea-view-terrace", "labels": { "en": "Fenced sea-view terrace", "de": "Umzäunte Terrasse mit Meerblick", "hr": "Ograđena terasa s pogledom na more", "it": "Terrazza recintata vista mare" } },
+        { "id": "garden-sun-terrace", "labels": { "en": "Garden and sun terrace", "de": "Garten und Sonnenterrasse", "hr": "Vrt i sunčana terasa", "it": "Giardino e terrazza solarium" } },
+        { "id": "summer-kitchen", "labels": { "en": "Summer kitchen, barbecue and outdoor dining", "de": "Sommerküche, Grill und Essbereich im Freien", "hr": "Ljetna kuhinja, roštilj i vanjska blagovaonica", "it": "Cucina estiva, barbecue e zona pranzo all'aperto" } },
+        { "id": "table-tennis", "labels": { "en": "Table tennis", "de": "Tischtennis", "hr": "Stolni tenis", "it": "Ping pong" } }
+      ]
+    },
+    {
+      "id": "space-comfort",
+      "title": {
+        "en": "Space & comfort",
+        "de": "Raum & Komfort",
+        "hr": "Prostor i udobnost",
+        "it": "Spazio e comfort"
+      },
+      "items": [
+        { "id": "bedrooms", "labels": { "en": "4 ensuite bedrooms", "de": "4 Schlafzimmer mit eigenem Bad", "hr": "4 spavaće sobe s vlastitim kupaonicama", "it": "4 camere con bagno privato" } },
+        { "id": "guest-wc", "labels": { "en": "Additional guest WC", "de": "Separates Gäste-WC", "hr": "Dodatni WC", "it": "WC aggiuntivo per gli ospiti" } },
+        { "id": "capacity", "labels": { "en": "Up to 8 guests", "de": "Für bis zu 8 Gäste", "hr": "Do 8 gostiju", "it": "Fino a 8 ospiti" } },
+        { "id": "climate", "labels": { "en": "Air conditioning and heating", "de": "Klimaanlage und Heizung", "hr": "Klimatizacija i grijanje", "it": "Aria condizionata e riscaldamento" } },
+        { "id": "non-smoking", "labels": { "en": "Non-smoking accommodation", "de": "Nichtraucherunterkunft", "hr": "Nepušački objekt", "it": "Struttura non fumatori" } },
+        { "id": "laundry", "labels": { "en": "Washing machine and iron", "de": "Waschmaschine und Bügeleisen", "hr": "Perilica rublja i glačalo", "it": "Lavatrice e ferro da stiro" } },
+        { "id": "linen-towels", "labels": { "en": "Bed linen and towels provided", "de": "Bettwäsche und Handtücher inklusive", "hr": "Posteljina i ručnici uključeni", "it": "Biancheria da letto e asciugamani inclusi" } },
+        { "id": "bathroom-essentials", "labels": { "en": "Hairdryers and complimentary toiletries", "de": "Haartrockner und kostenlose Pflegeprodukte", "hr": "Sušila za kosu i besplatna kozmetika", "it": "Asciugacapelli e set di cortesia" } }
+      ]
+    },
+    {
+      "id": "kitchen-dining",
+      "title": {
+        "en": "Kitchen & dining",
+        "de": "Küche & Essen",
+        "hr": "Kuhinja i blagovanje",
+        "it": "Cucina e zona pranzo"
+      },
+      "items": [
+        { "id": "equipped-kitchen", "labels": { "en": "Fully equipped kitchen", "de": "Voll ausgestattete Küche", "hr": "Potpuno opremljena kuhinja", "it": "Cucina completamente attrezzata" } },
+        { "id": "oven-stovetop", "labels": { "en": "Oven and stovetop", "de": "Backofen und Kochfeld", "hr": "Pećnica i ploča za kuhanje", "it": "Forno e piano cottura" } },
+        { "id": "refrigerator", "labels": { "en": "Refrigerator", "de": "Kühlschrank", "hr": "Hladnjak", "it": "Frigorifero" } },
+        { "id": "dishwasher-microwave", "labels": { "en": "Dishwasher and microwave", "de": "Geschirrspüler und Mikrowelle", "hr": "Perilica posuđa i mikrovalna pećnica", "it": "Lavastoviglie e microonde" } },
+        { "id": "coffee-machine", "labels": { "en": "Coffee machine", "de": "Kaffeemaschine", "hr": "Aparat za kavu", "it": "Macchina da caffè" } },
+        { "id": "kettle-toaster", "labels": { "en": "Electric kettle and toaster", "de": "Wasserkocher und Toaster", "hr": "Kuhalo za vodu i toster", "it": "Bollitore elettrico e tostapane" } },
+        { "id": "kitchenware-dining", "labels": { "en": "Kitchenware and indoor dining area", "de": "Kochgeschirr und Essbereich innen", "hr": "Kuhinjski pribor i unutarnja blagovaonica", "it": "Utensili da cucina e zona pranzo interna" } }
+      ]
+    },
+    {
+      "id": "entertainment-work",
+      "title": {
+        "en": "Entertainment & work",
+        "de": "Unterhaltung & Arbeiten",
+        "hr": "Zabava i rad",
+        "it": "Intrattenimento e lavoro"
+      },
+      "items": [
+        { "id": "wifi", "labels": { "en": "Free Wi-Fi", "de": "Kostenloses WLAN", "hr": "Besplatan Wi-Fi", "it": "Wi-Fi gratuito" } },
+        { "id": "tv-streaming", "labels": { "en": "Flat-screen TV with streaming services", "de": "Flachbild-TV mit Streaming-Diensten", "hr": "TV ravnog ekrana sa streaming uslugama", "it": "TV a schermo piatto con servizi streaming" } },
+        { "id": "board-games", "labels": { "en": "Board games and puzzles", "de": "Brettspiele und Puzzles", "hr": "Društvene igre i slagalice", "it": "Giochi da tavolo e puzzle" } },
+        { "id": "workspace", "labels": { "en": "Desk and workspace", "de": "Schreibtisch und Arbeitsplatz", "hr": "Radni stol i prostor za rad", "it": "Scrivania e spazio di lavoro" } }
+      ]
+    },
+    {
+      "id": "parking-services",
+      "title": {
+        "en": "Parking & guest services",
+        "de": "Parken & Gästeservice",
+        "hr": "Parking i usluge za goste",
+        "it": "Parcheggio e servizi ospiti"
+      },
+      "items": [
+        { "id": "parking", "labels": { "en": "Private parking", "de": "Privatparkplatz", "hr": "Privatni parking", "it": "Parcheggio privato" } },
+        { "id": "ev-charging", "labels": { "en": "22 kW EV charging station", "de": "22-kW-Ladestation für Elektrofahrzeuge", "hr": "Stanica za punjenje električnih vozila · 22 kW", "it": "Stazione di ricarica per veicoli elettrici · 22 kW" } },
+        { "id": "shuttle", "labels": { "en": "Airport transfer and shuttle service on request", "de": "Flughafentransfer und Shuttle-Service auf Anfrage", "hr": "Prijevoz iz/do zračne luke i shuttle na upit", "it": "Transfer aeroportuale e navetta su richiesta" } },
+        { "id": "invoice", "labels": { "en": "Invoice provided", "de": "Rechnung erhältlich", "hr": "Izdavanje računa", "it": "Fattura disponibile" } },
+        { "id": "local-support", "labels": { "en": "Direct support from the local host team", "de": "Direkter Kontakt zum lokalen Gastgeberteam", "hr": "Izravna podrška lokalnog host tima", "it": "Assistenza diretta del team locale" } }
+      ]
+    },
+    {
+      "id": "safety",
+      "title": {
+        "en": "Safety & house rules",
+        "de": "Sicherheit & Hausregeln",
+        "hr": "Sigurnost i kućna pravila",
+        "it": "Sicurezza e regole della casa"
+      },
+      "items": [
+        { "id": "key-access", "labels": { "en": "Key access", "de": "Zugang mit Schlüssel", "hr": "Pristup ključem", "it": "Accesso con chiave" } },
+        { "id": "safe", "labels": { "en": "Safety deposit box", "de": "Safe", "hr": "Sef", "it": "Cassaforte" } },
+        { "id": "cctv", "labels": { "en": "Exterior CCTV", "de": "Videoüberwachung im Außenbereich", "hr": "Vanjski videonadzor", "it": "Videosorveglianza esterna" } },
+        { "id": "fire-extinguishers", "labels": { "en": "Fire extinguishers", "de": "Feuerlöscher", "hr": "Aparati za gašenje požara", "it": "Estintori" } },
+        { "id": "professional-cleaning", "labels": { "en": "Professionally cleaned before arrival", "de": "Professionelle Reinigung vor der Anreise", "hr": "Profesionalno čišćenje prije dolaska", "it": "Pulizia professionale prima dell'arrivo" } }
+      ]
+    }
+  ]
+}
