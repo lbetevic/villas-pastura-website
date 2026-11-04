@@ -181,6 +181,14 @@ const amenitiesCloseButton = document.querySelector('[data-amenities-close]');
 const shareButton = document.querySelector('[data-share-page]');
 const directPerksList = document.querySelector('#direct-perks-list');
 const poiGrid = document.querySelector('#poi-grid');
+const poiPreview = document.querySelector('#poi-preview');
+const poiDialog = document.querySelector('#poi-dialog');
+const poiOpen = document.querySelector('[data-poi-open]');
+const poiClose = document.querySelector('[data-poi-close]');
+const featuredPoiIds = ['beach-terra', 'novalja-centre', 'zadar-airport'];
+poiOpen?.addEventListener('click', () => poiDialog?.showModal());
+poiClose?.addEventListener('click', () => poiDialog?.close());
+poiDialog?.addEventListener('click', (event) => { if (event.target === poiDialog) poiDialog.close(); });
 const poiNotice = document.querySelector('#poi-notice');
 let directBookingBenefits = null;
 let amenitiesContent = null;
@@ -275,6 +283,7 @@ function renderPoiContent() {
       const listItem = document.createElement('li');
       const link = document.createElement('a');
       link.className = 'poi-link';
+      link.dataset.poiId = item.id;
       link.href = item.mapUrl;
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
@@ -302,6 +311,15 @@ function renderPoiContent() {
     return section;
   });
   poiGrid.replaceChildren(...sections);
+  if (poiPreview) {
+    const featured = featuredPoiIds.map((id) => poiGrid.querySelector(`[data-poi-id="${id}"]`)).filter(Boolean);
+    poiPreview.replaceChildren(...featured.map((link) => {
+      const card = document.createElement('article');
+      card.className = 'poi-card';
+      card.append(link.cloneNode(true));
+      return card;
+    }));
+  }
   if (poiNotice) poiNotice.textContent = poiContent.notice?.[currentLang] || poiContent.notice?.en || '';
 }
 
@@ -510,6 +528,11 @@ form.addEventListener('submit', (event) => {
   window.location.href = `availability.html?${query}`;
 });
 
+Object.assign(translations.en, {"poiSeeAll":"See all points of interest","poiAllTitle":"Explore Pag and Novalja","poiAllIntro":"Our local selection of beaches, dining and things to discover.","poiIntro":"A few useful starting points, chosen by our local team.","mapShow":"Show on map","poiClose":"Close points of interest"});
+Object.assign(translations.de, {"poiSeeAll":"Alle Ausflugsziele ansehen","poiAllTitle":"Pag und Novalja entdecken","poiAllIntro":"Unsere lokalen Empfehlungen für Strände, Restaurants und Ausflüge.","poiIntro":"Drei praktische Ausgangspunkte, ausgewählt von unserem lokalen Team.","mapShow":"Auf Karte anzeigen","poiClose":"Ausflugsziele schließen"});
+Object.assign(translations.hr, {"poiSeeAll":"Pogledaj sve zanimljivosti","poiAllTitle":"Istražite Pag i Novalju","poiAllIntro":"Lokalni izbor plaža, restorana i zanimljivosti.","poiIntro":"Tri korisne početne točke koje preporučuje naš lokalni tim.","mapShow":"Prikaži na karti","poiClose":"Zatvori zanimljivosti"});
+Object.assign(translations.it, {"poiSeeAll":"Vedi tutti i luoghi d'interesse","poiAllTitle":"Scopri Pag e Novalja","poiAllIntro":"I nostri consigli locali per spiagge, ristoranti e luoghi da visitare.","poiIntro":"Tre punti di partenza utili, scelti dal nostro team locale.","mapShow":"Mostra sulla mappa","poiClose":"Chiudi i punti d'interesse"});
+
 function applyLanguage(lang) {
   const dict = translations[lang] || translations.en;
   document.documentElement.lang = lang;
@@ -526,6 +549,7 @@ function applyLanguage(lang) {
   renderDirectBookingBenefits();
   renderAmenities();
   renderPoiContent();
+  poiClose?.setAttribute('aria-label', dict.poiClose);
   closeCalendarButton.setAttribute('aria-label', dict.closeCalendar);
   amenitiesCloseButton?.setAttribute('aria-label', dict.closeCalendar);
   previousMonthButton.setAttribute('aria-label', dict.previousMonth);
