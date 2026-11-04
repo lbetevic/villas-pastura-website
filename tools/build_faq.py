@@ -12,41 +12,11 @@ from pathlib import Path
 
 LANGUAGES = ("en", "de", "hr", "it")
 
-PLACEHOLDER_ANSWERS = {
-    "en": {
-        "short": "Prototype answer. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Final property information will replace this text after owner review.",
-        "medium": "Prototype answer. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere, nisl at facilisis volutpat, justo velit consequat neque, vitae malesuada lorem sem non erat. Final property information will replace this text after owner review.",
-        "long": "Prototype answer. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere, nisl at facilisis volutpat, justo velit consequat neque, vitae malesuada lorem sem non erat. Sed dignissim, arcu sed feugiat viverra, sapien mauris interdum nibh, vitae consequat lectus ipsum vel augue. Final property information will replace this text after owner review.",
-    },
-    "de": {
-        "short": "Prototyp-Antwort. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nach Prüfung durch die Eigentümer werden hier die endgültigen Informationen stehen.",
-        "medium": "Prototyp-Antwort. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere, nisl at facilisis volutpat, justo velit consequat neque, vitae malesuada lorem sem non erat. Nach Prüfung durch die Eigentümer werden hier die endgültigen Informationen stehen.",
-        "long": "Prototyp-Antwort. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere, nisl at facilisis volutpat, justo velit consequat neque, vitae malesuada lorem sem non erat. Sed dignissim, arcu sed feugiat viverra, sapien mauris interdum nibh, vitae consequat lectus ipsum vel augue. Nach Prüfung durch die Eigentümer werden hier die endgültigen Informationen stehen.",
-    },
-    "hr": {
-        "short": "Probni odgovor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Konačne informacije o objektu zamijenit će ovaj tekst nakon provjere vlasnika.",
-        "medium": "Probni odgovor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere, nisl at facilisis volutpat, justo velit consequat neque, vitae malesuada lorem sem non erat. Konačne informacije o objektu zamijenit će ovaj tekst nakon provjere vlasnika.",
-        "long": "Probni odgovor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere, nisl at facilisis volutpat, justo velit consequat neque, vitae malesuada lorem sem non erat. Sed dignissim, arcu sed feugiat viverra, sapien mauris interdum nibh, vitae consequat lectus ipsum vel augue. Konačne informacije o objektu zamijenit će ovaj tekst nakon provjere vlasnika.",
-    },
-    "it": {
-        "short": "Risposta di prova. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Le informazioni definitive sostituiranno questo testo dopo la verifica dei proprietari.",
-        "medium": "Risposta di prova. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere, nisl at facilisis volutpat, justo velit consequat neque, vitae malesuada lorem sem non erat. Le informazioni definitive sostituiranno questo testo dopo la verifica dei proprietari.",
-        "long": "Risposta di prova. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere, nisl at facilisis volutpat, justo velit consequat neque, vitae malesuada lorem sem non erat. Sed dignissim, arcu sed feugiat viverra, sapien mauris interdum nibh, vitae consequat lectus ipsum vel augue. Le informazioni definitive sostituiranno questo testo dopo la verifica dei proprietari.",
-    },
-}
-
 TIP_LABELS = {
     "en": "Local host tip",
     "de": "Tipp der lokalen Gastgeber",
     "hr": "Savjet lokalnog host tima",
     "it": "Consiglio del team locale",
-}
-
-PLACEHOLDER_TIPS = {
-    "en": "Placeholder for a first-hand recommendation that only the owners or local host team can provide.",
-    "de": "Platzhalter für eine persönliche Empfehlung der Eigentümer oder des lokalen Gastgeberteams.",
-    "hr": "Mjesto za iskustvenu preporuku koju mogu dati samo vlasnici ili lokalni host tim.",
-    "it": "Spazio per un consiglio diretto che solo i proprietari o il team locale possono fornire.",
 }
 
 
@@ -91,14 +61,13 @@ def enrich(data: dict) -> dict:
         questions = {lang: localized(item, "question", lang) for lang in LANGUAGES}
         if not all(questions.values()):
             raise ValueError(f"Missing question translation: {item_id}")
-        answers = {
-            lang: item.get("answer", {}).get(lang, PLACEHOLDER_ANSWERS[lang][variant])
-            for lang in LANGUAGES
-        }
+        answers = {lang: item.get("answer", {}).get(lang) for lang in LANGUAGES}
+        if not all(answers.values()):
+            raise ValueError(f"Missing FAQ answer translation: {item_id}")
         tips = None
         if item.get("showTip") or item.get("tip"):
             tips = {
-                lang: item.get("tip", {}).get(lang, PLACEHOLDER_TIPS[lang])
+                lang: item.get("tip", {}).get(lang, "")
                 for lang in LANGUAGES
             }
         enriched_items.append({
@@ -185,13 +154,12 @@ def render_schema(data: dict) -> str:
     schema = {
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        "name": "Villas Pastura frequently asked questions prototype",
-        "creativeWorkStatus": "Draft",
+        "name": "Villas Pastura frequently asked questions",
+        "creativeWorkStatus": "Published",
         "dateModified": data["lastModified"],
         "author": {
             "@type": "Organization",
             "name": "Villas Pastura",
-            "url": "https://example.com/",
         },
         "about": {
             "@type": "VacationRental",
@@ -223,8 +191,8 @@ def main() -> int:
     home_page = project / "index.html"
     data = enrich(json.loads(source.read_text(encoding="utf-8")))
 
-    if data.get("status") != "draft":
-        raise ValueError("This prototype builder expects FAQ status to remain 'draft'")
+    if data.get("status") != "approved":
+        raise ValueError("FAQ content must be approved before generation")
 
     faq_text = faq_page.read_text(encoding="utf-8")
     home_text = home_page.read_text(encoding="utf-8")
