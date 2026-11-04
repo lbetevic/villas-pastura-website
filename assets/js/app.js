@@ -59,7 +59,7 @@ Object.assign(translations.en, {
   reviewsKicker: 'Guest reviews', reviewsTitle: 'Guests rate Pool Villas Pastura 9.9 out of 10.',
   reviewsScore: 'out of 10 · 4 verified reviews', reviewsButton: 'Read all verified reviews',
   faqPreviewKicker: 'Good to know before booking', faqPreviewTitle: 'Questions guests usually ask before choosing a villa.',
-  faqPreviewIntro: 'A preview of the future owner-reviewed FAQ, grouped around real booking decisions.', faqPreviewStatus: 'Prototype content', faqPreviewButton: 'See all questions',
+  faqPreviewIntro: 'Practical answers from our local team about booking, comfort and island life.', faqPreviewButton: 'See all questions',
   flowStep1: 'Choose dates in the live calendar', flowStep2: 'Compare complete prices and conditions', flowStep3: 'Enter guest details and review', flowNote: 'The selected offer is checked again before personal data is entered.',
   guestPickerTitle: 'Who is staying?', adultsLabel: 'Adults', adultsHelp: 'Ages 18 or above', childrenLabel: 'Children', childrenHelp: 'Ages 0–11', teenagersLabel: 'Young guests', teenagersHelp: 'Ages 12–17', guestCapacity: 'Maximum 8 guests in total.', adultOne: 'adult', adultMany: 'adults', childOne: 'child 0–11', childMany: 'children 0–11', teenOne: 'young guest 12–17', teenMany: 'young guests 12–17'
 });
@@ -68,7 +68,7 @@ Object.assign(translations.de, {
   reviewsKicker: 'Gästebewertungen', reviewsTitle: 'Gäste bewerten Pool Villas Pastura mit 9,9 von 10.',
   reviewsScore: 'von 10 · 4 verifizierte Bewertungen', reviewsButton: 'Alle verifizierten Bewertungen lesen',
   faqPreviewKicker: 'Gut zu wissen vor der Buchung', faqPreviewTitle: 'Fragen, die Gäste vor der Auswahl einer Villa stellen.',
-  faqPreviewIntro: 'Eine Vorschau der künftigen, von den Eigentümern geprüften FAQ.', faqPreviewStatus: 'Inhaltsprototyp', faqPreviewButton: 'Alle Fragen ansehen',
+  faqPreviewIntro: 'Praktische Antworten unseres lokalen Teams zu Buchung, Komfort und dem Leben auf Pag.', faqPreviewButton: 'Alle Fragen ansehen',
   flowStep1: 'Daten im Live-Kalender wählen', flowStep2: 'Gesamtpreise und Bedingungen vergleichen', flowStep3: 'Gästedaten eingeben und prüfen', flowNote: 'Das gewählte Angebot wird vor Eingabe persönlicher Daten erneut geprüft.',
   guestPickerTitle: 'Wer reist mit?', adultsLabel: 'Erwachsene', adultsHelp: 'Ab 18 Jahren', childrenLabel: 'Kinder', childrenHelp: '0–11 Jahre', teenagersLabel: 'Junge Gäste', teenagersHelp: '12–17 Jahre', guestCapacity: 'Maximal 8 Gäste insgesamt.', adultOne: 'Erwachsener', adultMany: 'Erwachsene', childOne: 'Kind 0–11', childMany: 'Kinder 0–11', teenOne: 'junger Gast 12–17', teenMany: 'junge Gäste 12–17'
 });
@@ -77,7 +77,7 @@ Object.assign(translations.hr, {
   reviewsKicker: 'Recenzije gostiju', reviewsTitle: 'Gosti ocjenjuju Pool Villas Pastura s 9,9 od 10.',
   reviewsScore: 'od 10 · 4 provjerene recenzije', reviewsButton: 'Pročitaj sve provjerene recenzije',
   faqPreviewKicker: 'Dobro je znati prije rezervacije', faqPreviewTitle: 'Pitanja koja gosti obično postavljaju prije odabira vile.',
-  faqPreviewIntro: 'Pregled budućeg FAQ-a koji će provjeriti vlasnici, organiziran prema stvarnim odlukama gostiju.', faqPreviewStatus: 'Prototip sadržaja', faqPreviewButton: 'Pogledaj sva pitanja',
+  faqPreviewIntro: 'Praktični odgovori lokalnog tima o rezervaciji, udobnosti i boravku na Pagu.', faqPreviewButton: 'Pogledaj sva pitanja',
   flowStep1: 'Odaberite datume u live kalendaru', flowStep2: 'Usporedite potpune cijene i uvjete', flowStep3: 'Unesite podatke gosta i pregledajte', flowNote: 'Odabrana ponuda ponovno se provjerava prije unosa osobnih podataka.',
   guestPickerTitle: 'Tko boravi?', adultsLabel: 'Odrasli', adultsHelp: '18 ili više godina', childrenLabel: 'Djeca', childrenHelp: '0–11 godina', teenagersLabel: 'Mladi gosti', teenagersHelp: '12–17 godina', guestCapacity: 'Najviše 8 gostiju ukupno.', adultOne: 'odrasla osoba', adultMany: 'odraslih', childOne: 'dijete 0–11', childMany: 'djece 0–11', teenOne: 'mladi gost 12–17', teenMany: 'mladih gostiju 12–17'
 });
@@ -86,7 +86,7 @@ Object.assign(translations.it, {
   reviewsKicker: 'Recensioni degli ospiti', reviewsTitle: 'Gli ospiti valutano Pool Villas Pastura 9,9 su 10.',
   reviewsScore: 'su 10 · 4 recensioni verificate', reviewsButton: 'Leggi tutte le recensioni verificate',
   faqPreviewKicker: 'Da sapere prima di prenotare', faqPreviewTitle: 'Le domande che gli ospiti fanno prima di scegliere una villa.',
-  faqPreviewIntro: 'Anteprima delle future FAQ verificate dai proprietari, organizzate intorno alle decisioni reali degli ospiti.', faqPreviewStatus: 'Prototipo dei contenuti', faqPreviewButton: 'Vedi tutte le domande',
+  faqPreviewIntro: 'Risposte del nostro team locale su prenotazione, comfort e vita a Pag.', faqPreviewButton: 'Vedi tutte le domande',
   flowStep1: 'Scegli le date nel calendario live', flowStep2: 'Confronta prezzi completi e condizioni', flowStep3: 'Inserisci i dati e controlla', flowNote: 'L’offerta viene verificata nuovamente prima di inserire i dati personali.',
   guestPickerTitle: 'Chi soggiorna?', adultsLabel: 'Adulti', adultsHelp: '18 anni o più', childrenLabel: 'Bambini', childrenHelp: '0–11 anni', teenagersLabel: 'Ospiti giovani', teenagersHelp: '12–17 anni', guestCapacity: 'Massimo 8 ospiti in totale.', adultOne: 'adulto', adultMany: 'adulti', childOne: 'bambino 0–11', childMany: 'bambini 0–11', teenOne: 'ospite giovane 12–17', teenMany: 'ospiti giovani 12–17'
 });
