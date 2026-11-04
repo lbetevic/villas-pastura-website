@@ -432,3 +432,26 @@ h3 { margin: 0 0 8px; font-size: 1.12rem; color: var(--color-deep-2); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
 }
+
+
+/* Homepage luxury map: entirely first-party, with Google Maps opened only on click. */
+.map-preview-link { position: relative; display: block; min-height: 0; padding: 0; overflow: hidden; background: #e6eee9; color: #173c51; text-decoration: none; }
+.map-preview-link img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+.map-preview-link .map-preview-action { position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%); display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 999px; background: #143c55; color: white; font-size: .95rem; font-weight: 700; white-space: nowrap; box-shadow: 0 4px 16px rgb(0 0 0 / 20%); }
+.map-preview-link:hover .map-preview-action, .map-preview-link:focus-visible .map-preview-action { background: #235f72; }
+.map-preview-link:focus-visible { outline: 3px solid #b5944e; outline-offset: 4px; }
+.poi-section { padding-top: 72px; }
+.poi-preview-grid { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 24px; }
+.poi-preview-grid .poi-card { min-width: 0; }
+.poi-preview-grid .poi-link { min-height: 110px; }
+.poi-actions { margin-top: 24px; display: flex; justify-content: center; }
+.poi-dialog { width: min(1100px, calc(100% - 24px)); max-width: 1100px; max-height: min(88dvh, 930px); border: 1px solid var(--color-border); border-radius: 20px; padding: 24px; background: #fbfaf6; color: var(--color-deep-2); box-shadow: 0 30px 100px rgb(0 0 0 / 25%); }
+.poi-dialog::backdrop { background: rgb(10 29 41 / 65%); }
+.poi-dialog-head { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.poi-dialog-head h2 { margin: 0; }
+.poi-dialog-intro { color: var(--color-muted); margin: 12px 0 8px; }
+.poi-dialog-close { display: inline-grid; place-items: center; flex: 0 0 44px; width: 44px; height: 44px; border: 1px solid var(--color-border); border-radius: 50%; background: white; color: var(--color-deep); font-size: 29px; cursor: pointer; }
+.poi-dialog-close:focus-visible { outline: 3px solid var(--color-gold); outline-offset: 3px; }
+.poi-dialog .poi-grid { margin-top: 18px; }
+@media (min-width: 700px) { .poi-preview-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } .poi-dialog { padding: 36px; } }
+@media (max-width: 699px) { .poi-dialog { padding: 18px; } .poi-dialog-head h2 { font-size: 1.4rem; } }
