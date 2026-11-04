@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 750" role="img" aria-labelledby="title desc">
+<title id="title">Villas Pastura — Novalja, Pag Island</title>
+<desc id="desc">Illustrative luxury map showing Villas Pastura close to Terra Beach on Pag Island. Open Google Maps for exact directions.</desc>
+<defs>
+ <linearGradient id="sea" x2="1" y2="1"><stop stop-color="#bfd9dc"/><stop offset="1" stop-color="#a9cad0"/></linearGradient>
+ <linearGradient id="sand" x2=".3" y2="1"><stop stop-color="#f8f3e8"/><stop offset="1" stop-color="#eee2ca"/></linearGradient>
+ <filter id="glow"><feGaussianBlur stdDeviation="13"/></filter>
+ <filter id="pinshadow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="6"/></filter>
+ <pattern id="grain" width="12" height="12" patternUnits="userSpaceOnUse"><circle cx="2" cy="3" r=".7" fill="#264858" opacity=".05"/><circle cx="8" cy="10" r=".45" fill="#fff" opacity=".35"/></pattern>
+</defs>
+<rect width="1000" height="750" rx="22" fill="url(#sea)"/>
+<path d="M0 0H640 Q595 69 581 112Q540 169 558 223Q590 286 560 355Q521 411 545 450Q585 497 580 552Q545 628 602 750H0Z" fill="url(#sand)" stroke="#fff7e9" stroke-width="7"/>
+<path d="M1000 0H916Q895 108 853 152T827 231Q828 309 794 369Q761 433 779 503Q801 584 741 750H1000Z" fill="#eee6d6" stroke="#fff7e9" stroke-width="6"/>
+<path d="M-20 594Q105 581 169 625T300 652Q434 660 560 706L579 750H0Z" fill="#d8dfca" opacity=".75"/>
+<g fill="#d7dfcc" opacity=".85"><path d="M86 0h159l79 93-40 107-94 36-117-41z"/><path d="M366 71l142 44-29 114-90 53-75-98z"/><path d="M66 315l154-48 77 83-44 101-183 13z"/><path d="M339 454l136-55 65 112-49 87-119-23z"/><path d="M828 0h172v170l-91-29-68 37z"/></g>
+<g stroke="#ccb98b" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M215 0Q282 83 300 144T310 258Q326 355 392 438T471 563Q512 649 560 710"/>
+ <path d="M300 144Q398 161 525 194"/>
+ <path d="M392 438Q470 421 556 457"/>
+</g>
+<g stroke="#f8f5ed" stroke-width="2.5" fill="none" opacity=".94"><path d="M391 438l-32 80 52 58 60-13M431 477l66-18 37 42M465 574l-25 50 75 18M404 587l80 15M312 265l-47 44 80 50M275 112l85-25"/></g>
+<g font-family="Georgia, 'Times New Roman', serif" fill="#183d50">
+ <text x="730" y="85" font-size="21" letter-spacing="5">PAG ISLAND</text>
+ <text x="624" y="382" font-size="40" letter-spacing="1">Stara Novalja</text>
+ <text x="320" y="640" font-size="45">Novalja</text>
+ <text x="30" y="275" font-size="25">Terra Beach</text>
+</g>
+<g fill="#b89650"><circle cx="451" cy="572" r="7"/><circle cx="623" cy="405" r="5"/><path d="M740 115h160" stroke="#b89650" stroke-width="2"/><path d="M322 658h110" stroke="#b89650" stroke-width="2"/></g>
+<g transform="translate(298 254)">
+ <ellipse cx="0" cy="65" rx="37" ry="14" fill="#324e57" opacity=".28" filter="url(#pinshadow)"/>
+ <path d="M0-47C-36-47-60-20-60 13c0 45 60 99 60 99S60 58 60 13C60-20 36-47 0-47Z" fill="#b9944b" stroke="#fff9eb" stroke-width="5"/>
+ <circle cx="0" cy="12" r="33" fill="#fdf9eb"/>
+ <path d="M-22 9L0-10 22 9M-16 7v19h32V7M-6 26V9h12v17" stroke="#294a58" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+ </g>
+ <text x="364" y="277" fill="#173a4b" font-family="Georgia,serif" font-size="42" font-weight="600">Villas Pastura</text>
+ <path d="M366 295h195" stroke="#b9944b" stroke-width="3"/>
+ <text x="345" y="380" fill="#224c55" font-family="Arial,sans-serif" font-size="19">Terra Park Phalaris</text>
+ <g stroke="#b9944b" stroke-width="3" fill="none"><circle cx="909" cy="646" r="33"/><path d="M909 614v64M877 646h64"/><path d="M909 614l-8 22 8-5 8 5z" fill="#b9944b"/></g>
+ <text x="904" y="603" fill="#234c57" font-size="19" font-family="Georgia,serif">N</text>
+ <rect x="17" y="17" width="966" height="716" rx="17" fill="none" stroke="#c4a063" stroke-width="3"/>
+ <rect x="24" y="24" width="952" height="702" rx="13" fill="url(#grain)" stroke="#fff4db" stroke-opacity=".75" stroke-width="2"/>
+</svg>
