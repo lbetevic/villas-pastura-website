@@ -173,10 +173,10 @@ let calendarAvailabilityState = 'idle';
 
 const menuToggle = document.querySelector('[data-menu-toggle]');
 const nav = document.querySelector('[data-nav]');
-Object.assign(translations.en, {"poiSeeAll":"See all points of interest","poiAllTitle":"Explore Pag and Novalja","poiAllIntro":"Our local selection of beaches, dining and things to discover.","poiIntro":"A few useful starting points, chosen by our local team.","mapShow":"Show on map","poiClose":"Close points of interest"});
-Object.assign(translations.de, {"poiSeeAll":"Alle Ausflugsziele ansehen","poiAllTitle":"Pag und Novalja entdecken","poiAllIntro":"Unsere lokalen Empfehlungen für Strände, Restaurants und Ausflüge.","poiIntro":"Drei praktische Ausgangspunkte, ausgewählt von unserem lokalen Team.","mapShow":"Auf Karte anzeigen","poiClose":"Ausflugsziele schließen"});
-Object.assign(translations.hr, {"poiSeeAll":"Pogledaj sve zanimljivosti","poiAllTitle":"Istražite Pag i Novalju","poiAllIntro":"Lokalni izbor plaža, restorana i zanimljivosti.","poiIntro":"Tri korisne početne točke koje preporučuje naš lokalni tim.","mapShow":"Prikaži na karti","poiClose":"Zatvori zanimljivosti"});
-Object.assign(translations.it, {"poiSeeAll":"Vedi tutti i luoghi d'interesse","poiAllTitle":"Scopri Pag e Novalja","poiAllIntro":"I nostri consigli locali per spiagge, ristoranti e luoghi da visitare.","poiIntro":"Tre punti di partenza utili, scelti dal nostro team locale.","mapShow":"Mostra sulla mappa","poiClose":"Chiudi i punti d'interesse"});
+Object.assign(translations.en, {"poiSeeAll":"See all points of interest","poiAllTitle":"Explore Pag and Novalja","poiAllIntro":"Our local selection of beaches, dining and things to discover.","poiIntro":"A few useful starting points, chosen by our local team.","mapShow":"Show on map","poiClose":"Close points of interest","mapAria":"Open the exact Villas Pastura location in Google Maps","mapAlt":"Illustrative Pag Island map featuring Villas Pastura near Terra Beach"});
+Object.assign(translations.de, {"poiSeeAll":"Alle Ausflugsziele ansehen","poiAllTitle":"Pag und Novalja entdecken","poiAllIntro":"Unsere lokalen Empfehlungen für Strände, Restaurants und Ausflüge.","poiIntro":"Drei praktische Ausgangspunkte, ausgewählt von unserem lokalen Team.","mapShow":"Auf Karte anzeigen","poiClose":"Ausflugsziele schließen","mapAria":"Genauen Standort der Villas Pastura in Google Maps öffnen","mapAlt":"Illustrierte Karte von Pag mit Villas Pastura nahe Terra Beach"});
+Object.assign(translations.hr, {"poiSeeAll":"Pogledaj sve zanimljivosti","poiAllTitle":"Istražite Pag i Novalju","poiAllIntro":"Lokalni izbor plaža, restorana i zanimljivosti.","poiIntro":"Tri korisne početne točke koje preporučuje naš lokalni tim.","mapShow":"Prikaži na karti","poiClose":"Zatvori zanimljivosti","mapAria":"Otvori točnu lokaciju Villas Pastura u Google Mapsu","mapAlt":"Ilustrirana karta otoka Paga s vilama Pastura u blizini plaže Terra"});
+Object.assign(translations.it, {"poiSeeAll":"Vedi tutti i luoghi d'interesse","poiAllTitle":"Scopri Pag e Novalja","poiAllIntro":"I nostri consigli locali per spiagge, ristoranti e luoghi da visitare.","poiIntro":"Tre punti di partenza utili, scelti dal nostro team locale.","mapShow":"Mostra sulla mappa","poiClose":"Chiudi i punti d'interesse","mapAria":"Apri la posizione esatta di Villas Pastura su Google Maps","mapAlt":"Mappa illustrata di Pag con Villas Pastura vicino a Terra Beach"});
 
 const languageSelect = document.querySelector('#language-select');
 const amenitiesDialog = document.querySelector('#amenities-dialog');
@@ -550,6 +550,8 @@ function applyLanguage(lang) {
   renderAmenities();
   renderPoiContent();
   poiClose?.setAttribute('aria-label', dict.poiClose);
+  document.querySelector('[data-map-link]')?.setAttribute('aria-label', dict.mapAria);
+  document.querySelector('[data-map-alt]')?.setAttribute('alt', dict.mapAlt);
   closeCalendarButton.setAttribute('aria-label', dict.closeCalendar);
   amenitiesCloseButton?.setAttribute('aria-label', dict.closeCalendar);
   previousMonthButton.setAttribute('aria-label', dict.previousMonth);
