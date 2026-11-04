@@ -1,5 +1,17 @@
 # Villas Pastura direct-booking website — v1.25.0
 
+## Unreleased — November 2026 FAQ and visitor-experience iteration
+
+- Published 18 localized FAQ answers in EN/DE/HR/IT and removed draft/prototype language. Homepage uses six FAQ teasers and static FAQPage data is generated from the same approved source.
+- Moved Plan your stay below the homepage FAQ. Three POIs (Terra Beach, Novalja centre, Zadar Airport) are featured; an accessible modal preserves the complete 13-item multilingual guide.
+- Replaced the decorative location placeholder with a first-party luxury illustrated SVG mini-map. Its link opens the approved villa coordinates in external Google Maps without loading Google Maps JavaScript or Google trackers. The separately approved WebP artwork remains available as a design reference but has **not yet been committed as a WebP binary**.
+- Added Ventus Travel management attribution and Instagram/Facebook links to site footers.
+- Added a first-party responsive wa.me contact link to the separate WABA/ManyChat number +385 91 608 1364. Mobile displays an icon only; general call number +385 95 7328 532 remains unchanged.
+- Added docs/gtm-tracking-spec.md (documentation only; no tracking).
+- Added focused test/site-content-2026.test.mjs regression checks.
+- Source is a draft PR; no production deployment or actual CreateReservation behavior change. Tests and visual QA must be executed before merging.
+
+
 A mobile-first, multilingual website plus a Cloudflare Worker that integrates
 server-to-server with Nokumo. Version 1.25.0 refines two targeted brand and
 contrast details without changing the established page layouts.

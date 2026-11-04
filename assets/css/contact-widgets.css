@@ -1,0 +1,12 @@
+/* Shared first-party contact elements. No third-party requests until clicked. */
+.footer-manager { display: flex; align-items: center; flex-wrap: wrap; gap: 9px 16px; margin-top: 12px; font-size: .86rem; }
+.footer-manager-label { font-weight: 700; color: #183b51; }
+.footer-manager a { color: #225e71; text-decoration: underline; text-underline-offset: 3px; }
+.footer-manager a:hover, .footer-manager a:focus-visible { color: #102f42; }
+.wa-chat-link { position: fixed; z-index: 550; right: max(18px, env(safe-area-inset-right)); bottom: max(18px, env(safe-area-inset-bottom)); display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; min-width: 56px; padding: 11px; border-radius: 999px; background: #218b54; color: white; box-shadow: 0 6px 22px rgb(0 0 0 / 23%); text-decoration: none; font-family: system-ui, sans-serif; font-weight: 700; line-height: 1.3; }
+.wa-chat-link svg { display: block; flex: 0 0 32px; height: 32px; width: 32px; fill: white; }
+.wa-chat-link:hover, .wa-chat-link:focus-visible { background: #166d40; color: white; }
+.wa-chat-link:focus-visible { outline: 3px solid #123c55; outline-offset: 4px; }
+.wa-chat-label { display: none; }
+@media (min-width: 700px) { .wa-chat-link { padding: 11px 17px; } .wa-chat-label { display: inline; } }
+@media (max-width: 699px) { .wa-chat-link { right: max(12px, env(safe-area-inset-right)); bottom: max(14px, env(safe-area-inset-bottom)); } }

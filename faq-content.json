@@ -1,6 +1,6 @@
 {
-  "status": "draft",
-  "lastModified": "2026-10-31",
+  "status": "approved",
+  "lastModified": "2026-11-04",
   "categories": [
     {
       "id": "booking",
@@ -11,10 +11,10 @@
         "it": "Prenotazione e prezzo"
       },
       "intro": {
-        "en": "Placeholder questions for booking terms, payments and transparent pricing.",
-        "de": "Platzhalterfragen zu Buchungsbedingungen, Zahlungen und transparenten Preisen.",
-        "hr": "Probna pitanja o uvjetima rezervacije, plaćanju i transparentnoj cijeni.",
-        "it": "Domande provvisorie su condizioni, pagamenti e prezzi trasparenti."
+        "en": "Clear answers about prices, payments, reservations and cancellation terms.",
+        "de": "Antworten zu Preisen, Zahlung, Buchungen und Stornierung.",
+        "hr": "Odgovori o cijenama, plaćanju, rezervacijama i otkazivanju.",
+        "it": "Risposte su prezzi, pagamenti, prenotazioni e cancellazioni."
       }
     },
     {
@@ -26,10 +26,10 @@
         "it": "Villa e piscina"
       },
       "intro": {
-        "en": "Placeholder questions about privacy, comfort, the pool and house rules.",
-        "de": "Platzhalterfragen zu Privatsphäre, Komfort, Pool und Hausregeln.",
-        "hr": "Probna pitanja o privatnosti, komforu, bazenu i kućnim pravilima.",
-        "it": "Domande provvisorie su privacy, comfort, piscina e regole della casa."
+        "en": "Privacy, comfort, heated pools and house information.",
+        "de": "Privatsphäre, Komfort, beheizte Pools und Hausregeln.",
+        "hr": "Privatnost, udobnost, grijani bazeni i kućni red.",
+        "it": "Privacy, comfort, piscine riscaldate e regole della casa."
       }
     },
     {
@@ -41,10 +41,10 @@
         "it": "Arrivo e posizione"
       },
       "intro": {
-        "en": "Placeholder questions for transport, check-in, parking and nearby places.",
-        "de": "Platzhalterfragen zu Verkehr, Check-in, Parken und Zielen in der Nähe.",
-        "hr": "Probna pitanja o prijevozu, check-inu, parkingu i mjestima u blizini.",
-        "it": "Domande provvisorie su trasporti, check-in, parcheggio e luoghi vicini."
+        "en": "Useful details about arriving and settling in.",
+        "de": "Alles Wichtige zu Anreise und Check-in.",
+        "hr": "Korisne informacije o dolasku i prijavi.",
+        "it": "Informazioni utili su arrivo e check-in."
       }
     },
     {
@@ -56,10 +56,10 @@
         "it": "Consigli del team locale"
       },
       "intro": {
-        "en": "Placeholder questions reserved for first-hand recommendations from Novalja.",
-        "de": "Platzhalterfragen für persönliche Empfehlungen aus Novalja.",
-        "hr": "Probna pitanja rezervirana za iskustvene preporuke iz Novalje.",
-        "it": "Domande provvisorie per consigli diretti da Novalja."
+        "en": "Personal local tips and support from our team.",
+        "de": "Persönliche lokale Tipps und Unterstützung.",
+        "hr": "Osobne lokalne preporuke i podrška našeg tima.",
+        "it": "Consigli locali personali e assistenza del team."
       }
     }
   ],
@@ -70,10 +70,16 @@
       "homepage": true,
       "variant": "medium",
       "question": {
-        "en": "Placeholder: Is direct booking the best available price?",
-        "de": "Platzhalter: Ist die Direktbuchung der beste verfügbare Preis?",
-        "hr": "Placeholder: Je li direktna rezervacija najbolja dostupna cijena?",
-        "it": "Segnaposto: La prenotazione diretta offre il miglior prezzo disponibile?"
+        "en": "Is direct booking the best available price?",
+        "de": "Ist die Direktbuchung der beste verfügbare Preis?",
+        "hr": "Je li direktna rezervacija najbolja dostupna cijena?",
+        "it": "La prenotazione diretta offre il miglior prezzo disponibile?"
+      },
+      "answer": {
+        "en": "In most cases, yes. On the official Villas Pastura website we aim to offer our best rates and extra benefits for direct guests. If you find a better offer for the same dates, number of guests and booking terms, please contact us and we will gladly review it.",
+        "de": "In den meisten Fällen ja. Auf der offiziellen Website von Villas Pastura möchten wir unsere besten Preise und zusätzliche Vorteile für Direktbucher anbieten. Finden Sie anderswo ein besseres Angebot für dieselben Daten, dieselbe Gästezahl und dieselben Bedingungen, kontaktieren Sie uns bitte.",
+        "hr": "U većini slučajeva da. Na službenoj stranici Villas Pastura nastojimo ponuditi najbolje cijene i dodatne pogodnosti za izravne rezervacije. Ako drugdje pronađete bolju ponudu za iste datume, broj gostiju i uvjete, javite nam se i rado ćemo je provjeriti.",
+        "it": "Nella maggior parte dei casi sì. Sul sito ufficiale di Villas Pastura cerchiamo di offrire le nostre migliori tariffe e vantaggi per chi prenota direttamente. Se trovate condizioni migliori per le stesse date, gli stessi ospiti e le stesse condizioni, contattateci."
       }
     },
     {
@@ -82,10 +88,16 @@
       "homepage": true,
       "variant": "long",
       "question": {
-        "en": "Placeholder: What is included in the displayed price?",
-        "de": "Platzhalter: Was ist im angezeigten Preis enthalten?",
-        "hr": "Placeholder: Što je uključeno u prikazanu cijenu?",
-        "it": "Segnaposto: Cosa è incluso nel prezzo visualizzato?"
+        "en": "What is included in the displayed price?",
+        "de": "Was ist im angezeigten Preis enthalten?",
+        "hr": "Što je uključeno u prikazanu cijenu?",
+        "it": "Cosa è incluso nel prezzo visualizzato?"
+      },
+      "answer": {
+        "en": "The displayed total includes accommodation, tourist tax and final cleaning. There are no additional mandatory charges beyond the total shown at checkout. You can review the full price breakdown before confirming your booking.",
+        "de": "Der angezeigte Gesamtpreis umfasst Unterkunft, Kurtaxe und Endreinigung. Über den beim Abschluss angezeigten Betrag hinaus fallen keine weiteren verpflichtenden Kosten an. Die vollständige Preisaufstellung ist vor Bestätigung einsehbar.",
+        "hr": "Ukupna cijena uključuje smještaj, turističku pristojbu i završno čišćenje. Nema dodatnih obveznih naknada povrh prikazanog iznosa. Prije potvrde rezervacije možete pregledati detaljan obračun.",
+        "it": "Il totale comprende alloggio, tassa di soggiorno e pulizia finale. Non ci sono altri costi obbligatori oltre al prezzo indicato. Prima della conferma potete consultare il dettaglio completo."
       }
     },
     {
@@ -94,10 +106,16 @@
       "homepage": false,
       "variant": "medium",
       "question": {
-        "en": "Placeholder: How are payment and booking confirmation handled?",
-        "de": "Platzhalter: Wie funktionieren Zahlung und Buchungsbestätigung?",
-        "hr": "Placeholder: Kako funkcioniraju plaćanje i potvrda rezervacije?",
-        "it": "Segnaposto: Come funzionano pagamento e conferma?"
+        "en": "How are payment and booking confirmation handled?",
+        "de": "Wie funktionieren Zahlung und Buchungsbestätigung?",
+        "hr": "Kako funkcioniraju plaćanje i potvrda rezervacije?",
+        "it": "Come funzionano pagamento e conferma?"
+      },
+      "answer": {
+        "en": "Villas Pastura is professionally managed by Ventus Travel, a local agency with over 15 years of experience in Novalja. You can pay by secure 3-D Secure payment link through our partner Monri or by bank transfer using the provided instructions. Your reservation is processed through our booking system and you receive payment instructions and confirmation of its status. We never store card details on our website.",
+        "de": "Villas Pastura wird von Ventus Travel betreut, einer lokalen Agentur mit über 15 Jahren Erfahrung in Novalja. Bezahlen Sie per sicherem 3-D-Secure-Zahlungslink unseres Partners Monri oder per Überweisung. Die Reservierung wird in unserem Buchungssystem verarbeitet; Sie erhalten Zahlungsanweisungen und eine Bestätigung des Buchungsstatus. Kartendaten speichern wir nicht.",
+        "hr": "Vilama Pastura upravlja Ventus Travel, lokalna agencija s više od 15 godina iskustva u Novalji. Plaćanje je moguće sigurnom poveznicom s 3-D Secure provjerom preko partnera Monri ili bankovnom uplatom prema uputama. Rezervacija se obrađuje kroz naš sustav, a vi dobivate upute za plaćanje i potvrdu njezina statusa. Podatke o karticama ne pohranjujemo.",
+        "it": "Villas Pastura è gestita da Ventus Travel, agenzia locale con oltre 15 anni di esperienza a Novalja. È possibile pagare tramite link sicuro con autenticazione 3-D Secure del partner Monri oppure con bonifico bancario. La prenotazione viene elaborata dal sistema e riceverete istruzioni di pagamento e conferma dello stato. Non conserviamo dati delle carte sul sito."
       }
     },
     {
@@ -106,10 +124,16 @@
       "homepage": false,
       "variant": "long",
       "question": {
-        "en": "Placeholder: Which cancellation terms apply?",
-        "de": "Platzhalter: Welche Stornierungsbedingungen gelten?",
-        "hr": "Placeholder: Koji uvjeti otkazivanja vrijede?",
-        "it": "Segnaposto: Quali condizioni di cancellazione si applicano?"
+        "en": "Which cancellation terms apply?",
+        "de": "Welche Stornierungsbedingungen gelten?",
+        "hr": "Koji uvjeti otkazivanja vrijede?",
+        "it": "Quali condizioni di cancellazione si applicano?"
+      },
+      "answer": {
+        "en": "Cancellation terms depend on your stay dates and selected offer. All applicable deadlines, refund conditions and any charges are shown clearly before you confirm the booking.",
+        "de": "Die Stornierungsbedingungen hängen von Reisedaten und gewähltem Angebot ab. Fristen, Erstattungsregeln und mögliche Gebühren werden vor der Bestätigung klar angezeigt.",
+        "hr": "Uvjeti otkazivanja ovise o datumima boravka i odabranoj ponudi. Rokovi, pravila povrata i eventualne naknade jasno su prikazani prije potvrde rezervacije.",
+        "it": "Le condizioni di cancellazione dipendono dalle date e dall'offerta scelta. Scadenze, rimborsi ed eventuali penali sono indicati chiaramente prima della conferma."
       }
     },
     {
@@ -118,10 +142,16 @@
       "homepage": false,
       "variant": "short",
       "question": {
-        "en": "Placeholder: Is tourist tax included?",
-        "de": "Platzhalter: Ist die Kurtaxe enthalten?",
-        "hr": "Placeholder: Je li boravišna pristojba uključena?",
-        "it": "Segnaposto: La tassa di soggiorno è inclusa?"
+        "en": "Is tourist tax included?",
+        "de": "Ist die Kurtaxe enthalten?",
+        "hr": "Je li boravišna pristojba uključena?",
+        "it": "La tassa di soggiorno è inclusa?"
+      },
+      "answer": {
+        "en": "Yes. Tourist tax is included in the total price and itemised in the breakdown. You will not have to pay it separately on arrival.",
+        "de": "Ja. Die Kurtaxe ist im Gesamtpreis enthalten und separat ausgewiesen. Sie müssen sie bei der Anreise nicht nochmals bezahlen.",
+        "hr": "Da. Turistička pristojba uključena je u ukupnu cijenu i zasebno prikazana u obračunu. Ne plaća se ponovno pri dolasku.",
+        "it": "Sì. La tassa di soggiorno è inclusa nel totale e indicata nel dettaglio. Non dovrete pagarla separatamente all'arrivo."
       }
     },
     {
@@ -137,9 +167,9 @@
       },
       "answer": {
         "en": "Each villa offers complete privacy, with its own entrance, fenced terrace and private heated pool. No outdoor facilities are shared.",
-        "de": "Jede Villa bietet vollständige Privatsphäre mit eigenem Eingang, umzäunter Terrasse und privatem beheiztem Pool. Es werden keine Außenbereiche gemeinsam genutzt.",
-        "hr": "Svaka vila pruža potpunu privatnost te ima vlastiti ulaz, ograđenu terasu i privatni grijani bazen. Nijedan vanjski sadržaj nije zajednički.",
-        "it": "Ogni villa offre completa privacy, con ingresso indipendente, terrazza recintata e piscina privata riscaldata. Nessuno spazio esterno è condiviso."
+        "de": "Jede Villa bietet vollständige Privatsphäre mit eigenem Eingang, umzäunter Terrasse und privatem beheiztem Pool. Außenbereiche werden nicht gemeinsam genutzt.",
+        "hr": "Svaka vila ima vlastiti ulaz, ograđenu terasu i privatni grijani bazen. Nijedan vanjski sadržaj nije zajednički.",
+        "it": "Ogni villa dispone di ingresso indipendente, terrazza recintata e piscina privata riscaldata. Nessuno spazio esterno è condiviso."
       }
     },
     {
@@ -148,10 +178,16 @@
       "homepage": true,
       "variant": "long",
       "question": {
-        "en": "Placeholder: Is the villa genuinely comfortable at full capacity?",
-        "de": "Platzhalter: Ist die Villa auch bei voller Belegung komfortabel?",
-        "hr": "Placeholder: Je li vila zaista udobna pri punom kapacitetu?",
-        "it": "Segnaposto: La villa è davvero confortevole alla massima capacità?"
+        "en": "Is the villa genuinely comfortable at full capacity?",
+        "de": "Ist die Villa auch bei voller Belegung komfortabel?",
+        "hr": "Je li vila zaista udobna pri punom kapacitetu?",
+        "it": "La villa è davvero confortevole alla massima capacità?"
+      },
+      "answer": {
+        "en": "Yes. Each villa has four spacious double bedrooms, each with its own bathroom, and comfortably accommodates eight guests without temporary extra beds.",
+        "de": "Ja. Jede Villa verfügt über vier geräumige Doppelzimmer, jeweils mit eigenem Bad, und bietet acht Gästen bequem Platz – ohne zusätzliche Notbetten.",
+        "hr": "Da. Svaka vila ima četiri prostrane spavaće sobe s bračnim krevetima i vlastitim kupaonicama te udobno prima osam gostiju, bez pomoćnih ležajeva.",
+        "it": "Sì. Ogni villa dispone di quattro spaziose camere matrimoniali con bagno privato e accoglie comodamente otto ospiti senza letti aggiuntivi."
       }
     },
     {
@@ -159,12 +195,17 @@
       "category": "villa",
       "homepage": true,
       "variant": "long",
-      "showTip": true,
       "question": {
-        "en": "Placeholder: What does a heated pool mean in practice?",
-        "de": "Platzhalter: Was bedeutet ein beheizter Pool in der Praxis?",
-        "hr": "Placeholder: Što grijani bazen znači u praksi?",
-        "it": "Segnaposto: Cosa significa piscina riscaldata in pratica?"
+        "en": "What does a heated pool mean in practice?",
+        "de": "Was bedeutet ein beheizter Pool in der Praxis?",
+        "hr": "Što grijani bazen znači u praksi?",
+        "it": "Cosa significa piscina riscaldata in pratica?"
+      },
+      "answer": {
+        "en": "Both villas have private heated pools. Heating is especially useful in spring and September, when mornings and evenings are cooler. In the warmest summer weeks it is usually unnecessary, but it remains available on request at no extra charge. Outdoor water temperature also depends on the weather.",
+        "de": "Beide Villen haben private beheizte Pools. Die Heizung ist besonders im Frühjahr und September angenehm. Im Hochsommer ist sie meist nicht nötig, kann aber auf Wunsch jederzeit kostenlos genutzt werden. Die Wassertemperatur hängt auch vom Wetter ab.",
+        "hr": "Obje vile imaju privatne grijane bazene. Grijanje je posebno korisno u predsezoni i rujnu, kada su jutra i večeri svježiji. Usred ljeta obično nije potrebno, ali je na zahtjev dostupno bez doplate. Temperatura vode ovisi i o vremenskim uvjetima.",
+        "it": "Entrambe le ville hanno piscine private riscaldate. Il riscaldamento è particolarmente utile in primavera e a settembre. Nelle settimane più calde di solito non serve, ma rimane disponibile su richiesta senza costi aggiuntivi. La temperatura dell'acqua dipende anche dal meteo."
       }
     },
     {
@@ -173,10 +214,16 @@
       "homepage": false,
       "variant": "medium",
       "question": {
-        "en": "Placeholder: How suitable is the villa for small children?",
-        "de": "Platzhalter: Wie geeignet ist die Villa für kleine Kinder?",
-        "hr": "Placeholder: Koliko je vila prikladna za malu djecu?",
-        "it": "Segnaposto: Quanto è adatta la villa ai bambini piccoli?"
+        "en": "How suitable is the villa for small children?",
+        "de": "Wie geeignet ist die Villa für kleine Kinder?",
+        "hr": "Koliko je vila prikladna za malu djecu?",
+        "it": "Quanto è adatta la villa ai bambini piccoli?"
+      },
+      "answer": {
+        "en": "Families with young children are welcome. The outdoor area is fenced, and a baby cot can be arranged on request. Adults must supervise children at all times, especially near the swimming pool.",
+        "de": "Familien mit kleinen Kindern sind willkommen. Der Außenbereich ist umzäunt und ein Babybett ist auf Anfrage erhältlich. Kinder müssen stets von Erwachsenen beaufsichtigt werden, besonders am Pool.",
+        "hr": "Obitelji s malom djecom su dobrodošle. Dvorište je ograđeno, a dječji krevetić dostupan je na zahtjev. Odrasli moraju stalno nadzirati djecu, osobito uz bazen.",
+        "it": "Le famiglie con bambini piccoli sono benvenute. L'area esterna è recintata e una culla è disponibile su richiesta. I bambini devono essere sempre sorvegliati dagli adulti, soprattutto vicino alla piscina."
       }
     },
     {
@@ -185,10 +232,16 @@
       "homepage": false,
       "variant": "medium",
       "question": {
-        "en": "Placeholder: Which house rules should guests know before booking?",
-        "de": "Platzhalter: Welche Hausregeln sollten Gäste vor der Buchung kennen?",
-        "hr": "Placeholder: Koja kućna pravila treba znati prije rezervacije?",
-        "it": "Segnaposto: Quali regole vanno conosciute prima di prenotare?"
+        "en": "Which house rules should guests know before booking?",
+        "de": "Welche Hausregeln sollten Gäste vor der Buchung kennen?",
+        "hr": "Koja kućna pravila treba znati prije rezervacije?",
+        "it": "Quali regole vanno conosciute prima di prenotare?"
+      },
+      "answer": {
+        "en": "Please treat the villa with care and respect the neighbourhood. Quiet hours run from 11 PM to 7 AM. Normal conversation is fine, but loud parties or behaviour disturbing others are not permitted.",
+        "de": "Bitte behandeln Sie die Villa sorgsam und respektieren Sie die Nachbarschaft. Die Ruhezeit gilt von 23 bis 7 Uhr. Normale Gespräche sind kein Problem, laute Partys und störendes Verhalten jedoch nicht erlaubt.",
+        "hr": "Molimo vas da čuvate vilu i poštujete susjedstvo. Kućni mir traje od 23 do 7 sati. Uobičajen razgovor nije problem, ali glasne zabave i ometanje drugih nisu dopušteni.",
+        "it": "Vi chiediamo di prendervi cura della villa e rispettare il vicinato. Le ore di quiete sono dalle 23 alle 7. Le normali conversazioni vanno bene, ma non sono ammesse feste rumorose o disturbi agli altri."
       }
     },
     {
@@ -196,12 +249,17 @@
       "category": "arrival",
       "homepage": true,
       "variant": "long",
-      "showTip": true,
       "question": {
-        "en": "Placeholder: Do we need a car when staying at Villas Pastura?",
-        "de": "Platzhalter: Brauchen wir während des Aufenthalts ein Auto?",
-        "hr": "Placeholder: Treba li nam automobil tijekom boravka?",
-        "it": "Segnaposto: Serve un'auto durante il soggiorno?"
+        "en": "Do we need a car when staying at Villas Pastura?",
+        "de": "Brauchen wir während des Aufenthalts ein Auto?",
+        "hr": "Treba li nam automobil tijekom boravka?",
+        "it": "Serve un'auto durante il soggiorno?"
+      },
+      "answer": {
+        "en": "Not necessarily, but we recommend a car for exploring Pag comfortably. The villas are in a peaceful, private setting and the nearest beach is within walking distance. Restaurants, shops and most other attractions are easier to reach by car.",
+        "de": "Nicht unbedingt, aber für Ausflüge auf Pag empfehlen wir ein Auto. Die Villen liegen ruhig und privat; der nächste Strand ist zu Fuß erreichbar. Restaurants, Geschäfte und viele Ausflugsziele erreichen Sie bequemer mit dem Auto.",
+        "hr": "Ne nužno, ali automobil preporučujemo za ugodno istraživanje Paga. Vile su na mirnoj i privatnoj lokaciji, a najbliža plaža dostupna je pješice. Do restorana, trgovina i većine sadržaja jednostavnije je automobilom.",
+        "it": "Non è indispensabile, ma consigliamo un'auto per esplorare Pag comodamente. Le ville sono in posizione tranquilla e la spiaggia più vicina è raggiungibile a piedi. Per ristoranti, negozi e attrazioni l'auto è più pratica."
       }
     },
     {
@@ -210,10 +268,16 @@
       "homepage": false,
       "variant": "medium",
       "question": {
-        "en": "Placeholder: How do arrival and check-in work?",
-        "de": "Platzhalter: Wie funktionieren Anreise und Check-in?",
-        "hr": "Placeholder: Kako funkcioniraju dolazak i check-in?",
-        "it": "Segnaposto: Come funzionano arrivo e check-in?"
+        "en": "How do arrival and check-in work?",
+        "de": "Wie funktionieren Anreise und Check-in?",
+        "hr": "Kako funkcioniraju dolazak i check-in?",
+        "it": "Come funzionano arrivo e check-in?"
+      },
+      "answer": {
+        "en": "A member of our local team will welcome you personally. We coordinate your arrival on check-in day by WhatsApp, email or phone. Direct guests benefit from priority check-in and complimentary early check-in when available.",
+        "de": "Ein Mitglied unseres lokalen Teams empfängt Sie persönlich. Wir stimmen die Ankunft am Anreisetag per WhatsApp, E-Mail oder Telefon ab. Direktbucher erhalten bevorzugten Check-in und nach Verfügbarkeit kostenloses früheres Einchecken.",
+        "hr": "Član lokalnog tima osobno će vas dočekati. Vrijeme dolaska dogovaramo na dan prijave WhatsAppom, e-poštom ili telefonom. Izravni gosti imaju prioritet pri prijavi i mogućnost besplatnog ranijeg ulaska kada je dostupan.",
+        "it": "Un membro del team locale vi accoglierà personalmente. Concordiamo l'arrivo il giorno del check-in tramite WhatsApp, email o telefono. Chi prenota direttamente beneficia di check-in prioritario e anticipato gratuito quando disponibile."
       }
     },
     {
@@ -222,10 +286,16 @@
       "homepage": false,
       "variant": "medium",
       "question": {
-        "en": "Placeholder: Where do guests park and charge an electric car?",
-        "de": "Platzhalter: Wo können Gäste parken und ein Elektroauto laden?",
-        "hr": "Placeholder: Gdje gosti parkiraju i pune električni automobil?",
-        "it": "Segnaposto: Dove si parcheggia e si ricarica un'auto elettrica?"
+        "en": "Where do guests park and charge an electric car?",
+        "de": "Wo können Gäste parken und ein Elektroauto laden?",
+        "hr": "Gdje gosti parkiraju i pune električni automobil?",
+        "it": "Dove si parcheggia e si ricarica un'auto elettrica?"
+      },
+      "answer": {
+        "en": "Private on-site parking is included in your stay. Direct-booking guests can also use our 22 kW EV charger free of charge.",
+        "de": "Private Parkplätze auf dem Grundstück sind inklusive. Direktbucher können auch die 22-kW-Ladestation kostenlos nutzen.",
+        "hr": "Privatni parking u sklopu vile uključen je u cijenu. Gosti s direktnom rezervacijom mogu besplatno koristiti i punjač za električna vozila snage 22 kW.",
+        "it": "Il parcheggio privato in loco è incluso. Chi prenota direttamente può utilizzare gratuitamente anche il caricatore per veicoli elettrici da 22 kW."
       }
     },
     {
@@ -233,12 +303,17 @@
       "category": "arrival",
       "homepage": false,
       "variant": "long",
-      "showTip": true,
       "question": {
-        "en": "Placeholder: Is the nearest beach practical for families?",
-        "de": "Platzhalter: Ist der nächste Strand für Familien praktisch?",
-        "hr": "Placeholder: Je li najbliža plaža praktična za obitelji?",
-        "it": "Segnaposto: La spiaggia più vicina è pratica per le famiglie?"
+        "en": "Is the nearest beach practical for families?",
+        "de": "Ist der nächste Strand für Familien praktisch?",
+        "hr": "Je li najbliža plaža praktična za obitelji?",
+        "it": "La spiaggia più vicina è pratica per le famiglie?"
+      },
+      "answer": {
+        "en": "Terra is the nearest beach and is within walking distance. Families may also enjoy Planjka in Stara Novalja, recognised with the Blue Flag for standards related to water quality, environment, safety and facilities. Jadrišnica in Jakišnica is another option. Ask our team for advice based on your needs and the day's conditions.",
+        "de": "Terra ist der nächste Strand und zu Fuß erreichbar. Familien können auch Planjka in Stara Novalja besuchen, ausgezeichnet mit der Blauen Flagge für Standards bei Wasserqualität, Umwelt, Sicherheit und Ausstattung. Eine weitere Möglichkeit ist Jadrišnica in Jakišnica. Unser Team hilft bei der Auswahl.",
+        "hr": "Terra je najbliža plaža, dostupna pješice. Obiteljima preporučujemo i Planjku u Staroj Novalji, s Plavom zastavom kao priznanjem za kvalitetu mora, okoliš, sigurnost i sadržaje. Još jedna opcija je Jadrišnica u Jakišnici. Pitajte naš tim za savjet prema potrebama i uvjetima toga dana.",
+        "it": "Terra è la spiaggia più vicina, raggiungibile a piedi. Le famiglie possono scegliere anche Planjka a Stara Novalja, premiata con la Bandiera Blu per standard relativi ad acqua, ambiente, sicurezza e servizi. Un'altra opzione è Jadrišnica a Jakišnica. Chiedete consiglio al nostro team."
       }
     },
     {
@@ -247,10 +322,16 @@
       "homepage": false,
       "variant": "short",
       "question": {
-        "en": "Placeholder: What happens if we arrive late?",
-        "de": "Platzhalter: Was passiert bei einer späten Anreise?",
-        "hr": "Placeholder: Što ako stignemo kasno?",
-        "it": "Segnaposto: Cosa succede se arriviamo tardi?"
+        "en": "What happens if we arrive late?",
+        "de": "Was passiert bei einer späten Anreise?",
+        "hr": "Što ako stignemo kasno?",
+        "it": "Cosa succede se arriviamo tardi?"
+      },
+      "answer": {
+        "en": "No worries. Our local team will welcome you personally regardless of the hour, even in the middle of the night. Just let us know if your plans change so we can coordinate your arrival.",
+        "de": "Kein Problem. Unser lokales Team empfängt Sie persönlich, unabhängig von der Uhrzeit, auch mitten in der Nacht. Informieren Sie uns bitte über Änderungen Ihrer Ankunftszeit.",
+        "hr": "Bez brige. Lokalni tim osobno će vas dočekati bez obzira na sat dolaska, čak i usred noći. Samo nam javite ako se planovi promijene kako bismo uskladili doček.",
+        "it": "Nessun problema. Il nostro team locale vi accoglierà personalmente a qualsiasi ora, anche nel cuore della notte. Avvisateci se cambiano i vostri programmi."
       }
     },
     {
@@ -258,12 +339,17 @@
       "category": "local",
       "homepage": false,
       "variant": "long",
-      "showTip": true,
       "question": {
-        "en": "Placeholder: Where would our hosts go for dinner on the first evening?",
-        "de": "Platzhalter: Wo würden unsere Gastgeber am ersten Abend essen gehen?",
-        "hr": "Placeholder: Gdje bi naš host tim večerao prve večeri?",
-        "it": "Segnaposto: Dove cenerebbe il nostro team la prima sera?"
+        "en": "Where would our hosts go for dinner on the first evening?",
+        "de": "Wo würden unsere Gastgeber am ersten Abend essen gehen?",
+        "hr": "Gdje bi naš host tim večerao prve večeri?",
+        "it": "Dove cenerebbe il nostro team la prima sera?"
+      },
+      "answer": {
+        "en": "For a special first evening in Novalja, our personal recommendation is Starac i More, a lovely choice for a more refined dining experience. We suggest booking a table in advance in summer.",
+        "de": "Für einen besonderen ersten Abend in Novalja empfehlen wir persönlich Starac i More, eine ausgezeichnete Wahl für ein gehobenes Abendessen. Im Sommer empfiehlt sich eine Tischreservierung.",
+        "hr": "Za posebnu prvu večer u Novalji osobno preporučujemo Starac i More, odličan izbor za profinjeniji gastronomski doživljaj. Ljeti preporučujemo rezervirati stol.",
+        "it": "Per una prima serata speciale a Novalja consigliamo personalmente Starac i More, una scelta raffinata per la cena. In estate è meglio prenotare in anticipo."
       }
     },
     {
@@ -272,35 +358,16 @@
       "homepage": false,
       "variant": "long",
       "question": {
-        "en": "Placeholder: Which beach works best for different wind conditions?",
-        "de": "Platzhalter: Welcher Strand eignet sich bei unterschiedlichen Winden?",
-        "hr": "Placeholder: Koja je plaža najbolja pri različitim smjerovima vjetra?",
-        "it": "Segnaposto: Quale spiaggia scegliere con venti diversi?"
-      }
-    },
-    {
-      "id": "avoid-traffic",
-      "category": "local",
-      "homepage": false,
-      "variant": "medium",
-      "showTip": true,
-      "question": {
-        "en": "Placeholder: When should guests avoid the busiest arrival traffic?",
-        "de": "Platzhalter: Wann sollten Gäste den stärksten Anreiseverkehr meiden?",
-        "hr": "Placeholder: Kada treba izbjegavati najveću gužvu pri dolasku?",
-        "it": "Segnaposto: Quando conviene evitare il traffico più intenso?"
-      }
-    },
-    {
-      "id": "short-stay-itinerary",
-      "category": "local",
-      "homepage": false,
-      "variant": "long",
-      "question": {
-        "en": "Placeholder: What is worth doing during a short stay on Pag?",
-        "de": "Platzhalter: Was lohnt sich bei einem kurzen Aufenthalt auf Pag?",
-        "hr": "Placeholder: Što vrijedi napraviti tijekom kratkog boravka na Pagu?",
-        "it": "Segnaposto: Cosa vale la pena fare durante un breve soggiorno a Pag?"
+        "en": "Which beach works best for different wind conditions?",
+        "de": "Welcher Strand eignet sich bei unterschiedlichen Winden?",
+        "hr": "Koja je plaža najbolja pri različitim smjerovima vjetra?",
+        "it": "Quale spiaggia scegliere con venti diversi?"
+      },
+      "answer": {
+        "en": "Choosing another side of Pag can help when the wind changes. In a southerly jugo wind, Caska and Zrće are often more sheltered; Planjka in Stara Novalja can also be suitable. During the northeasterly bura, we often suggest Babe or Planjka. Conditions vary, so ask our team on the day.",
+        "de": "Bei Wind kann die Wahl einer anderen Inselseite helfen. Bei südlichem Jugo sind Caska und Zrće häufig geschützter; auch Planjka in Stara Novalja kann passen. Bei nordöstlicher Bora empfehlen wir oft Babe oder Planjka. Fragen Sie unser Team nach den aktuellen Bedingungen.",
+        "hr": "Za različitih vjetrova vrijedi promijeniti stranu otoka. Kad puše jugo, Caska i Zrće često su zaklonjenije, a dobar izbor može biti i Planjka u Staroj Novalji. Za bure često preporučujemo Babe ili Planjku. Pitajte naš tim za aktualne uvjete.",
+        "it": "Quando cambia il vento, scegliere un altro lato di Pag può aiutare. Con lo jugo da sud, Caska e Zrće sono spesso più riparate, così come Planjka a Stara Novalja. Con la bora da nord-est suggeriamo spesso Babe o Planjka. Chiedete al team le condizioni del giorno."
       }
     },
     {
@@ -309,11 +376,18 @@
       "homepage": false,
       "variant": "medium",
       "question": {
-        "en": "Placeholder: Who helps us if we need something during the stay?",
-        "de": "Platzhalter: Wer hilft uns, wenn wir während des Aufenthalts etwas brauchen?",
-        "hr": "Placeholder: Tko nam pomaže ako nešto zatrebamo tijekom boravka?",
-        "it": "Segnaposto: Chi ci aiuta se serve qualcosa durante il soggiorno?"
+        "en": "Who helps us if we need something during the stay?",
+        "de": "Wer hilft uns, wenn wir während des Aufenthalts etwas brauchen?",
+        "hr": "Tko nam pomaže ako nešto zatrebamo tijekom boravka?",
+        "it": "Chi ci aiuta se serve qualcosa durante il soggiorno?"
+      },
+      "answer": {
+        "en": "The local Ventus Travel team looks after cleaning, maintenance and practical support at Villas Pastura. Whether you need help with the property or want a local recommendation, we are here. Our contact details are provided at check-in and on this website.",
+        "de": "Das lokale Team von Ventus Travel kümmert sich um Reinigung, Wartung und Unterstützung bei Villas Pastura. Ob Fragen zur Unterkunft oder lokale Tipps: Wir helfen gern. Kontaktdaten erhalten Sie beim Check-in und auf dieser Website.",
+        "hr": "Lokalni tim Ventus Travela brine o čišćenju, održavanju i podršci u vilama Pastura. Bilo da imate pitanje o vili ili želite lokalnu preporuku, tu smo za vas. Kontakte dobivate pri dolasku, a dostupni su i na stranici.",
+        "it": "Il team locale di Ventus Travel segue pulizia, manutenzione e assistenza a Villas Pastura. Per aiuto con la villa o consigli locali, siamo a disposizione. Riceverete i contatti al check-in e li trovate anche sul sito."
       }
     }
-  ]
+  ],
+  "schemaVersion": 1
 }

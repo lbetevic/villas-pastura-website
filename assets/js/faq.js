@@ -3,44 +3,32 @@ const faqTranslations = {
     navVilla: 'The villa', navGallery: 'Gallery', navReviews: 'Reviews', navLocation: 'Location',
     faqKicker: 'Official Villas Pastura information', faqHeading: 'Questions answered by your hosts in Novalja.',
     faqIntro: 'Practical answers about booking, the villa, arrival and local life on Pag.',
-    prototypeBadge: 'Content prototype', prototypeTitle: 'Layout and interactions are ready for testing.',
-    prototypeCopy: 'Questions and answers are placeholders. This page is excluded from search indexing until the final content is reviewed.',
-    sourceLabel: 'Source', sourceValue: 'Official Villas Pastura website', reviewLabel: 'Final review', reviewValue: 'Owners and local host team', updatedLabel: 'Prototype updated',
     ctaKicker: 'Your stay', ctaTitle: 'Ready to check your dates?', ctaCopy: 'Return to the villa page for live availability, complete prices and conditions.', ctaButton: 'Check availability',
-    pageTitle: 'FAQ Prototype | Villas Pastura Novalja', metaDescription: 'Prototype frequently asked questions page for Villas Pastura in Novalja.',
+    pageTitle: 'FAQ | Villas Pastura Novalja', metaDescription: 'Official answers about booking, heated private pools, arrival and local advice for Villas Pastura in Novalja.',
     skipLink: 'Skip to questions', menuLabel: 'Open menu', languageLabel: 'Choose language'
   },
   de: {
     navVilla: 'Die Villa', navGallery: 'Galerie', navReviews: 'Bewertungen', navLocation: 'Lage',
     faqKicker: 'Offizielle Informationen der Villas Pastura', faqHeading: 'Fragen, beantwortet von Ihren Gastgebern in Novalja.',
     faqIntro: 'Praktische Antworten zu Buchung, Villa, Anreise und dem Leben auf Pag.',
-    prototypeBadge: 'Inhaltsprototyp', prototypeTitle: 'Layout und Interaktionen können getestet werden.',
-    prototypeCopy: 'Fragen und Antworten sind Platzhalter. Diese Seite bleibt von der Indexierung ausgeschlossen, bis alle Inhalte geprüft sind.',
-    sourceLabel: 'Quelle', sourceValue: 'Offizielle Website der Villas Pastura', reviewLabel: 'Endprüfung', reviewValue: 'Eigentümer und lokales Gastgeberteam', updatedLabel: 'Prototyp aktualisiert',
     ctaKicker: 'Ihr Aufenthalt', ctaTitle: 'Möchten Sie Ihre Daten prüfen?', ctaCopy: 'Zur Villa-Seite für Live-Verfügbarkeit, Gesamtpreise und Bedingungen.', ctaButton: 'Verfügbarkeit prüfen',
-    pageTitle: 'FAQ-Prototyp | Villas Pastura Novalja', metaDescription: 'Prototyp der häufig gestellten Fragen für Villas Pastura in Novalja.',
+    pageTitle: 'FAQ | Villas Pastura Novalja', metaDescription: 'Offizielle Antworten zu Buchung, privaten beheizten Pools, Anreise und lokalen Tipps für Villas Pastura in Novalja.',
     skipLink: 'Zu den Fragen springen', menuLabel: 'Menü öffnen', languageLabel: 'Sprache wählen'
   },
   hr: {
     navVilla: 'Vila', navGallery: 'Galerija', navReviews: 'Recenzije', navLocation: 'Lokacija',
     faqKicker: 'Službene informacije Villas Pastura', faqHeading: 'Pitanja na koja odgovaraju vaši domaćini u Novalji.',
     faqIntro: 'Praktični odgovori o rezervaciji, vili, dolasku i lokalnom životu na Pagu.',
-    prototypeBadge: 'Prototip sadržaja', prototypeTitle: 'Layout i interakcije spremni su za testiranje.',
-    prototypeCopy: 'Pitanja i odgovori privremeni su. Stranica je isključena iz indeksiranja dok se ne provjeri konačni sadržaj.',
-    sourceLabel: 'Izvor', sourceValue: 'Službena web-stranica Villas Pastura', reviewLabel: 'Konačna provjera', reviewValue: 'Vlasnici i lokalni host tim', updatedLabel: 'Prototip ažuriran',
     ctaKicker: 'Vaš boravak', ctaTitle: 'Spremni za provjeru datuma?', ctaCopy: 'Vratite se na stranicu vile za live raspoloživost, potpune cijene i uvjete.', ctaButton: 'Provjeri raspoloživost',
-    pageTitle: 'FAQ prototip | Villas Pastura Novalja', metaDescription: 'Prototip često postavljanih pitanja za Villas Pastura u Novalji.',
+    pageTitle: 'Česta pitanja | Villas Pastura Novalja', metaDescription: 'Odgovori na pitanja o rezervaciji, privatnim grijanim bazenima, dolasku i lokalnim savjetima za Villas Pastura u Novalji.',
     skipLink: 'Prijeđi na pitanja', menuLabel: 'Otvori izbornik', languageLabel: 'Odaberi jezik'
   },
   it: {
     navVilla: 'La villa', navGallery: 'Galleria', navReviews: 'Recensioni', navLocation: 'Posizione',
     faqKicker: 'Informazioni ufficiali Villas Pastura', faqHeading: 'Domande con risposte dei vostri host a Novalja.',
     faqIntro: 'Risposte pratiche su prenotazione, villa, arrivo e vita locale a Pag.',
-    prototypeBadge: 'Prototipo dei contenuti', prototypeTitle: 'Layout e interazioni sono pronti per il test.',
-    prototypeCopy: 'Domande e risposte sono provvisorie. La pagina non sarà indicizzata finché i contenuti finali non saranno verificati.',
-    sourceLabel: 'Fonte', sourceValue: 'Sito ufficiale di Villas Pastura', reviewLabel: 'Verifica finale', reviewValue: 'Proprietari e team locale', updatedLabel: 'Prototipo aggiornato',
     ctaKicker: 'Il tuo soggiorno', ctaTitle: 'Vuoi controllare le date?', ctaCopy: 'Torna alla villa per disponibilità live, prezzi completi e condizioni.', ctaButton: 'Controlla disponibilità',
-    pageTitle: 'Prototipo FAQ | Villas Pastura Novalja', metaDescription: 'Prototipo delle domande frequenti per Villas Pastura a Novalja.',
+    pageTitle: 'Domande frequenti | Villas Pastura Novalja', metaDescription: 'Risposte ufficiali su prenotazioni, piscine private riscaldate, arrivo e consigli locali per Villas Pastura a Novalja.',
     skipLink: 'Vai alle domande', menuLabel: 'Apri menu', languageLabel: 'Scegli lingua'
   }
 };
