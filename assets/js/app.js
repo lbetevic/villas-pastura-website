@@ -173,6 +173,11 @@ let calendarAvailabilityState = 'idle';
 
 const menuToggle = document.querySelector('[data-menu-toggle]');
 const nav = document.querySelector('[data-nav]');
+Object.assign(translations.en, {"poiSeeAll":"See all points of interest","poiAllTitle":"Explore Pag and Novalja","poiAllIntro":"Our local selection of beaches, dining and things to discover.","poiIntro":"A few useful starting points, chosen by our local team.","mapShow":"Show on map","poiClose":"Close points of interest"});
+Object.assign(translations.de, {"poiSeeAll":"Alle Ausflugsziele ansehen","poiAllTitle":"Pag und Novalja entdecken","poiAllIntro":"Unsere lokalen Empfehlungen für Strände, Restaurants und Ausflüge.","poiIntro":"Drei praktische Ausgangspunkte, ausgewählt von unserem lokalen Team.","mapShow":"Auf Karte anzeigen","poiClose":"Ausflugsziele schließen"});
+Object.assign(translations.hr, {"poiSeeAll":"Pogledaj sve zanimljivosti","poiAllTitle":"Istražite Pag i Novalju","poiAllIntro":"Lokalni izbor plaža, restorana i zanimljivosti.","poiIntro":"Tri korisne početne točke koje preporučuje naš lokalni tim.","mapShow":"Prikaži na karti","poiClose":"Zatvori zanimljivosti"});
+Object.assign(translations.it, {"poiSeeAll":"Vedi tutti i luoghi d'interesse","poiAllTitle":"Scopri Pag e Novalja","poiAllIntro":"I nostri consigli locali per spiagge, ristoranti e luoghi da visitare.","poiIntro":"Tre punti di partenza utili, scelti dal nostro team locale.","mapShow":"Mostra sulla mappa","poiClose":"Chiudi i punti d'interesse"});
+
 const languageSelect = document.querySelector('#language-select');
 const amenitiesDialog = document.querySelector('#amenities-dialog');
 const amenitiesGroups = document.querySelector('.amenities-groups');
@@ -527,11 +532,6 @@ form.addEventListener('submit', (event) => {
   });
   window.location.href = `availability.html?${query}`;
 });
-
-Object.assign(translations.en, {"poiSeeAll":"See all points of interest","poiAllTitle":"Explore Pag and Novalja","poiAllIntro":"Our local selection of beaches, dining and things to discover.","poiIntro":"A few useful starting points, chosen by our local team.","mapShow":"Show on map","poiClose":"Close points of interest"});
-Object.assign(translations.de, {"poiSeeAll":"Alle Ausflugsziele ansehen","poiAllTitle":"Pag und Novalja entdecken","poiAllIntro":"Unsere lokalen Empfehlungen für Strände, Restaurants und Ausflüge.","poiIntro":"Drei praktische Ausgangspunkte, ausgewählt von unserem lokalen Team.","mapShow":"Auf Karte anzeigen","poiClose":"Ausflugsziele schließen"});
-Object.assign(translations.hr, {"poiSeeAll":"Pogledaj sve zanimljivosti","poiAllTitle":"Istražite Pag i Novalju","poiAllIntro":"Lokalni izbor plaža, restorana i zanimljivosti.","poiIntro":"Tri korisne početne točke koje preporučuje naš lokalni tim.","mapShow":"Prikaži na karti","poiClose":"Zatvori zanimljivosti"});
-Object.assign(translations.it, {"poiSeeAll":"Vedi tutti i luoghi d'interesse","poiAllTitle":"Scopri Pag e Novalja","poiAllIntro":"I nostri consigli locali per spiagge, ristoranti e luoghi da visitare.","poiIntro":"Tre punti di partenza utili, scelti dal nostro team locale.","mapShow":"Mostra sulla mappa","poiClose":"Chiudi i punti d'interesse"});
 
 function applyLanguage(lang) {
   const dict = translations[lang] || translations.en;
